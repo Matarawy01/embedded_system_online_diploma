@@ -1,0 +1,37 @@
+/* By Abdelrahman Matarawy */
+/* StartUp for CortexM3 */
+
+/* Interupt Vector Table */
+.section .vectors
+
+.word 0x20001000 		 /* Address added for stack top */
+.word _reset      		 /* 1 Reset Handler */
+.word vector_handler     /* 2 NMI */
+.word vector_handler     /* 3 Hard fault */
+.word vector_handler     /* 4 MM fault */
+.word vector_handler     /* 5 Bus fault */
+.word vector_handler     /* 6 usage fault */
+.word vector_handler     /* 7 Reserved */
+.word vector_handler     /* 8 Reserved */
+.word vector_handler     /* 9 Reserved */
+.word vector_handler     /* 10 Reserved */
+.word vector_handler     /* 11 SV call */
+.word vector_handler     /* 12 Debug reserved */
+.word vector_handler     /* 13 Reserved */
+.word vector_handler     /* 14 pendSV */
+.word vector_handler     /* 15 SysTick */
+.word vector_handler     /* 16 IRQ0 */
+.word vector_handler     /* 17 IRG1 */
+.word vector_handler     /* 18 IRG2 */
+.word vector_handler     /* 19 ... */
+
+.section .text
+_reset:
+	bl main
+	b .
+
+/* For activate 16 bits mode */
+.thumb_func	
+
+vector_handler:
+	b _reset

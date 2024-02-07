@@ -1,0 +1,13 @@
+12:08:15 **** Incremental Build of configuration Debug for project Lab1_Toggle_Led ****
+make -j8 all 
+arm-none-eabi-size   Lab1_Toggle_Led.elf 
+arm-none-eabi-objcopy  -O ihex  Lab1_Toggle_Led.elf  "Lab1_Toggle_Led.hex"
+   text	   data	    bss	    dec	    hex	filename
+    684	      8	   1568	   2260	    8d4	Lab1_Toggle_Led.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1_Toggle_Led.hex
+ 
+
+12:08:15 Build Finished. 0 errors, 0 warnings. (took 274ms)
+

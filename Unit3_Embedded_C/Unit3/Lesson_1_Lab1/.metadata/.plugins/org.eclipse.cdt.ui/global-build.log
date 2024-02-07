@@ -1,0 +1,654 @@
+Info: Nothing to build for Includes_By_me
+11:55:14 **** Build of configuration Debug for project Lab1_Toggle_Led ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+In file included from ../Src/main.c:20:0:
+../Inc/Platform_Types.h:33:49: error: conflicting type qualifiers for 'chat_t'
+ typedef   volatile char                         chat_t;
+                                                 ^~~~~~
+../Inc/Platform_Types.h:18:43: note: previous declaration of 'chat_t' was here
+ typedef   char                            chat_t;
+                                           ^~~~~~
+../Inc/Platform_Types.h:34:49: error: conflicting type qualifiers for 'sint8_t'
+ typedef   volatile signed char                  sint8_t;
+                                                 ^~~~~~~
+../Inc/Platform_Types.h:19:43: note: previous declaration of 'sint8_t' was here
+ typedef   signed char                     sint8_t;
+                                           ^~~~~~~
+../Inc/Platform_Types.h:35:49: error: conflicting type qualifiers for 'uint8_t'
+ typedef   volatile unsigned char                uint8_t;
+                                                 ^~~~~~~
+../Inc/Platform_Types.h:20:42: note: previous declaration of 'uint8_t' was here
+ typedef   unsigned char                  uint8_t;
+                                          ^~~~~~~
+../Inc/Platform_Types.h:36:49: error: conflicting type qualifiers for 'sint16_t'
+ typedef   volatile signed short                 sint16_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:21:42: note: previous declaration of 'sint16_t' was here
+ typedef   signed short                   sint16_t;
+                                          ^~~~~~~~
+../Inc/Platform_Types.h:37:49: error: conflicting type qualifiers for 'uint16_t'
+ typedef   volatile unsigned short               uint16_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:22:41: note: previous declaration of 'uint16_t' was here
+ typedef   unsigned short                uint16_t;
+                                         ^~~~~~~~
+../Inc/Platform_Types.h:38:49: error: conflicting type qualifiers for 'sint32_t'
+ typedef   volatile signed int                   sint32_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:23:42: note: previous declaration of 'sint32_t' was here
+ typedef   signed int                     sint32_t;
+                                          ^~~~~~~~
+../Inc/Platform_Types.h:39:49: error: conflicting type qualifiers for 'uint32_t'
+ typedef   volatile unsigned int                 uint32_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:24:43: note: previous declaration of 'uint32_t' was here
+ typedef   unsigned int                    uint32_t;
+                                           ^~~~~~~~
+../Inc/Platform_Types.h:40:49: error: conflicting type qualifiers for 'sint64_t'
+ typedef   volatile signed long long int         sint64_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:25:49: note: previous declaration of 'sint64_t' was here
+ typedef   signed long long int                  sint64_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:41:49: error: conflicting type qualifiers for 'uint64_t'
+ typedef   volatile unsigned long long int       uint64_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:26:43: note: previous declaration of 'uint64_t' was here
+ typedef   unsigned long long int          uint64_t;
+                                           ^~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:25:41: error: unknown type name 'unit32_t'
+ #define APB2ENR             *((volatile unit32_t *) RCC_Base_Address + 0x18)
+                                         ^
+../Src/main.c:32:5: note: in expansion of macro 'APB2ENR'
+     APB2ENR |= (1<<2);
+     ^~~~~~~
+../Src/main.c:27:41: error: unknown type name 'unit32_t'
+ #define ODR                 *((volatile unit32_t *) GPIO_PortA + 0x0c)
+                                         ^
+../Src/main.c:33:5: note: in expansion of macro 'ODR'
+     ODR |=(1<<13);
+     ^~~
+../Src/main.c:26:41: error: unknown type name 'unit32_t'
+ #define CRH                 *((volatile unit32_t *) GPIO_PortA + 0x04)
+                                         ^
+../Src/main.c:34:5: note: in expansion of macro 'CRH'
+     CRH &=0xFF0FFFFF;
+     ^~~
+../Src/main.c:26:41: error: unknown type name 'unit32_t'
+ #define CRH                 *((volatile unit32_t *) GPIO_PortA + 0x04)
+                                         ^
+../Src/main.c:35:5: note: in expansion of macro 'CRH'
+     CRH |=0x00200000;
+     ^~~
+../Src/main.c:27:41: error: unknown type name 'unit32_t'
+ #define ODR                 *((volatile unit32_t *) GPIO_PortA + 0x0c)
+                                         ^
+../Src/main.c:38:6: note: in expansion of macro 'ODR'
+      ODR |=(1<<13);
+      ^~~
+../Src/main.c:27:41: error: unknown type name 'unit32_t'
+ #define ODR                 *((volatile unit32_t *) GPIO_PortA + 0x0c)
+                                         ^
+../Src/main.c:40:6: note: in expansion of macro 'ODR'
+      ODR &=~(1<<13);
+      ^~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+Info: Nothing to build for Includes_By_me
+11:56:01 **** Incremental Build of configuration Debug for project Lab1_Toggle_Led ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:20:0:
+../Inc/Platform_Types.h:24:43: error: conflicting types for 'uint32_t'
+ typedef   unsigned int                    uint32_t;
+                                           ^~~~~~~~
+In file included from c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\sys\types.h:64:0,
+                 from c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\stdio.h:61,
+                 from ../Src/main.c:19:
+c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\sys\_stdint.h:48:20: note: previous declaration of 'uint32_t' was here
+ typedef __uint32_t uint32_t ;
+                    ^~~~~~~~
+In file included from ../Src/main.c:20:0:
+../Inc/Platform_Types.h:33:49: error: conflicting type qualifiers for 'chat_t'
+ typedef   volatile char                         chat_t;
+                                                 ^~~~~~
+../Inc/Platform_Types.h:18:43: note: previous declaration of 'chat_t' was here
+ typedef   char                            chat_t;
+                                           ^~~~~~
+../Inc/Platform_Types.h:34:49: error: conflicting type qualifiers for 'sint8_t'
+ typedef   volatile signed char                  sint8_t;
+                                                 ^~~~~~~
+../Inc/Platform_Types.h:19:43: note: previous declaration of 'sint8_t' was here
+ typedef   signed char                     sint8_t;
+                                           ^~~~~~~
+../Inc/Platform_Types.h:35:49: error: conflicting type qualifiers for 'uint8_t'
+ typedef   volatile unsigned char                uint8_t;
+                                                 ^~~~~~~
+In file included from c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\sys\types.h:64:0,
+                 from c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\stdio.h:61,
+                 from ../Src/main.c:19:
+c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\sys\_stdint.h:24:19: note: previous declaration of 'uint8_t' was here
+ typedef __uint8_t uint8_t ;
+                   ^~~~~~~
+In file included from ../Src/main.c:20:0:
+../Inc/Platform_Types.h:36:49: error: conflicting type qualifiers for 'sint16_t'
+ typedef   volatile signed short                 sint16_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:21:42: note: previous declaration of 'sint16_t' was here
+ typedef   signed short                   sint16_t;
+                                          ^~~~~~~~
+../Inc/Platform_Types.h:37:49: error: conflicting type qualifiers for 'uint16_t'
+ typedef   volatile unsigned short               uint16_t;
+                                                 ^~~~~~~~
+In file included from c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\sys\types.h:64:0,
+                 from c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\stdio.h:61,
+                 from ../Src/main.c:19:
+c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\sys\_stdint.h:36:20: note: previous declaration of 'uint16_t' was here
+ typedef __uint16_t uint16_t ;
+                    ^~~~~~~~
+In file included from ../Src/main.c:20:0:
+../Inc/Platform_Types.h:38:49: error: conflicting type qualifiers for 'sint32_t'
+ typedef   volatile signed int                   sint32_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:23:42: note: previous declaration of 'sint32_t' was here
+ typedef   signed int                     sint32_t;
+                                          ^~~~~~~~
+../Inc/Platform_Types.h:39:49: error: conflicting type qualifiers for 'uint32_t'
+ typedef   volatile unsigned int                 uint32_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:24:43: note: previous declaration of 'uint32_t' was here
+ typedef   unsigned int                    uint32_t;
+                                           ^~~~~~~~
+../Inc/Platform_Types.h:40:49: error: conflicting type qualifiers for 'sint64_t'
+ typedef   volatile signed long long int         sint64_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:25:49: note: previous declaration of 'sint64_t' was here
+ typedef   signed long long int                  sint64_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:41:49: error: conflicting type qualifiers for 'uint64_t'
+ typedef   volatile unsigned long long int       uint64_t;
+                                                 ^~~~~~~~
+In file included from c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\sys\types.h:64:0,
+                 from c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\stdio.h:61,
+                 from ../Src/main.c:19:
+c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\sys\_stdint.h:60:20: note: previous declaration of 'uint64_t' was here
+ typedef __uint64_t uint64_t ;
+                    ^~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:25:41: error: unknown type name 'unit32_t'
+ #define APB2ENR             *((volatile unit32_t *) RCC_Base_Address + 0x18)
+                                         ^
+../Src/main.c:32:5: note: in expansion of macro 'APB2ENR'
+     APB2ENR |= (1<<2);
+     ^~~~~~~
+../Src/main.c:27:41: error: unknown type name 'unit32_t'
+ #define ODR                 *((volatile unit32_t *) GPIO_PortA + 0x0c)
+                                         ^
+../Src/main.c:33:5: note: in expansion of macro 'ODR'
+     ODR |=(1<<13);
+     ^~~
+../Src/main.c:26:41: error: unknown type name 'unit32_t'
+ #define CRH                 *((volatile unit32_t *) GPIO_PortA + 0x04)
+                                         ^
+../Src/main.c:34:5: note: in expansion of macro 'CRH'
+     CRH &=0xFF0FFFFF;
+     ^~~
+../Src/main.c:26:41: error: unknown type name 'unit32_t'
+ #define CRH                 *((volatile unit32_t *) GPIO_PortA + 0x04)
+                                         ^
+../Src/main.c:35:5: note: in expansion of macro 'CRH'
+     CRH |=0x00200000;
+     ^~~
+../Src/main.c:27:41: error: unknown type name 'unit32_t'
+ #define ODR                 *((volatile unit32_t *) GPIO_PortA + 0x0c)
+                                         ^
+../Src/main.c:38:6: note: in expansion of macro 'ODR'
+      ODR |=(1<<13);
+      ^~~
+../Src/main.c:27:41: error: unknown type name 'unit32_t'
+ #define ODR                 *((volatile unit32_t *) GPIO_PortA + 0x0c)
+                                         ^
+../Src/main.c:40:6: note: in expansion of macro 'ODR'
+      ODR &=~(1<<13);
+      ^~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+Info: Nothing to build for Includes_By_me
+11:56:48 **** Incremental Build of configuration Debug for project Lab1_Toggle_Led ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:20:0:
+../Inc/Platform_Types.h:33:49: error: conflicting type qualifiers for 'chat_t'
+ typedef   volatile char                         chat_t;
+                                                 ^~~~~~
+../Inc/Platform_Types.h:18:43: note: previous declaration of 'chat_t' was here
+ typedef   char                            chat_t;
+                                           ^~~~~~
+../Inc/Platform_Types.h:34:49: error: conflicting type qualifiers for 'sint8_t'
+ typedef   volatile signed char                  sint8_t;
+                                                 ^~~~~~~
+../Inc/Platform_Types.h:19:43: note: previous declaration of 'sint8_t' was here
+ typedef   signed char                     sint8_t;
+                                           ^~~~~~~
+../Inc/Platform_Types.h:35:49: error: conflicting type qualifiers for 'uint8_t'
+ typedef   volatile unsigned char                uint8_t;
+                                                 ^~~~~~~
+../Inc/Platform_Types.h:20:42: note: previous declaration of 'uint8_t' was here
+ typedef   unsigned char                  uint8_t;
+                                          ^~~~~~~
+../Inc/Platform_Types.h:36:49: error: conflicting type qualifiers for 'sint16_t'
+ typedef   volatile signed short                 sint16_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:21:42: note: previous declaration of 'sint16_t' was here
+ typedef   signed short                   sint16_t;
+                                          ^~~~~~~~
+../Inc/Platform_Types.h:37:49: error: conflicting type qualifiers for 'uint16_t'
+ typedef   volatile unsigned short               uint16_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:22:41: note: previous declaration of 'uint16_t' was here
+ typedef   unsigned short                uint16_t;
+                                         ^~~~~~~~
+../Inc/Platform_Types.h:38:49: error: conflicting type qualifiers for 'sint32_t'
+ typedef   volatile signed int                   sint32_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:23:42: note: previous declaration of 'sint32_t' was here
+ typedef   signed int                     sint32_t;
+                                          ^~~~~~~~
+../Inc/Platform_Types.h:39:49: error: conflicting type qualifiers for 'uint32_t'
+ typedef   volatile unsigned int                 uint32_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:24:43: note: previous declaration of 'uint32_t' was here
+ typedef   unsigned int                    uint32_t;
+                                           ^~~~~~~~
+../Inc/Platform_Types.h:40:49: error: conflicting type qualifiers for 'sint64_t'
+ typedef   volatile signed long long int         sint64_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:25:49: note: previous declaration of 'sint64_t' was here
+ typedef   signed long long int                  sint64_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:41:49: error: conflicting type qualifiers for 'uint64_t'
+ typedef   volatile unsigned long long int       uint64_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:26:43: note: previous declaration of 'uint64_t' was here
+ typedef   unsigned long long int          uint64_t;
+                                           ^~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:25:41: error: unknown type name 'unit32_t'
+ #define APB2ENR             *((volatile unit32_t *) RCC_Base_Address + 0x18)
+                                         ^
+../Src/main.c:32:5: note: in expansion of macro 'APB2ENR'
+     APB2ENR |= (1<<2);
+     ^~~~~~~
+../Src/main.c:27:41: error: unknown type name 'unit32_t'
+ #define ODR                 *((volatile unit32_t *) GPIO_PortA + 0x0c)
+                                         ^
+../Src/main.c:33:5: note: in expansion of macro 'ODR'
+     ODR |=(1<<13);
+     ^~~
+../Src/main.c:26:41: error: unknown type name 'unit32_t'
+ #define CRH                 *((volatile unit32_t *) GPIO_PortA + 0x04)
+                                         ^
+../Src/main.c:34:5: note: in expansion of macro 'CRH'
+     CRH &=0xFF0FFFFF;
+     ^~~
+../Src/main.c:26:41: error: unknown type name 'unit32_t'
+ #define CRH                 *((volatile unit32_t *) GPIO_PortA + 0x04)
+                                         ^
+../Src/main.c:35:5: note: in expansion of macro 'CRH'
+     CRH |=0x00200000;
+     ^~~
+../Src/main.c:27:41: error: unknown type name 'unit32_t'
+ #define ODR                 *((volatile unit32_t *) GPIO_PortA + 0x0c)
+                                         ^
+../Src/main.c:38:6: note: in expansion of macro 'ODR'
+      ODR |=(1<<13);
+      ^~~
+../Src/main.c:27:41: error: unknown type name 'unit32_t'
+ #define ODR                 *((volatile unit32_t *) GPIO_PortA + 0x0c)
+                                         ^
+../Src/main.c:40:6: note: in expansion of macro 'ODR'
+      ODR &=~(1<<13);
+      ^~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+Info: Nothing to build for Includes_By_me
+11:59:02 **** Incremental Build of configuration Debug for project Lab1_Toggle_Led ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:20:0:
+../Inc/Platform_Types.h:33:49: error: conflicting type qualifiers for 'chat_t'
+ typedef   volatile char                         chat_t;
+                                                 ^~~~~~
+../Inc/Platform_Types.h:18:43: note: previous declaration of 'chat_t' was here
+ typedef   char                            chat_t;
+                                           ^~~~~~
+../Inc/Platform_Types.h:34:49: error: conflicting type qualifiers for 'sint8_t'
+ typedef   volatile signed char                  sint8_t;
+                                                 ^~~~~~~
+../Inc/Platform_Types.h:19:43: note: previous declaration of 'sint8_t' was here
+ typedef   signed char                     sint8_t;
+                                           ^~~~~~~
+../Inc/Platform_Types.h:35:49: error: conflicting type qualifiers for 'uint8_t'
+ typedef   volatile unsigned char                uint8_t;
+                                                 ^~~~~~~
+../Inc/Platform_Types.h:20:42: note: previous declaration of 'uint8_t' was here
+ typedef   unsigned char                  uint8_t;
+                                          ^~~~~~~
+../Inc/Platform_Types.h:36:49: error: conflicting type qualifiers for 'sint16_t'
+ typedef   volatile signed short                 sint16_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:21:42: note: previous declaration of 'sint16_t' was here
+ typedef   signed short                   sint16_t;
+                                          ^~~~~~~~
+../Inc/Platform_Types.h:37:49: error: conflicting type qualifiers for 'uint16_t'
+ typedef   volatile unsigned short               uint16_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:22:41: note: previous declaration of 'uint16_t' was here
+ typedef   unsigned short                uint16_t;
+                                         ^~~~~~~~
+../Inc/Platform_Types.h:38:49: error: conflicting type qualifiers for 'sint32_t'
+ typedef   volatile signed int                   sint32_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:23:42: note: previous declaration of 'sint32_t' was here
+ typedef   signed int                     sint32_t;
+                                          ^~~~~~~~
+../Inc/Platform_Types.h:39:49: error: conflicting type qualifiers for 'uint32_t'
+ typedef   volatile unsigned int                 uint32_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:24:43: note: previous declaration of 'uint32_t' was here
+ typedef   unsigned int                    uint32_t;
+                                           ^~~~~~~~
+../Inc/Platform_Types.h:40:49: error: conflicting type qualifiers for 'sint64_t'
+ typedef   volatile signed long long int         sint64_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:25:49: note: previous declaration of 'sint64_t' was here
+ typedef   signed long long int                  sint64_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:41:49: error: conflicting type qualifiers for 'uint64_t'
+ typedef   volatile unsigned long long int       uint64_t;
+                                                 ^~~~~~~~
+../Inc/Platform_Types.h:26:43: note: previous declaration of 'uint64_t' was here
+ typedef   unsigned long long int          uint64_t;
+                                           ^~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:25:45: error: unknown type name 'unit32_t'
+ #define RCC_APB2ENR             *((volatile unit32_t *) RCC_Base_Address + 0x18)
+                                             ^
+../Src/main.c:32:5: note: in expansion of macro 'RCC_APB2ENR'
+     RCC_APB2ENR |= (1<<2);
+     ^~~~~~~~~~~
+../Src/main.c:27:46: error: unknown type name 'unit32_t'
+ #define GPIO_ODR                 *((volatile unit32_t *) GPIO_PortA + 0x0c)
+                                              ^
+../Src/main.c:33:5: note: in expansion of macro 'GPIO_ODR'
+     GPIO_ODR |=(1<<13);
+     ^~~~~~~~
+../Src/main.c:26:46: error: unknown type name 'unit32_t'
+ #define GPIO_CRH                 *((volatile unit32_t *) GPIO_PortA + 0x04)
+                                              ^
+../Src/main.c:34:5: note: in expansion of macro 'GPIO_CRH'
+     GPIO_CRH &=0xFF0FFFFF;
+     ^~~~~~~~
+../Src/main.c:26:46: error: unknown type name 'unit32_t'
+ #define GPIO_CRH                 *((volatile unit32_t *) GPIO_PortA + 0x04)
+                                              ^
+../Src/main.c:35:5: note: in expansion of macro 'GPIO_CRH'
+     GPIO_CRH |=0x00200000;
+     ^~~~~~~~
+../Src/main.c:27:46: error: unknown type name 'unit32_t'
+ #define GPIO_ODR                 *((volatile unit32_t *) GPIO_PortA + 0x0c)
+                                              ^
+../Src/main.c:38:6: note: in expansion of macro 'GPIO_ODR'
+      GPIO_ODR |=(1<<13);
+      ^~~~~~~~
+../Src/main.c:27:46: error: unknown type name 'unit32_t'
+ #define GPIO_ODR                 *((volatile unit32_t *) GPIO_PortA + 0x0c)
+                                              ^
+../Src/main.c:40:6: note: in expansion of macro 'GPIO_ODR'
+      GPIO_ODR &=~(1<<13);
+      ^~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+Info: Nothing to build for Includes_By_me
+11:59:49 **** Incremental Build of configuration Debug for project Lab1_Toggle_Led ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:25:45: error: unknown type name 'unit32_t'
+ #define RCC_APB2ENR             *((volatile unit32_t *) RCC_Base_Address + 0x18)
+                                             ^
+../Src/main.c:32:5: note: in expansion of macro 'RCC_APB2ENR'
+     RCC_APB2ENR |= (1<<2);
+     ^~~~~~~~~~~
+../Src/main.c:27:46: error: unknown type name 'unit32_t'
+ #define GPIO_ODR                 *((volatile unit32_t *) GPIO_PortA + 0x0c)
+                                              ^
+../Src/main.c:33:5: note: in expansion of macro 'GPIO_ODR'
+     GPIO_ODR |=(1<<13);
+     ^~~~~~~~
+../Src/main.c:26:46: error: unknown type name 'unit32_t'
+ #define GPIO_CRH                 *((volatile unit32_t *) GPIO_PortA + 0x04)
+                                              ^
+../Src/main.c:34:5: note: in expansion of macro 'GPIO_CRH'
+     GPIO_CRH &=0xFF0FFFFF;
+     ^~~~~~~~
+../Src/main.c:26:46: error: unknown type name 'unit32_t'
+ #define GPIO_CRH                 *((volatile unit32_t *) GPIO_PortA + 0x04)
+                                              ^
+../Src/main.c:35:5: note: in expansion of macro 'GPIO_CRH'
+     GPIO_CRH |=0x00200000;
+     ^~~~~~~~
+../Src/main.c:27:46: error: unknown type name 'unit32_t'
+ #define GPIO_ODR                 *((volatile unit32_t *) GPIO_PortA + 0x0c)
+                                              ^
+../Src/main.c:38:6: note: in expansion of macro 'GPIO_ODR'
+      GPIO_ODR |=(1<<13);
+      ^~~~~~~~
+../Src/main.c:27:46: error: unknown type name 'unit32_t'
+ #define GPIO_ODR                 *((volatile unit32_t *) GPIO_PortA + 0x0c)
+                                              ^
+../Src/main.c:40:6: note: in expansion of macro 'GPIO_ODR'
+      GPIO_ODR &=~(1<<13);
+      ^~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+Info: Nothing to build for Includes_By_me
+12:00:17 **** Incremental Build of configuration Debug for project Lab1_Toggle_Led ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:25:37: error: 'vunit32_t' undeclared (first use in this function); did you mean 'vuint32_t'?
+ #define RCC_APB2ENR             *(( vunit32_t *) RCC_Base_Address + 0x18)
+                                     ^
+../Src/main.c:32:5: note: in expansion of macro 'RCC_APB2ENR'
+     RCC_APB2ENR |= (1<<2);
+     ^~~~~~~~~~~
+../Src/main.c:25:37: note: each undeclared identifier is reported only once for each function it appears in
+ #define RCC_APB2ENR             *(( vunit32_t *) RCC_Base_Address + 0x18)
+                                     ^
+../Src/main.c:32:5: note: in expansion of macro 'RCC_APB2ENR'
+     RCC_APB2ENR |= (1<<2);
+     ^~~~~~~~~~~
+../Src/main.c:25:48: error: expected expression before ')' token
+ #define RCC_APB2ENR             *(( vunit32_t *) RCC_Base_Address + 0x18)
+                                                ^
+../Src/main.c:32:5: note: in expansion of macro 'RCC_APB2ENR'
+     RCC_APB2ENR |= (1<<2);
+     ^~~~~~~~~~~
+../Src/main.c:27:49: error: expected expression before ')' token
+ #define GPIO_ODR                 *(( vunit32_t *) GPIO_PortA + 0x0c)
+                                                 ^
+../Src/main.c:33:5: note: in expansion of macro 'GPIO_ODR'
+     GPIO_ODR |=(1<<13);
+     ^~~~~~~~
+../Src/main.c:26:49: error: expected expression before ')' token
+ #define GPIO_CRH                 *(( vunit32_t *) GPIO_PortA + 0x04)
+                                                 ^
+../Src/main.c:34:5: note: in expansion of macro 'GPIO_CRH'
+     GPIO_CRH &=0xFF0FFFFF;
+     ^~~~~~~~
+../Src/main.c:26:49: error: expected expression before ')' token
+ #define GPIO_CRH                 *(( vunit32_t *) GPIO_PortA + 0x04)
+                                                 ^
+../Src/main.c:35:5: note: in expansion of macro 'GPIO_CRH'
+     GPIO_CRH |=0x00200000;
+     ^~~~~~~~
+../Src/main.c:27:49: error: expected expression before ')' token
+ #define GPIO_ODR                 *(( vunit32_t *) GPIO_PortA + 0x0c)
+                                                 ^
+../Src/main.c:38:6: note: in expansion of macro 'GPIO_ODR'
+      GPIO_ODR |=(1<<13);
+      ^~~~~~~~
+../Src/main.c:27:49: error: expected expression before ')' token
+ #define GPIO_ODR                 *(( vunit32_t *) GPIO_PortA + 0x0c)
+                                                 ^
+../Src/main.c:40:6: note: in expansion of macro 'GPIO_ODR'
+      GPIO_ODR &=~(1<<13);
+      ^~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+Info: Nothing to build for Includes_By_me
+12:01:19 **** Incremental Build of configuration Debug for project Lab1_Toggle_Led ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:25:37: error: 'vunit32_t' undeclared (first use in this function); did you mean 'vuint32_t'?
+ #define RCC_APB2ENR             *(( vunit32_t *) (RCC_Base_Address + 0x18))
+                                     ^
+../Src/main.c:32:5: note: in expansion of macro 'RCC_APB2ENR'
+     RCC_APB2ENR |= (1<<2);
+     ^~~~~~~~~~~
+../Src/main.c:25:37: note: each undeclared identifier is reported only once for each function it appears in
+ #define RCC_APB2ENR             *(( vunit32_t *) (RCC_Base_Address + 0x18))
+                                     ^
+../Src/main.c:32:5: note: in expansion of macro 'RCC_APB2ENR'
+     RCC_APB2ENR |= (1<<2);
+     ^~~~~~~~~~~
+../Src/main.c:25:48: error: expected expression before ')' token
+ #define RCC_APB2ENR             *(( vunit32_t *) (RCC_Base_Address + 0x18))
+                                                ^
+../Src/main.c:32:5: note: in expansion of macro 'RCC_APB2ENR'
+     RCC_APB2ENR |= (1<<2);
+     ^~~~~~~~~~~
+../Src/main.c:27:48: error: expected expression before ')' token
+ #define GPIO_ODR                *(( vunit32_t *) (GPIO_PortA + 0x0c))
+                                                ^
+../Src/main.c:33:5: note: in expansion of macro 'GPIO_ODR'
+     GPIO_ODR |=(1<<13);
+     ^~~~~~~~
+../Src/main.c:26:48: error: expected expression before ')' token
+ #define GPIO_CRH                *(( vunit32_t *) (GPIO_PortA + 0x04))
+                                                ^
+../Src/main.c:34:5: note: in expansion of macro 'GPIO_CRH'
+     GPIO_CRH &=0xFF0FFFFF;
+     ^~~~~~~~
+../Src/main.c:26:48: error: expected expression before ')' token
+ #define GPIO_CRH                *(( vunit32_t *) (GPIO_PortA + 0x04))
+                                                ^
+../Src/main.c:35:5: note: in expansion of macro 'GPIO_CRH'
+     GPIO_CRH |=0x00200000;
+     ^~~~~~~~
+../Src/main.c:27:48: error: expected expression before ')' token
+ #define GPIO_ODR                *(( vunit32_t *) (GPIO_PortA + 0x0c))
+                                                ^
+../Src/main.c:38:6: note: in expansion of macro 'GPIO_ODR'
+      GPIO_ODR |=(1<<13);
+      ^~~~~~~~
+../Src/main.c:27:48: error: expected expression before ')' token
+ #define GPIO_ODR                *(( vunit32_t *) (GPIO_PortA + 0x0c))
+                                                ^
+../Src/main.c:40:6: note: in expansion of macro 'GPIO_ODR'
+      GPIO_ODR &=~(1<<13);
+      ^~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+Info: Nothing to build for Includes_By_me
+12:01:40 **** Incremental Build of configuration Debug for project Lab1_Toggle_Led ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:25:37: error: 'vunit32_t' undeclared (first use in this function); did you mean 'vuint32_t'?
+ #define RCC_APB2ENR             *(( vunit32_t*) (RCC_Base_Address + 0x18))
+                                     ^
+../Src/main.c:32:5: note: in expansion of macro 'RCC_APB2ENR'
+     RCC_APB2ENR |= (1<<2);
+     ^~~~~~~~~~~
+../Src/main.c:25:37: note: each undeclared identifier is reported only once for each function it appears in
+ #define RCC_APB2ENR             *(( vunit32_t*) (RCC_Base_Address + 0x18))
+                                     ^
+../Src/main.c:32:5: note: in expansion of macro 'RCC_APB2ENR'
+     RCC_APB2ENR |= (1<<2);
+     ^~~~~~~~~~~
+../Src/main.c:25:47: error: expected expression before ')' token
+ #define RCC_APB2ENR             *(( vunit32_t*) (RCC_Base_Address + 0x18))
+                                               ^
+../Src/main.c:32:5: note: in expansion of macro 'RCC_APB2ENR'
+     RCC_APB2ENR |= (1<<2);
+     ^~~~~~~~~~~
+../Src/main.c:27:47: error: expected expression before ')' token
+ #define GPIO_ODR                *(( vunit32_t*) (GPIO_PortA + 0x0c))
+                                               ^
+../Src/main.c:33:5: note: in expansion of macro 'GPIO_ODR'
+     GPIO_ODR |=(1<<13);
+     ^~~~~~~~
+../Src/main.c:26:47: error: expected expression before ')' token
+ #define GPIO_CRH                *(( vunit32_t*) (GPIO_PortA + 0x04))
+                                               ^
+../Src/main.c:34:5: note: in expansion of macro 'GPIO_CRH'
+     GPIO_CRH &=0xFF0FFFFF;
+     ^~~~~~~~
+../Src/main.c:26:47: error: expected expression before ')' token
+ #define GPIO_CRH                *(( vunit32_t*) (GPIO_PortA + 0x04))
+                                               ^
+../Src/main.c:35:5: note: in expansion of macro 'GPIO_CRH'
+     GPIO_CRH |=0x00200000;
+     ^~~~~~~~
+../Src/main.c:27:47: error: expected expression before ')' token
+ #define GPIO_ODR                *(( vunit32_t*) (GPIO_PortA + 0x0c))
+                                               ^
+../Src/main.c:38:6: note: in expansion of macro 'GPIO_ODR'
+      GPIO_ODR |=(1<<13);
+      ^~~~~~~~
+../Src/main.c:27:47: error: expected expression before ')' token
+ #define GPIO_ODR                *(( vunit32_t*) (GPIO_PortA + 0x0c))
+                                               ^
+../Src/main.c:40:6: note: in expansion of macro 'GPIO_ODR'
+      GPIO_ODR &=~(1<<13);
+      ^~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+Info: Nothing to build for Includes_By_me
+12:02:41 **** Incremental Build of configuration Debug for project Lab1_Toggle_Led ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Lab1_Toggle_Led.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\github_repo\Unit3_Embedded_C\Unit3\Lesson 1\Lab1_Toggle_Led\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1_Toggle_Led.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1_Toggle_Led.elf
+ 
+arm-none-eabi-size   Lab1_Toggle_Led.elf 
+arm-none-eabi-objdump -h -S  Lab1_Toggle_Led.elf  > "Lab1_Toggle_Led.list"
+arm-none-eabi-objcopy  -O binary  Lab1_Toggle_Led.elf  "Lab1_Toggle_Led.bin"
+   text	   data	    bss	    dec	    hex	filename
+    684	      8	   1568	   2260	    8d4	Lab1_Toggle_Led.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1_Toggle_Led.bin
+Finished building: Lab1_Toggle_Led.list
+ 
+ 
+Info: Nothing to build for Includes_By_me
+12:08:15 **** Incremental Build of configuration Debug for project Lab1_Toggle_Led ****
+make -j8 all 
+arm-none-eabi-size   Lab1_Toggle_Led.elf 
+arm-none-eabi-objcopy  -O ihex  Lab1_Toggle_Led.elf  "Lab1_Toggle_Led.hex"
+   text	   data	    bss	    dec	    hex	filename
+    684	      8	   1568	   2260	    8d4	Lab1_Toggle_Led.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1_Toggle_Led.hex
+ 
