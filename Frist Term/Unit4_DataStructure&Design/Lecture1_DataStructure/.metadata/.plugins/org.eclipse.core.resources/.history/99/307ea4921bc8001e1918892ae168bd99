@@ -1,0 +1,34 @@
+/*
+ * Linked_List.h
+ *
+ *  Created on: Feb 9, 2024
+ *      Author: Abdelrahman Matarawy
+ */
+
+#ifndef LINKED_LIST_H_
+#define LINKED_LIST_H_
+
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <conio.h>
+/* Student data */
+struct Sdata{
+	int ID;
+	char Name[40];
+	float Height;
+};
+
+/* Linked List Node */
+struct SStudent{
+	struct Sdata Student;
+	struct SStudent *PNextStudent;
+};
+/* Head of linked list */
+struct SStudent *gpFirstStudent = NULL;
+/* APIS */
+void Add_Student();
+int Delete_Student();
+void View_Students();
+void Delete_All();
+#endif /* LINKED_LIST_H_ */

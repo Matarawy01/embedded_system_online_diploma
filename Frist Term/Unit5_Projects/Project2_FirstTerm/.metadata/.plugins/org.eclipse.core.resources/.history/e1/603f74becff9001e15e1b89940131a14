@@ -1,0 +1,51 @@
+/*
+ * Queue.h
+ *
+ *  Created on: Mar 6, 2024
+ *      Author: Abdelrahman Matarawy
+ */
+
+#ifndef QUEUE_H_
+#define QUEUE_H_
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <conio.h>
+
+/* Total Student In Queue List */
+#define Total_Student 3
+
+/* Function To Clear input and output Buffer and Print */
+#define DPRINTF(...)   {fflush(stdin); \
+					 	fflush(stdout); \
+					 	printf(__VA_ARGS__);\
+					 	fflush(stdin); \
+					 	fflush(stdout);}
+
+/* Student Data */
+struct SINFO{
+	char First_Name[50];
+	char Last_Name[50];
+	int Roll_Number;
+	float GPA;
+	int Course_ID[10];
+}st[Total_Student];
+
+/* APIS */
+void Add_Student_file();
+void Add_Student_Manually();
+void Find_ByRollNumber();
+void Find_ByFirstName();
+void Find_StudentRegisteredInCourse();
+void Total_Students();
+void Delete_Student();
+void Update_StudentData();
+void Show_AllStudent();
+
+
+int Check_ID(int Roll_Number);
+int Course_Add_Check(int StudentNum);
+void Printing_Student_Data(int StudentNum);
+int Scanning_Data();
+
+#endif /* QUEUE_H_ */

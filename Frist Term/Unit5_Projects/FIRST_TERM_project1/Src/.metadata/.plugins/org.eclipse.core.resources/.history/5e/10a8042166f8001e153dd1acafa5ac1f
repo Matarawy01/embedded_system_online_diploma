@@ -1,0 +1,46 @@
+/*
+ * PressureSensor.c
+ *
+ *  Created on: Apr 11, 2024
+ *      Author: Abdelrahman Matarawy
+ */
+#include "PressureSensor.h"
+#include "driver.h"
+ 
+/* Defination Global Vairiables */
+int PVal = 0;
+
+/* State Pointer to Function */
+void (*PSensor_state)();
+
+
+/* Pressure Sensor Initialization */
+void PSensor_Init()
+{
+	//printf("Pressure Sensor Init [Done]\n");
+}
+
+
+/* Definition of state functions */
+STATE_define(PSesnor_Reading)
+{
+	/* State Name */
+	PSensor_STATE_ID = PSesnor_Reading;
+	/* Get Pressure Value */ 
+	PVal = getPressureVal();
+	//printf("The Pressure Value = %d",PVal);
+	/* Send Value to Main Algorithm */
+	Pressure_Value(PVal);
+	/* Waiting Time Delay between each reading */
+	Delay(100000);
+	PSensor_state = STATE(PSesnor_Waiting);
+}
+
+	
+STATE_define(PSesnor_Waiting)
+{
+	/* State Name */
+	PSensor_STATE_ID = PSesnor_Waiting;
+	/* Looping to Reading state Again After TimeOut */
+	PSensor_state = STATE(PSesnor_Reading);
+}

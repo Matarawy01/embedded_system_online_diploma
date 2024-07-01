@@ -1,0 +1,24 @@
+/*
+ * State.h
+ *
+ *  Created on: Apr 11, 2024
+ *      Author: Abdelrahman Matarawy
+ */
+
+#ifndef STATE_H_
+#define STATE_H_
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/* Automatic STATE Function Generated */
+#define STATE_define(_STATEFUN_)  void ST_##_STATEFUN_()
+#define STATE(_STATEFUN_)  ST_##_STATEFUN_
+
+/* Connector Functions */
+void Pressure_Value(int PVal);
+void High_Pressure_Detect();
+void Start_Alarm();
+void Stop_Alarm();
+
+#endif /* STATE_H_ */

@@ -1,0 +1,735 @@
+01:31:21 **** Rebuild of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "driver\\Alarm.o" "..\\driver\\Alarm.c" 
+..\driver\Alarm.c: In function 'Start_Alarm':
+..\driver\Alarm.c:21:2: warning: implicit declaration of function 'Set_Alarm_actuator' [-Wimplicit-function-declaration]
+  Set_Alarm_actuator(1);
+  ^~~~~~~~~~~~~~~~~~
+In file included from ..\driver\Alarm.h:11:0,
+                 from ..\driver\Alarm.c:7:
+..\driver\../State.h:16:15: error: '_STATEFUN_' undeclared (first use in this function)
+ #define STATE _STATEFUN_           ST_##_STATEFUN_
+               ^
+..\driver\Alarm.c:22:16: note: in expansion of macro 'STATE'
+  Alarm_state = STATE(Alarm_ON);
+                ^~~~~
+..\driver\../State.h:16:15: note: each undeclared identifier is reported only once for each function it appears in
+ #define STATE _STATEFUN_           ST_##_STATEFUN_
+               ^
+..\driver\Alarm.c:22:16: note: in expansion of macro 'STATE'
+  Alarm_state = STATE(Alarm_ON);
+                ^~~~~
+..\driver\../State.h:16:36: error: expected ';' before 'ST__STATEFUN_'
+ #define STATE _STATEFUN_           ST_##_STATEFUN_
+                                    ^
+..\driver\Alarm.c:22:16: note: in expansion of macro 'STATE'
+  Alarm_state = STATE(Alarm_ON);
+                ^~~~~
+..\driver\Alarm.c: In function 'Stop_Alarm':
+..\driver\../State.h:16:15: error: '_STATEFUN_' undeclared (first use in this function)
+ #define STATE _STATEFUN_           ST_##_STATEFUN_
+               ^
+..\driver\Alarm.c:28:16: note: in expansion of macro 'STATE'
+  Alarm_state = STATE(Alarm_OFF);
+                ^~~~~
+..\driver\../State.h:16:36: error: expected ';' before 'ST__STATEFUN_'
+ #define STATE _STATEFUN_           ST_##_STATEFUN_
+                                    ^
+..\driver\Alarm.c:28:16: note: in expansion of macro 'STATE'
+  Alarm_state = STATE(Alarm_OFF);
+                ^~~~~
+..\driver\Alarm.c: In function 'ST_Alarm_ON':
+..\driver\../State.h:16:15: error: '_STATEFUN_' undeclared (first use in this function)
+ #define STATE _STATEFUN_           ST_##_STATEFUN_
+               ^
+..\driver\Alarm.c:42:16: note: in expansion of macro 'STATE'
+  Alarm_state = STATE(Alarm_Waiting);
+                ^~~~~
+..\driver\../State.h:16:36: error: expected ';' before 'ST__STATEFUN_'
+ #define STATE _STATEFUN_           ST_##_STATEFUN_
+                                    ^
+..\driver\Alarm.c:42:16: note: in expansion of macro 'STATE'
+  Alarm_state = STATE(Alarm_Waiting);
+                ^~~~~
+..\driver\Alarm.c: In function 'ST_Alarm_OFF':
+..\driver\../State.h:16:15: error: '_STATEFUN_' undeclared (first use in this function)
+ #define STATE _STATEFUN_           ST_##_STATEFUN_
+               ^
+..\driver\Alarm.c:50:16: note: in expansion of macro 'STATE'
+  Alarm_state = STATE(Alarm_Waiting);
+                ^~~~~
+..\driver\../State.h:16:36: error: expected ';' before 'ST__STATEFUN_'
+ #define STATE _STATEFUN_           ST_##_STATEFUN_
+                                    ^
+..\driver\Alarm.c:50:16: note: in expansion of macro 'STATE'
+  Alarm_state = STATE(Alarm_Waiting);
+                ^~~~~
+01:31:27 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o MainAlg.o "..\\MainAlg.c" 
+In file included from ..\MainAlg.h:11:0,
+                 from ..\MainAlg.c:7:
+..\State.h:15:36: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ #define STATE_define(_STATEFUN_)   void ST_##_STATEFUN_()
+                                    ^
+..\MainAlg.h:19:1: note: in expansion of macro 'STATE_define'
+ STATE_define(MainAlg_HighPressureDetect);
+ ^~~~~~~~~~~~
+..\MainAlg.c: In function 'Pressure_Value':
+..\State.h:16:15: error: '_STATEFUN_' undeclared (first use in this function)
+ #define STATE _STATEFUN_           ST_##_STATEFUN_
+               ^
+..\MainAlg.c:21:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\State.h:16:15: note: each undeclared identifier is reported only once for each function it appears in
+ #define STATE _STATEFUN_           ST_##_STATEFUN_
+               ^
+..\MainAlg.c:21:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\State.h:16:36: error: expected ';' before 'ST__STATEFUN_'
+ #define STATE _STATEFUN_           ST_##_STATEFUN_
+                                    ^
+..\MainAlg.c:21:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\MainAlg.c: In function 'ST_MainAlg_HighPressureDetect':
+..\MainAlg.c:29:2: error: 'MainAlg_STATE_ID' undeclared (first use in this function)
+  MainAlg_STATE_ID = MainAlg_HighPressureDetect;
+  ^~~~~~~~~~~~~~~~
+In file included from ..\MainAlg.h:11:0,
+                 from ..\MainAlg.c:7:
+..\State.h:16:15: error: '_STATEFUN_' undeclared (first use in this function)
+ #define STATE _STATEFUN_           ST_##_STATEFUN_
+               ^
+..\MainAlg.c:34:19: note: in expansion of macro 'STATE'
+   MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                   ^~~~~
+..\State.h:16:36: error: expected ';' before 'ST__STATEFUN_'
+ #define STATE _STATEFUN_           ST_##_STATEFUN_
+                                    ^
+..\MainAlg.c:34:19: note: in expansion of macro 'STATE'
+   MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                   ^~~~~
+..\State.h:16:36: error: expected ';' before 'ST__STATEFUN_'
+ #define STATE _STATEFUN_           ST_##_STATEFUN_
+                                    ^
+..\MainAlg.c:38:19: note: in expansion of macro 'STATE'
+   MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                   ^~~~~
+01:33:50 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "driver\\driver.o" "..\\driver\\driver.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o MainAlg.o "..\\MainAlg.c" 
+In file included from ..\MainAlg.h:11:0,
+                 from ..\MainAlg.c:7:
+..\State.h:15:36: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ #define STATE_define(_STATEFUN_)   void ST_##_STATEFUN_()
+                                    ^
+..\MainAlg.h:19:1: note: in expansion of macro 'STATE_define'
+ STATE_define(MainAlg_HighPressureDetect);
+ ^~~~~~~~~~~~
+..\MainAlg.c: In function 'Pressure_Value':
+..\State.h:16:16: error: '_STATEFUN_' undeclared (first use in this function)
+ #define STATE (_STATEFUN_)           ST_##_STATEFUN_
+                ^
+..\MainAlg.c:21:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\State.h:16:16: note: each undeclared identifier is reported only once for each function it appears in
+ #define STATE (_STATEFUN_)           ST_##_STATEFUN_
+                ^
+..\MainAlg.c:21:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\State.h:16:38: error: expected ';' before 'ST__STATEFUN_'
+ #define STATE (_STATEFUN_)           ST_##_STATEFUN_
+                                      ^
+..\MainAlg.c:21:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\MainAlg.c: In function 'ST_MainAlg_HighPressureDetect':
+..\MainAlg.c:29:2: error: 'MainAlg_STATE_ID' undeclared (first use in this function)
+  MainAlg_STATE_ID = MainAlg_HighPressureDetect;
+  ^~~~~~~~~~~~~~~~
+In file included from ..\MainAlg.h:11:0,
+                 from ..\MainAlg.c:7:
+..\State.h:16:16: error: '_STATEFUN_' undeclared (first use in this function)
+ #define STATE (_STATEFUN_)           ST_##_STATEFUN_
+                ^
+..\MainAlg.c:34:19: note: in expansion of macro 'STATE'
+   MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                   ^~~~~
+..\State.h:16:38: error: expected ';' before 'ST__STATEFUN_'
+ #define STATE (_STATEFUN_)           ST_##_STATEFUN_
+                                      ^
+..\MainAlg.c:34:19: note: in expansion of macro 'STATE'
+   MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                   ^~~~~
+..\State.h:16:38: error: expected ';' before 'ST__STATEFUN_'
+ #define STATE (_STATEFUN_)           ST_##_STATEFUN_
+                                      ^
+..\MainAlg.c:38:19: note: in expansion of macro 'STATE'
+   MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                   ^~~~~
+01:35:37 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+In file included from ..\AlarmMonitor.h:11:0,
+                 from ..\main.c:3:
+..\State.h:15:35: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ #define STATE_define(_STATEFUN_)  void ST_##_STATEFUN_()
+                                   ^
+..\AlarmMonitor.h:20:1: note: in expansion of macro 'STATE_define'
+ STATE_define(AlarmMonitor_AlarmON);
+ ^~~~~~~~~~~~
+..\State.h:15:35: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ #define STATE_define(_STATEFUN_)  void ST_##_STATEFUN_()
+                                   ^
+..\MainAlg.h:19:1: note: in expansion of macro 'STATE_define'
+ STATE_define(MainAlg_HighPressureDetect);
+ ^~~~~~~~~~~~
+In file included from ..\main.c:8:0:
+..\driver/PressureSensor.h:20:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ void PSensor_Init();
+ ^~~~
+..\main.c: In function 'setup':
+..\main.c:14:2: warning: implicit declaration of function 'PSensor_Init' [-Wimplicit-function-declaration]
+  PSensor_Init();
+  ^~~~~~~~~~~~
+In file included from ..\AlarmMonitor.h:11:0,
+                 from ..\main.c:3:
+..\State.h:16:28: error: 'ST_MainAlg_HighPressureDetect' undeclared (first use in this function)
+ #define STATE(_STATEFUN_)  ST_##_STATEFUN_
+                            ^
+..\main.c:17:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\State.h:16:28: note: each undeclared identifier is reported only once for each function it appears in
+ #define STATE(_STATEFUN_)  ST_##_STATEFUN_
+                            ^
+..\main.c:17:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\main.c: At top level:
+..\main.c:37:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+01:37:46 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o MainAlg.o "..\\MainAlg.c" 
+In file included from ..\MainAlg.h:11:0,
+                 from ..\MainAlg.c:7:
+..\State.h:15:35: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ #define STATE_define(_STATEFUN_)  void ST_##_STATEFUN_()
+                                   ^
+..\MainAlg.h:19:1: note: in expansion of macro 'STATE_define'
+ STATE_define(MainAlg_HighPressureDetect);
+ ^~~~~~~~~~~~
+..\MainAlg.c: In function 'Pressure_Value':
+..\State.h:16:28: error: 'ST_MainAlg_HighPressureDetect' undeclared (first use in this function)
+ #define STATE(_STATEFUN_)  ST_##_STATEFUN_
+                            ^
+..\MainAlg.c:21:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\State.h:16:28: note: each undeclared identifier is reported only once for each function it appears in
+ #define STATE(_STATEFUN_)  ST_##_STATEFUN_
+                            ^
+..\MainAlg.c:21:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\MainAlg.c: In function 'ST_MainAlg_HighPressureDetect':
+..\MainAlg.c:29:2: error: 'MainAlg_STATE_ID' undeclared (first use in this function)
+  MainAlg_STATE_ID = MainAlg_HighPressureDetect;
+  ^~~~~~~~~~~~~~~~
+01:38:06 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o MainAlg.o "..\\MainAlg.c" 
+In file included from ..\MainAlg.h:11:0,
+                 from ..\MainAlg.c:7:
+..\State.h:15:35: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ #define STATE_define(_STATEFUN_)  void ST_##_STATEFUN_()
+                                   ^
+..\MainAlg.h:19:1: note: in expansion of macro 'STATE_define'
+ STATE_define(MainAlg_HighPressureDetect);
+ ^~~~~~~~~~~~
+..\MainAlg.c: In function 'Pressure_Value':
+..\State.h:16:28: error: 'ST_MainAlg_HighPressureDetect' undeclared (first use in this function)
+ #define STATE(_STATEFUN_)  ST_##_STATEFUN_
+                            ^
+..\MainAlg.c:21:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\State.h:16:28: note: each undeclared identifier is reported only once for each function it appears in
+ #define STATE(_STATEFUN_)  ST_##_STATEFUN_
+                            ^
+..\MainAlg.c:21:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\MainAlg.c: In function 'ST_MainAlg_HighPressureDetect':
+..\MainAlg.c:29:2: error: 'MainAlg_STATE_ID' undeclared (first use in this function)
+  MainAlg_STATE_ID = MainAlg_HighPressureDetect;
+  ^~~~~~~~~~~~~~~~
+01:40:18 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o MainAlg.o "..\\MainAlg.c" 
+In file included from ..\MainAlg.h:11:0,
+                 from ..\MainAlg.c:7:
+..\State.h:15:35: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ #define STATE_define(_STATEFUN_)  void ST_##_STATEFUN_()
+                                   ^
+..\MainAlg.h:19:1: note: in expansion of macro 'STATE_define'
+ STATE_define(MainAlg_HighPressureDetect);
+ ^~~~~~~~~~~~
+..\MainAlg.c: In function 'Pressure_Value':
+..\State.h:16:28: error: 'ST_MainAlg_HighPressureDetect' undeclared (first use in this function)
+ #define STATE(_STATEFUN_)  ST_##_STATEFUN_
+                            ^
+..\MainAlg.c:21:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\State.h:16:28: note: each undeclared identifier is reported only once for each function it appears in
+ #define STATE(_STATEFUN_)  ST_##_STATEFUN_
+                            ^
+..\MainAlg.c:21:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\MainAlg.c: In function 'ST_MainAlg_HighPressureDetect':
+..\MainAlg.c:29:2: error: 'MainAlg_STATE_ID' undeclared (first use in this function)
+  MainAlg_STATE_ID = MainAlg_HighPressureDetect;
+  ^~~~~~~~~~~~~~~~
+01:41:30 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+In file included from ..\AlarmMonitor.h:11:0,
+                 from ..\main.c:3:
+..\State.h:15:35: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ #define STATE_define(_STATEFUN_)  void ST_##_STATEFUN_()
+                                   ^
+..\AlarmMonitor.h:20:1: note: in expansion of macro 'STATE_define'
+ STATE_define(AlarmMonitor_AlarmON);
+ ^~~~~~~~~~~~
+..\State.h:15:35: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ #define STATE_define(_STATEFUN_)  void ST_##_STATEFUN_()
+                                   ^
+..\MainAlg.h:19:1: note: in expansion of macro 'STATE_define'
+ STATE_define(MainAlg_HighPressureDetect);
+ ^~~~~~~~~~~~
+In file included from ..\main.c:8:0:
+..\driver/PressureSensor.h:20:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ void PSensor_Init();
+ ^~~~
+..\main.c: In function 'setup':
+..\main.c:14:2: warning: implicit declaration of function 'PSensor_Init' [-Wimplicit-function-declaration]
+  PSensor_Init();
+  ^~~~~~~~~~~~
+In file included from ..\AlarmMonitor.h:11:0,
+                 from ..\main.c:3:
+..\State.h:16:28: error: 'ST_MainAlg_HighPressureDetect' undeclared (first use in this function)
+ #define STATE(_STATEFUN_)  ST_##_STATEFUN_
+                            ^
+..\main.c:17:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\State.h:16:28: note: each undeclared identifier is reported only once for each function it appears in
+ #define STATE(_STATEFUN_)  ST_##_STATEFUN_
+                            ^
+..\main.c:17:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\main.c: At top level:
+..\main.c:37:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+01:56:09 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "driver\\PressureSensor.o" "..\\driver\\PressureSensor.c" 
+In file included from ..\driver\PressureSensor.c:7:0:
+..\driver\PressureSensor.h:20:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ void PSensor_Init();
+ ^~~~
+..\driver\PressureSensor.c: In function 'ST_PSesnor_Reading':
+..\driver\PressureSensor.c:28:2: error: 'PSensor_STATE_ID' undeclared (first use in this function)
+  PSensor_STATE_ID = PSesnor_Reading;
+  ^~~~~~~~~~~~~~~~
+..\driver\PressureSensor.c:28:2: note: each undeclared identifier is reported only once for each function it appears in
+..\driver\PressureSensor.c: In function 'ST_PSesnor_Waiting':
+..\driver\PressureSensor.c:43:2: error: 'PSensor_STATE_ID' undeclared (first use in this function)
+  PSensor_STATE_ID = PSesnor_Waiting;
+  ^~~~~~~~~~~~~~~~
+..\driver\PressureSensor.c:43:21: error: 'PSesnor_Waiting' undeclared (first use in this function)
+  PSensor_STATE_ID = PSesnor_Waiting;
+                     ^~~~~~~~~~~~~~~
+02:00:46 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o MainAlg.o "..\\MainAlg.c" 
+In file included from ..\MainAlg.h:11:0,
+                 from ..\MainAlg.c:7:
+..\State.h:15:35: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ #define STATE_define(_STATEFUN_)  void ST_##_STATEFUN_()
+                                   ^
+..\MainAlg.h:19:1: note: in expansion of macro 'STATE_define'
+ STATE_define(MainAlg_HighPressureDetect);
+ ^~~~~~~~~~~~
+..\MainAlg.c: In function 'Pressure_Value':
+..\State.h:16:35: error: 'ST_MainAlg_HighPressureDetect' undeclared (first use in this function)
+ #define STATE(_STATEFUN_)         ST_##_STATEFUN_
+                                   ^
+..\MainAlg.c:21:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\State.h:16:35: note: each undeclared identifier is reported only once for each function it appears in
+ #define STATE(_STATEFUN_)         ST_##_STATEFUN_
+                                   ^
+..\MainAlg.c:21:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\MainAlg.c: In function 'ST_MainAlg_HighPressureDetect':
+..\MainAlg.c:29:2: error: 'MainAlg_STATE_ID' undeclared (first use in this function)
+  MainAlg_STATE_ID = MainAlg_HighPressureDetect;
+  ^~~~~~~~~~~~~~~~
+02:01:03 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "driver\\Alarm.o" "..\\driver\\Alarm.c" 
+..\driver\Alarm.c: In function 'Start_Alarm':
+..\driver\Alarm.c:21:2: warning: implicit declaration of function 'Set_Alarm_actuator' [-Wimplicit-function-declaration]
+  Set_Alarm_actuator(1);
+  ^~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "driver\\PressureSensor.o" "..\\driver\\PressureSensor.c" 
+In file included from ..\driver\PressureSensor.c:7:0:
+..\driver\PressureSensor.h:20:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ void PSensor_Init();
+ ^~~~
+..\driver\PressureSensor.c: In function 'ST_PSesnor_Reading':
+..\driver\PressureSensor.c:28:2: error: 'PSensor_STATE_ID' undeclared (first use in this function)
+  PSensor_STATE_ID = PSesnor_Reading;
+  ^~~~~~~~~~~~~~~~
+..\driver\PressureSensor.c:28:2: note: each undeclared identifier is reported only once for each function it appears in
+..\driver\PressureSensor.c: In function 'ST_PSesnor_Waiting':
+..\driver\PressureSensor.c:43:2: error: 'PSensor_STATE_ID' undeclared (first use in this function)
+  PSensor_STATE_ID = PSesnor_Waiting;
+  ^~~~~~~~~~~~~~~~
+..\driver\PressureSensor.c:43:21: error: 'PSesnor_Waiting' undeclared (first use in this function)
+  PSensor_STATE_ID = PSesnor_Waiting;
+                     ^~~~~~~~~~~~~~~
+02:03:08 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+In file included from ..\AlarmMonitor.h:11:0,
+                 from ..\main.c:3:
+..\State.h:15:35: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ #define STATE_define(_STATEFUN_)  void ST_##_STATEFUN_()
+                                   ^
+..\AlarmMonitor.h:20:1: note: in expansion of macro 'STATE_define'
+ STATE_define(AlarmMonitor_AlarmON);
+ ^~~~~~~~~~~~
+..\State.h:15:35: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ #define STATE_define(_STATEFUN_)  void ST_##_STATEFUN_()
+                                   ^
+..\MainAlg.h:19:1: note: in expansion of macro 'STATE_define'
+ STATE_define(MainAlg_HighPressureDetect);
+ ^~~~~~~~~~~~
+In file included from ..\main.c:8:0:
+..\driver/PressureSensor.h:20:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ void PSensor_Init();
+ ^~~~
+..\main.c: In function 'setup':
+..\main.c:14:2: warning: implicit declaration of function 'PSensor_Init' [-Wimplicit-function-declaration]
+  PSensor_Init();
+  ^~~~~~~~~~~~
+In file included from ..\AlarmMonitor.h:11:0,
+                 from ..\main.c:3:
+..\State.h:16:35: error: 'ST_MainAlg_HighPressureDetect' undeclared (first use in this function)
+ #define STATE(_STATEFUN_)         ST_##_STATEFUN_
+                                   ^
+..\main.c:17:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\State.h:16:35: note: each undeclared identifier is reported only once for each function it appears in
+ #define STATE(_STATEFUN_)         ST_##_STATEFUN_
+                                   ^
+..\main.c:17:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\main.c: At top level:
+..\main.c:37:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+02:03:13 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o AlarmMonitor.o "..\\AlarmMonitor.c" 
+In file included from ..\AlarmMonitor.h:11:0,
+                 from ..\AlarmMonitor.c:7:
+..\State.h:15:35: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ #define STATE_define(_STATEFUN_)  void ST_##_STATEFUN_()
+                                   ^
+..\AlarmMonitor.h:20:1: note: in expansion of macro 'STATE_define'
+ STATE_define(AlarmMonitor_AlarmON);
+ ^~~~~~~~~~~~
+..\AlarmMonitor.c: In function 'High_Pressure_Detect':
+..\State.h:16:35: error: 'ST_AlarmMonitor_AlarmON' undeclared (first use in this function)
+ #define STATE(_STATEFUN_)         ST_##_STATEFUN_
+                                   ^
+..\AlarmMonitor.c:16:23: note: in expansion of macro 'STATE'
+  AlarmMonitor_state = STATE(AlarmMonitor_AlarmON);
+                       ^~~~~
+..\State.h:16:35: note: each undeclared identifier is reported only once for each function it appears in
+ #define STATE(_STATEFUN_)         ST_##_STATEFUN_
+                                   ^
+..\AlarmMonitor.c:16:23: note: in expansion of macro 'STATE'
+  AlarmMonitor_state = STATE(AlarmMonitor_AlarmON);
+                       ^~~~~
+..\AlarmMonitor.c: In function 'ST_AlarmMonitor_AlarmON':
+..\AlarmMonitor.c:23:2: error: 'AlarmMonitor_STATE_ID' undeclared (first use in this function)
+  AlarmMonitor_STATE_ID = AlarmMonitor_AlarmON;
+  ^~~~~~~~~~~~~~~~~~~~~
+..\AlarmMonitor.c:27:2: warning: implicit declaration of function 'Delay' [-Wimplicit-function-declaration]
+  Delay(60000);
+  ^~~~~
+..\AlarmMonitor.c: In function 'ST_AlarmMonitor_AlarmOFF':
+..\AlarmMonitor.c:38:2: error: 'AlarmMonitor_STATE_ID' undeclared (first use in this function)
+  AlarmMonitor_STATE_ID = AlarmMonitor_AlarmOFF;
+  ^~~~~~~~~~~~~~~~~~~~~
+02:04:15 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+In file included from ..\AlarmMonitor.h:11:0,
+                 from ..\main.c:3:
+..\State.h:15:35: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ #define STATE_define(_STATEFUN_)  void ST_##_STATEFUN_()
+                                   ^
+..\MainAlg.h:19:1: note: in expansion of macro 'STATE_define'
+ STATE_define(MainAlg_HighPressureDetect);
+ ^~~~~~~~~~~~
+In file included from ..\main.c:8:0:
+..\driver/PressureSensor.h:20:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ void PSensor_Init();
+ ^~~~
+..\main.c: In function 'setup':
+..\main.c:14:2: warning: implicit declaration of function 'PSensor_Init' [-Wimplicit-function-declaration]
+  PSensor_Init();
+  ^~~~~~~~~~~~
+In file included from ..\AlarmMonitor.h:11:0,
+                 from ..\main.c:3:
+..\State.h:16:35: error: 'ST_MainAlg_HighPressureDetect' undeclared (first use in this function)
+ #define STATE(_STATEFUN_)         ST_##_STATEFUN_
+                                   ^
+..\main.c:17:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\State.h:16:35: note: each undeclared identifier is reported only once for each function it appears in
+ #define STATE(_STATEFUN_)         ST_##_STATEFUN_
+                                   ^
+..\main.c:17:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\main.c: At top level:
+..\main.c:37:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+02:04:20 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o AlarmMonitor.o "..\\AlarmMonitor.c" 
+..\AlarmMonitor.c: In function 'ST_AlarmMonitor_AlarmON':
+..\AlarmMonitor.c:27:2: warning: implicit declaration of function 'Delay' [-Wimplicit-function-declaration]
+  Delay(60000);
+  ^~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+In file included from ..\AlarmMonitor.h:11:0,
+                 from ..\main.c:3:
+..\State.h:15:35: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ #define STATE_define(_STATEFUN_)  void ST_##_STATEFUN_()
+                                   ^
+..\MainAlg.h:19:1: note: in expansion of macro 'STATE_define'
+ STATE_define(MainAlg_HighPressureDetect);
+ ^~~~~~~~~~~~
+In file included from ..\main.c:8:0:
+..\driver/PressureSensor.h:20:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ void PSensor_Init();
+ ^~~~
+..\main.c: In function 'setup':
+..\main.c:14:2: warning: implicit declaration of function 'PSensor_Init' [-Wimplicit-function-declaration]
+  PSensor_Init();
+  ^~~~~~~~~~~~
+In file included from ..\AlarmMonitor.h:11:0,
+                 from ..\main.c:3:
+..\State.h:16:35: error: 'ST_MainAlg_HighPressureDetect' undeclared (first use in this function)
+ #define STATE(_STATEFUN_)         ST_##_STATEFUN_
+                                   ^
+..\main.c:17:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\State.h:16:35: note: each undeclared identifier is reported only once for each function it appears in
+ #define STATE(_STATEFUN_)         ST_##_STATEFUN_
+                                   ^
+..\main.c:17:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\main.c: At top level:
+..\main.c:37:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+02:05:33 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+In file included from ..\AlarmMonitor.h:11:0,
+                 from ..\main.c:3:
+..\State.h:15:35: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ #define STATE_define(_STATEFUN_)  void ST_##_STATEFUN_()
+                                   ^
+..\MainAlg.h:19:1: note: in expansion of macro 'STATE_define'
+ STATE_define(MainAlg_HighPressureDetect);
+ ^~~~~~~~~~~~
+In file included from ..\main.c:8:0:
+..\driver/PressureSensor.h:20:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ void PSensor_Init();
+ ^~~~
+..\main.c: In function 'setup':
+..\main.c:14:2: warning: implicit declaration of function 'PSensor_Init' [-Wimplicit-function-declaration]
+  PSensor_Init();
+  ^~~~~~~~~~~~
+In file included from ..\AlarmMonitor.h:11:0,
+                 from ..\main.c:3:
+..\State.h:16:35: error: 'ST_MainAlg_HighPressureDetect' undeclared (first use in this function)
+ #define STATE(_STATEFUN_)         ST_##_STATEFUN_
+                                   ^
+..\main.c:17:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\State.h:16:35: note: each undeclared identifier is reported only once for each function it appears in
+ #define STATE(_STATEFUN_)         ST_##_STATEFUN_
+                                   ^
+..\main.c:17:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\main.c: At top level:
+..\main.c:37:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+02:07:22 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o MainAlg.o "..\\MainAlg.c" 
+In file included from ..\MainAlg.h:11:0,
+                 from ..\MainAlg.c:7:
+..\State.h:15:35: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ #define STATE_define(_STATEFUN_)  void ST_##_STATEFUN_()
+                                   ^
+..\MainAlg.h:19:1: note: in expansion of macro 'STATE_define'
+ STATE_define(MainAlg_HighPressureDetect);
+ ^~~~~~~~~~~~
+..\MainAlg.c: In function 'Pressure_Value':
+..\State.h:16:35: error: 'ST_MainAlg_HighPressureDetect' undeclared (first use in this function)
+ #define STATE(_STATEFUN_)         ST_##_STATEFUN_
+                                   ^
+..\MainAlg.c:21:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\State.h:16:35: note: each undeclared identifier is reported only once for each function it appears in
+ #define STATE(_STATEFUN_)         ST_##_STATEFUN_
+                                   ^
+..\MainAlg.c:21:18: note: in expansion of macro 'STATE'
+  MainAlg_state = STATE(MainAlg_HighPressureDetect);
+                  ^~~~~
+..\MainAlg.c: In function 'ST_MainAlg_HighPressureDetect':
+..\MainAlg.c:29:2: error: 'MainAlg_STATE_ID' undeclared (first use in this function)
+  MainAlg_STATE_ID = MainAlg_HighPressureDetect;
+  ^~~~~~~~~~~~~~~~
+02:15:11 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:37:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+02:16:04 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "driver\\Alarm.o" "..\\driver\\Alarm.c" 
+..\driver\Alarm.c: In function 'Start_Alarm':
+..\driver\Alarm.c:21:2: warning: implicit declaration of function 'Set_Alarm_actuator' [-Wimplicit-function-declaration]
+  Set_Alarm_actuator(1);
+  ^~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "driver\\PressureSensor.o" "..\\driver\\PressureSensor.c" 
+..\driver\PressureSensor.c: In function 'ST_PSesnor_Waiting':
+..\driver\PressureSensor.c:43:21: error: 'PSesnor_Waiting' undeclared (first use in this function)
+  PSensor_STATE_ID = PSesnor_Waiting;
+                     ^~~~~~~~~~~~~~~
+..\driver\PressureSensor.c:43:21: note: each undeclared identifier is reported only once for each function it appears in
+02:16:34 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "driver\\PressureSensor.o" "..\\driver\\PressureSensor.c" 
+..\driver\PressureSensor.c: In function 'ST_PSesnor_Waiting':
+..\driver\PressureSensor.c:43:21: error: 'PSesnor_Waiting' undeclared (first use in this function)
+  PSensor_STATE_ID = PSesnor_Waiting;
+                     ^~~~~~~~~~~~~~~
+..\driver\PressureSensor.c:43:21: note: each undeclared identifier is reported only once for each function it appears in
+02:18:33 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "driver\\Alarm.o" "..\\driver\\Alarm.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "driver\\PressureSensor.o" "..\\driver\\PressureSensor.c" 
+..\driver\PressureSensor.c: In function 'ST_PSesnor_Waiting':
+..\driver\PressureSensor.c:43:21: error: 'PSesnor_Waiting' undeclared (first use in this function)
+  PSensor_STATE_ID = PSesnor_Waiting;
+                     ^~~~~~~~~~~~~~~
+..\driver\PressureSensor.c:43:21: note: each undeclared identifier is reported only once for each function it appears in
+02:19:52 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "driver\\PressureSensor.o" "..\\driver\\PressureSensor.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o MainAlg.o "..\\MainAlg.c" 
+gcc -o FIRST_TERM_project1.exe AlarmMonitor.o MainAlg.o "driver\\Alarm.o" "driver\\PressureSensor.o" "driver\\driver.o" main.o 
+driver\Alarm.o:Alarm.c:(.rdata$.refptr.Alarm_state[.refptr.Alarm_state]+0x0): undefined reference to `Alarm_state'
+collect2.exe: error: ld returned 1 exit status
+02:21:44 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "driver\\Alarm.o" "..\\driver\\Alarm.c" 
+gcc -o FIRST_TERM_project1.exe AlarmMonitor.o MainAlg.o "driver\\Alarm.o" "driver\\PressureSensor.o" "driver\\driver.o" main.o 
+driver\Alarm.o:Alarm.c:(.rdata$.refptr.Alarm_state[.refptr.Alarm_state]+0x0): undefined reference to `Alarm_state'
+collect2.exe: error: ld returned 1 exit status
+02:29:02 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o FIRST_TERM_project1.exe AlarmMonitor.o MainAlg.o "driver\\Alarm.o" "driver\\PressureSensor.o" "driver\\driver.o" main.o 
+driver\Alarm.o:Alarm.c:(.rdata$.refptr.Alarm_state[.refptr.Alarm_state]+0x0): undefined reference to `Alarm_state'
+collect2.exe: error: ld returned 1 exit status
+02:30:32 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o AlarmMonitor.o "..\\AlarmMonitor.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "driver\\driver.o" "..\\driver\\driver.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o MainAlg.o "..\\MainAlg.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "driver\\PressureSensor.o" "..\\driver\\PressureSensor.c" 
+gcc -o FIRST_TERM_project1.exe AlarmMonitor.o MainAlg.o "driver\\Alarm.o" "driver\\PressureSensor.o" "driver\\driver.o" main.o 
+driver\Alarm.o:Alarm.c:(.rdata$.refptr.Alarm_state[.refptr.Alarm_state]+0x0): undefined reference to `Alarm_state'
+collect2.exe: error: ld returned 1 exit status
+02:31:49 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "driver\\Alarm.o" "..\\driver\\Alarm.c" 
+gcc -o FIRST_TERM_project1.exe AlarmMonitor.o MainAlg.o "driver\\Alarm.o" "driver\\PressureSensor.o" "driver\\driver.o" main.o 
+02:41:56 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o FIRST_TERM_project1.exe AlarmMonitor.o MainAlg.o "driver\\PressureSensor.o" "driver\\driver.o" main.o startup.o 
+gcc: error: startup.o: No such file or directory
+02:42:49 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o AlarmMonitor.o "..\\AlarmMonitor.c" 
+gcc -o FIRST_TERM_project1.exe AlarmMonitor.o MainAlg.o main.o startup.o 
+gcc: error: startup.o: No such file or directory
+02:46:38 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o AlarmMonitor.o "..\\AlarmMonitor.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o PressureSensor.o "..\\PressureSensor.c" 
+..\PressureSensor.c: In function 'ST_PSesnor_Waiting':
+..\PressureSensor.c:43:21: error: 'PSesnor_Waiting' undeclared (first use in this function)
+  PSensor_STATE_ID = PSesnor_Waiting;
+                     ^~~~~~~~~~~~~~~
+..\PressureSensor.c:43:21: note: each undeclared identifier is reported only once for each function it appears in
+02:46:45 **** Incremental Build of configuration Debug for project FIRST_TERM_project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o PressureSensor.o "..\\PressureSensor.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Alarm.o "..\\Alarm.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o driver.o "..\\driver.c" 
+gcc -o FIRST_TERM_project1.exe Alarm.o AlarmMonitor.o MainAlg.o PressureSensor.o driver.o main.o startup.o 
+gcc: error: startup.o: No such file or directory

@@ -1,0 +1,27 @@
+/*
+ * AlarmMonitor.h
+ *
+ *  Created on: Apr 11, 2024
+ *      Author: Abdelrahman Matarawy
+ */
+
+#ifndef ALARMMONITOR_H_
+#define ALARMMONITOR_H_
+
+#include "State.h"
+#define AlarmTimer 600000
+
+/* State Definition */
+enum{
+	AlarmMonitor_AlarmON,
+	AlarmMonitor_AlarmOFF
+}AlarmMonitor_STATE_ID;
+
+/* API */
+STATE_define(AlarmMonitor_AlarmON);
+STATE_define(AlarmMonitor_AlarmOFF);
+
+/* State Pointer to Function */
+extern void (*AlarmMonitor_state)();
+
+#endif /* ALARMMONITOR_H_ */

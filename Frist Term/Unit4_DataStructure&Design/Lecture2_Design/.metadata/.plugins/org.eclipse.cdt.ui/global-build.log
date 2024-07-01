@@ -1,0 +1,422 @@
+10:45:19 **** Rebuild of configuration Debug for project Unit4_Lesson2_CA1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o CA.o "..\\CA.c" 
+..\CA.c:18:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ STATE_define(CA_Waiting)
+ ^~~~~~~~~~~~
+..\CA.c: In function 'STATE_define':
+..\CA.c:18:1: warning: type of 'CA_Waiting' defaults to 'int' [-Wimplicit-int]
+..\CA.c:21:2: error: 'CA_STATE_ID' undeclared (first use in this function)
+  CA_STATE_ID = CA_Waiting;
+  ^~~~~~~~~~~
+..\CA.c:21:2: note: each undeclared identifier is reported only once for each function it appears in
+..\CA.c:29:46: warning: implicit declaration of function 'STATE' [-Wimplicit-function-declaration]
+  (CA_distance <= CA_threshold) ? (CA_state = STATE(CA_Waiting)) : (CA_state = STATE(CA_Driving));
+                                              ^~~~~
+..\CA.c:29:44: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  (CA_distance <= CA_threshold) ? (CA_state = STATE(CA_Waiting)) : (CA_state = STATE(CA_Driving));
+                                            ^
+..\CA.c:29:85: error: 'CA_Driving' undeclared (first use in this function)
+  (CA_distance <= CA_threshold) ? (CA_state = STATE(CA_Waiting)) : (CA_state = STATE(CA_Driving));
+                                                                                     ^~~~~~~~~~
+..\CA.c:30:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("CA_Waiting state: distance = %d speed = %d\n",CA_distance,CA_speed);
+  ^~~~~~
+..\CA.c:30:2: warning: incompatible implicit declaration of built-in function 'printf'
+..\CA.c:30:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+..\CA.c: At top level:
+..\CA.c:34:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ STATE_define(CA_Driving)
+ ^~~~~~~~~~~~
+..\CA.c:34:1: error: redefinition of 'STATE_define'
+..\CA.c:18:1: note: previous definition of 'STATE_define' was here
+ STATE_define(CA_Waiting)
+ ^~~~~~~~~~~~
+..\CA.c: In function 'STATE_define':
+..\CA.c:34:1: warning: type of 'CA_Driving' defaults to 'int' [-Wimplicit-int]
+ STATE_define(CA_Driving)
+ ^~~~~~~~~~~~
+..\CA.c:37:2: error: 'CA_STATE_ID' undeclared (first use in this function)
+  CA_STATE_ID = CA_Driving;
+  ^~~~~~~~~~~
+..\CA.c:45:52: error: 'CA_Waiting' undeclared (first use in this function)
+  (CA_distance <= CA_threshold) ? (CA_state = STATE(CA_Waiting)) : (CA_state = STATE(CA_Driving));
+                                                    ^~~~~~~~~~
+..\CA.c:45:77: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  (CA_distance <= CA_threshold) ? (CA_state = STATE(CA_Waiting)) : (CA_state = STATE(CA_Driving));
+                                                                             ^
+..\CA.c:46:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("CA_Waiting state: distance = %d speed = %d\n",CA_distance,CA_speed);
+  ^~~~~~
+..\CA.c:46:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+..\CA.c: In function 'US_Get_Distance_Random':
+..\CA.c:54:19: warning: implicit declaration of function 'rand' [-Wimplicit-function-declaration]
+   int RAND_NUM = (rand() % (r - l + 1)) + 1;
+                   ^~~~
+..\CA.c: In function 'STATE_define':
+..\CA.c:47:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\CA.c: In function 'US_Get_Distance_Random':
+..\CA.c:57:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+10:46:07 **** Incremental Build of configuration Debug for project Unit4_Lesson2_CA1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o CA.o "..\\CA.c" 
+..\CA.c: In function 'US_Get_Distance_Random':
+..\CA.c:58:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:16:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+..\main.c: In function 'main':
+..\main.c:22:3: warning: statement with no effect [-Wunused-value]
+   CA_state;
+   ^~~~~~~~
+gcc -o Unit4_Lesson2_CA1.exe CA.o main.o 
+Info: Nothing to build for Unit4_Lesson2_CA1
+Info: Nothing to build for Unit4_Lesson2_CA1
+Info: Nothing to build for Unit4_Lesson2_CA1
+Info: Nothing to build for Unit4_Lesson2_CA1
+10:51:48 **** Incremental Build of configuration Debug for project Unit4_Lesson2_CA1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o CA.o "..\\CA.c" 
+..\CA.c: In function 'US_Get_Distance_Random':
+..\CA.c:58:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Unit4_Lesson2_CA1.exe CA.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Unit4_Lesson2_CA1.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+10:51:53 **** Incremental Build of configuration Debug for project Unit4_Lesson2_CA1 ****
+Info: Internal Builder is used for build
+gcc -o Unit4_Lesson2_CA1.exe CA.o main.o 
+Info: Nothing to build for Unit4_Lesson2_CA1
+Info: Nothing to build for Unit4_Lesson2_CA1
+Info: Nothing to build for Unit4_Lesson2_CA1
+10:53:36 **** Incremental Build of configuration Debug for project Unit4_Lesson2_CA1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:16:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+..\main.c: In function 'main':
+..\main.c:23:3: warning: statement with no effect [-Wunused-value]
+   CA_state;
+   ^~~~~~~~
+gcc -o Unit4_Lesson2_CA1.exe CA.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Unit4_Lesson2_CA1.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+10:53:39 **** Incremental Build of configuration Debug for project Unit4_Lesson2_CA1 ****
+Info: Internal Builder is used for build
+gcc -o Unit4_Lesson2_CA1.exe CA.o main.o 
+Info: Nothing to build for Unit4_Lesson2_CA1
+10:54:18 **** Incremental Build of configuration Debug for project Unit4_Lesson2_CA1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:16:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+In file included from ..\CA.h:11:0,
+                 from ..\main.c:7:
+..\main.c: In function 'main':
+..\state.h:13:28: error: 'ST_' undeclared (first use in this function)
+ #define STATE(_STATEFUN_)  ST_##_STATEFUN_
+                            ^
+..\main.c:23:3: note: in expansion of macro 'STATE'
+   STATE();
+   ^~~~~
+..\state.h:13:28: note: each undeclared identifier is reported only once for each function it appears in
+ #define STATE(_STATEFUN_)  ST_##_STATEFUN_
+                            ^
+..\main.c:23:3: note: in expansion of macro 'STATE'
+   STATE();
+   ^~~~~
+10:55:06 **** Incremental Build of configuration Debug for project Unit4_Lesson2_CA1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:16:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o Unit4_Lesson2_CA1.exe CA.o main.o 
+Info: Nothing to build for Unit4_Lesson2_CA1
+10:55:17 **** Incremental Build of configuration Debug for project Unit4_Lesson2_CA1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:16:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o Unit4_Lesson2_CA1.exe CA.o main.o 
+Info: Nothing to build for Unit4_Lesson2_CA1
+Info: Nothing to build for Unit4_Lesson2_CA1
+10:58:23 **** Incremental Build of configuration Debug for project Unit4_Lesson2_CA1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:16:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o Unit4_Lesson2_CA1.exe CA.o main.o 
+Info: Nothing to build for Unit4_Lesson2_CA1
+Info: Nothing to build for Unit4_Lesson2_CA1
+Info: Nothing to build for Unit4_Lesson2_CA1
+Info: Nothing to build for Unit4_Lesson2_CA1
+15:05:08 **** Incremental Build of configuration Debug for project Unit4_Lesson2_CA1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o CA.o "..\\CA.c" 
+..\CA.c: In function 'US_Get_Distance_Random':
+..\CA.c:58:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Unit4_Lesson2_CA1.exe CA.o main.o 
+Info: Nothing to build for Unit4_Lesson2_CA1
+15:09:57 **** Incremental Build of configuration Debug for project Unit4_Lesson2_CA1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o CA.o "..\\CA.c" 
+..\CA.c: In function 'US_GetDistanceRandom':
+..\CA.c:58:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Unit4_Lesson2_CA1.exe CA.o main.o 
+CA.o: In function `ST_CA_Waiting':
+C:\Users\abdel\Downloads\Mastering_embedded_system\Unit4\Lecture2\Try\Unit4_Lesson2_CA1\Debug/../CA.c:29: undefined reference to `US_Get_Distance_Random'
+CA.o: In function `ST_CA_Driving':
+C:\Users\abdel\Downloads\Mastering_embedded_system\Unit4\Lecture2\Try\Unit4_Lesson2_CA1\Debug/../CA.c:45: undefined reference to `US_Get_Distance_Random'
+collect2.exe: error: ld returned 1 exit status
+15:10:02 **** Incremental Build of configuration Debug for project Unit4_Lesson2_CA1 ****
+Info: Internal Builder is used for build
+gcc -o Unit4_Lesson2_CA1.exe CA.o main.o 
+CA.o: In function `ST_CA_Waiting':
+C:\Users\abdel\Downloads\Mastering_embedded_system\Unit4\Lecture2\Try\Unit4_Lesson2_CA1\Debug/../CA.c:29: undefined reference to `US_Get_Distance_Random'
+CA.o: In function `ST_CA_Driving':
+C:\Users\abdel\Downloads\Mastering_embedded_system\Unit4\Lecture2\Try\Unit4_Lesson2_CA1\Debug/../CA.c:45: undefined reference to `US_Get_Distance_Random'
+collect2.exe: error: ld returned 1 exit status
+15:10:18 **** Incremental Build of configuration Debug for project Unit4_Lesson2_CA1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o CA.o "..\\CA.c" 
+..\CA.c: In function 'ST_CA_Waiting':
+..\CA.c:29:16: warning: implicit declaration of function 'US_GetDistanceRandom' [-Wimplicit-function-declaration]
+  CA_distance = US_GetDistanceRandom(45, 55, 1);
+                ^~~~~~~~~~~~~~~~~~~~
+..\CA.c: In function 'US_GetDistanceRandom':
+..\CA.c:58:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Unit4_Lesson2_CA1.exe CA.o main.o 
+Info: Nothing to build for Unit4_Lesson2_CA1
+15:11:21 **** Incremental Build of configuration Debug for project Unit4_Lesson2_CA1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o CA.o "..\\CA.c" 
+..\CA.c: In function 'US_Get_Distance_Random':
+..\CA.c:58:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Unit4_Lesson2_CA1.exe CA.o main.o 
+Info: Nothing to build for Unit4_Lesson2_CA1
+15:11:56 **** Incremental Build of configuration Debug for project Unit4_Lesson2_CA1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o CA.o "..\\CA.c" 
+..\CA.c: In function 'ST_CA_Waiting':
+..\CA.c:29:16: warning: implicit declaration of function 'US_GetDistanceRandom' [-Wimplicit-function-declaration]
+  CA_distance = US_GetDistanceRandom(45, 55, 1);
+                ^~~~~~~~~~~~~~~~~~~~
+..\CA.c: In function 'US_Get_Distance_Random':
+..\CA.c:58:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\CA.c: In function 'US_GetDistanceRandom':
+..\CA.c:67:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Unit4_Lesson2_CA1.exe CA.o main.o 
+Info: Nothing to build for Unit4_Lesson2_CA1
+09:19:50 **** Incremental Build of configuration Debug for project Unit4_Lesson2_CA1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o CA.o "..\\CA.c" 
+..\CA.c: In function 'US_Get_Distance_Random':
+..\CA.c:58:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Unit4_Lesson2_CA1.exe CA.o main.o 
+Info: Nothing to build for Unit4_Lesson2_CA1
+17:34:18 **** Rebuild of configuration Debug for project Unit4_Lesson2_CA2_3Medules ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:23:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o CA.o "..\\CA.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o DC.o "..\\DC.c" 
+..\DC.c: In function 'DC_Motor_Set':
+..\DC.c:46:46: error: 'CA_speed' undeclared (first use in this function)
+  printf("CA---------speed = %d-------->DC\n",CA_speed);
+                                              ^~~~~~~~
+..\DC.c:46:46: note: each undeclared identifier is reported only once for each function it appears in
+17:34:38 **** Incremental Build of configuration Debug for project Unit4_Lesson2_CA2_3Medules ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o US.o "..\\US.c" 
+..\US.c: In function 'US_Get_Distance_Random':
+..\US.c:50:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o DC.o "..\\DC.c" 
+gcc -o Unit4_Lesson2_CA2_3Medules.exe CA.o DC.o US.o main.o 
+Info: Nothing to build for Unit4_Lesson2_CA2_3Medules
+23:24:00 **** Rebuild of configuration Debug for project Unit4_Lesson2_CA2_3Medules ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o DC.o "..\\DC.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:23:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o CA.o "..\\CA.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o US.o "..\\US.c" 
+..\US.c: In function 'US_Get_Distance_Random':
+..\US.c:50:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Unit4_Lesson2_CA2_3Medules.exe CA.o DC.o US.o main.o 
+Info: Nothing to build for Unit4_Lesson2_CA2_3Medules
+12:38:05 **** Rebuild of configuration Debug for project Three_Models_TRY ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o CA.o "..\\CA.c" 
+..\CA.c:10:1: warning: data definition has no type or storage class
+ CA_speed = 0;
+ ^~~~~~~~
+..\CA.c:10:1: warning: type defaults to 'int' in declaration of 'CA_speed' [-Wimplicit-int]
+..\CA.c:11:1: warning: data definition has no type or storage class
+ CA_distance = 0;
+ ^~~~~~~~~~~
+..\CA.c:11:1: warning: type defaults to 'int' in declaration of 'CA_distance' [-Wimplicit-int]
+..\CA.c:12:1: warning: data definition has no type or storage class
+ CA_Threshold = 50;
+ ^~~~~~~~~~~~
+..\CA.c:12:1: warning: type defaults to 'int' in declaration of 'CA_Threshold' [-Wimplicit-int]
+..\CA.c: In function 'ST_CA_Waiting':
+..\CA.c:41:1: error: expected declaration or statement at end of input
+ }
+ ^
+In file included from ..\CA.h:11:0,
+                 from ..\CA.c:7:
+At top level:
+..\state.h:14:41: warning: 'ST_CA_Driving' defined but not used [-Wunused-function]
+ #define STATE_define(_STATEFUN_)   void ST_##_STATEFUN_()
+                                         ^
+..\CA.c:32:1: note: in expansion of macro 'STATE_define'
+ STATE_define(CA_Driving)
+ ^~~~~~~~~~~~
+12:40:40 **** Incremental Build of configuration Debug for project Three_Models_TRY ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:11:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ voidsetup()
+ ^~~~~~~~~
+..\main.c:20:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+..\main.c: In function 'main':
+..\main.c:23:2: warning: implicit declaration of function 'setup' [-Wimplicit-function-declaration]
+  setup();
+  ^~~~~
+..\main.c: In function 'voidsetup':
+..\main.c:18:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o CA.o "..\\CA.c" 
+..\CA.c:10:1: warning: data definition has no type or storage class
+ CA_speed = 0;
+ ^~~~~~~~
+..\CA.c:10:1: warning: type defaults to 'int' in declaration of 'CA_speed' [-Wimplicit-int]
+..\CA.c:11:1: warning: data definition has no type or storage class
+ CA_distance = 0;
+ ^~~~~~~~~~~
+..\CA.c:11:1: warning: type defaults to 'int' in declaration of 'CA_distance' [-Wimplicit-int]
+..\CA.c:12:1: warning: data definition has no type or storage class
+ CA_Threshold = 50;
+ ^~~~~~~~~~~~
+..\CA.c:12:1: warning: type defaults to 'int' in declaration of 'CA_Threshold' [-Wimplicit-int]
+..\CA.c: In function 'ST_CA_Waiting':
+..\CA.c:41:1: error: expected declaration or statement at end of input
+ }
+ ^
+In file included from ..\CA.h:11:0,
+                 from ..\CA.c:7:
+At top level:
+..\state.h:14:41: warning: 'ST_CA_Driving' defined but not used [-Wunused-function]
+ #define STATE_define(_STATEFUN_)   void ST_##_STATEFUN_()
+                                         ^
+..\CA.c:32:1: note: in expansion of macro 'STATE_define'
+ STATE_define(CA_Driving)
+ ^~~~~~~~~~~~
+12:41:13 **** Incremental Build of configuration Debug for project Three_Models_TRY ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o DC.o "..\\DC.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o US.o "..\\US.c" 
+..\US.c: In function 'ST_US_Busy':
+..\US.c:27:18: error: expected expression before 'int'
+  US_Set_Distance(int US_distance);
+                  ^~~
+..\US.c: In function 'Random':
+..\US.c:39:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+12:41:28 **** Incremental Build of configuration Debug for project Three_Models_TRY ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o CA.o "..\\CA.c" 
+..\CA.c:10:1: warning: data definition has no type or storage class
+ CA_speed = 0;
+ ^~~~~~~~
+..\CA.c:10:1: warning: type defaults to 'int' in declaration of 'CA_speed' [-Wimplicit-int]
+..\CA.c:11:1: warning: data definition has no type or storage class
+ CA_distance = 0;
+ ^~~~~~~~~~~
+..\CA.c:11:1: warning: type defaults to 'int' in declaration of 'CA_distance' [-Wimplicit-int]
+..\CA.c:12:1: warning: data definition has no type or storage class
+ CA_Threshold = 50;
+ ^~~~~~~~~~~~
+..\CA.c:12:1: warning: type defaults to 'int' in declaration of 'CA_Threshold' [-Wimplicit-int]
+..\CA.c: In function 'ST_CA_Waiting':
+..\CA.c:41:1: error: expected declaration or statement at end of input
+ }
+ ^
+In file included from ..\CA.h:11:0,
+                 from ..\CA.c:7:
+At top level:
+..\state.h:14:41: warning: 'ST_CA_Driving' defined but not used [-Wunused-function]
+ #define STATE_define(_STATEFUN_)   void ST_##_STATEFUN_()
+                                         ^
+..\CA.c:32:1: note: in expansion of macro 'STATE_define'
+ STATE_define(CA_Driving)
+ ^~~~~~~~~~~~
+12:41:46 **** Incremental Build of configuration Debug for project Three_Models_TRY ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o CA.o "..\\CA.c" 
+..\CA.c: In function 'ST_CA_Waiting':
+..\CA.c:41:1: error: expected declaration or statement at end of input
+ }
+ ^
+In file included from ..\CA.h:11:0,
+                 from ..\CA.c:7:
+At top level:
+..\state.h:14:41: warning: 'ST_CA_Driving' defined but not used [-Wunused-function]
+ #define STATE_define(_STATEFUN_)   void ST_##_STATEFUN_()
+                                         ^
+..\CA.c:32:1: note: in expansion of macro 'STATE_define'
+ STATE_define(CA_Driving)
+ ^~~~~~~~~~~~
+12:43:25 **** Incremental Build of configuration Debug for project Three_Models_TRY ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o CA.o "..\\CA.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o US.o "..\\US.c" 
+..\US.c: In function 'Random':
+..\US.c:39:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:20:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o Three_Models_TRY.exe CA.o DC.o US.o main.o 
+Info: Nothing to build for Three_Models_TRY

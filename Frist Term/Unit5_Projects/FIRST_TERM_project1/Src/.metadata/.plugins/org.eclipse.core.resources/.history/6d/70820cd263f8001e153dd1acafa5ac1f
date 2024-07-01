@@ -1,0 +1,41 @@
+/*
+ * AlarmMonitor.c
+ *
+ *  Created on: Apr 11, 2024
+ *      Author: Abdelrahman Matarawy
+ */
+#include "AlarmMonitor.h"
+
+/* State Pointer to Function */
+void (*AlarmMonitor_state)();
+
+
+void High_Pressure_Detect()
+{
+	/* When High Pressure Signal Come Thats mean To Start Alarm */
+	AlarmMonitor_state = STATE(AlarmMonitor_AlarmON);
+}
+
+
+STATE_define(AlarmMonitor_AlarmON)
+{
+	/* State Name */
+	AlarmMonitor_STATE_ID = AlarmMonitor_AlarmON;
+	/* Send Signal To Start Alarm */
+	Start_Alarm();
+	/* Wait For A Period Of time */
+	Delay(60000);
+	/* After TimeOut Back Again To Default Case */
+	Stop_Alarm();
+	/* Point To Alarm Off State */
+	AlarmMonitor_state = STATE(AlarmMonitor_AlarmOFF);
+}
+
+
+STATE_define(AlarmMonitor_AlarmOFF)
+{
+	/* State Name */
+	AlarmMonitor_STATE_ID = AlarmMonitor_AlarmOFF;
+	/* Send Signal To Stop Alarm */
+	Stop_Alarm();
+}	

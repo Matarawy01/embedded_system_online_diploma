@@ -1,0 +1,133 @@
+/*
+ * Linked_List.c
+ *
+ *  Created on: Feb 9, 2024
+ *      Author: Abdelrahman Matarawy
+ */
+#include "Linked_List.h"
+extern struct SStudent *gpFirstStudent ;
+char temp_text[40];
+
+
+void Add_Student()
+{
+	struct SStudent *PNewStudent;
+	struct SStudent *PLastStudent;
+	/* check if list is empty or not */
+	if(gpFirstStudent == NULL)
+	{
+		/* Create new record */
+		PNewStudent = (struct SStudent *)malloc(sizeof(struct SStudent));	
+		/* assign head to first node */
+		gpFirstStudent = PNewStudent;
+	}
+	else
+	{
+		PLastStudent = gpFirstStudent;
+		/* Navigate until reaching the last record */
+		while(PLastStudent->PNextStudent)
+		{
+			PLastStudent = PLastStudent->PNextStudent;
+		}
+		/* Create new record */
+		PNewStudent = (struct SStudent *)malloc(sizeof(struct SStudent));
+		/* Assign the next student to last record */
+		PNewStudent = PLastStudent;
+	}
+
+	/* fill the record data */
+	DPRINTF("\nEnter the ID: ");
+	gets(temp_text);
+	PNewStudent->Student.ID = atoi(temp_text);
+
+	DPRINTF("\nEnter the Student name: ");
+	gets(PNewStudent->Student.Name);
+
+	DPRINTF("\nEnter the Height: ");
+	gets(temp_text);
+	PNewStudent->Student.Height = atof(temp_text);
+
+	/* Set the next record to null */
+	PNewStudent->PNextStudent = NULL;
+}
+
+
+int Delete_Student()
+{
+	unsigned int selected_ID;
+	/* to get ID to delete the student */
+	DPRINTF("\nEnter Student ID that you want to delete:");
+	gets(temp_text);
+	selected_ID = atoi(temp_text);
+	/* to check if the list is empty or not */
+	if(gpFirstStudent) // when the list is not empty
+	{
+		struct SStudent *PPreviousStudent = NULL;
+		struct SStudent *PSelectedStudent = gpFirstStudent;
+		/* Start iterate to find the pointed node from head */
+		while(PSelectedStudent)
+		{
+			/* Compare each ID with each node */
+			if(PSelectedStudent->Student.ID == selected_ID)
+			{
+				/* the first node is not the selected */
+				if(PPreviousStudent)
+				{
+					PPreviousStudent->PNextStudent = PSelectedStudent->PNextStudent;
+				}
+				else // the first one is the selected ID
+				{
+					gpFirstStudent = PSelectedStudent->PNextStudent;
+				}
+				free(PSelectedStudent);
+				return 1;
+			}
+			PPreviousStudent = PSelectedStudent;
+			PSelectedStudent = PSelectedStudent->PNextStudent;
+		}
+		/* In case ID not found */
+		DPRINTF("\nThe Entered ID is not found");
+		return 0;
+	}
+}
+
+
+void View_Students()
+{
+	int count = 0;
+	struct SStudent *PCurrentStudent = gpFirstStudent;
+	/* Check if the node is empty or not */
+	if(gpFirstStudent == NULL)
+	{
+		DPRINTF("\nEmpty List");
+	}
+	while(PCurrentStudent)
+	{
+		DPRINTF("\nRecord Number %d",count+1);
+		DPRINTF("\nID : %d",PCurrentStudent->Student.ID);
+		DPRINTF("\nName : %s",PCurrentStudent->Student.Name);
+		DPRINTF("\nHeight : %f",PCurrentStudent->Student.Height);
+		count++;
+		PCurrentStudent = PCurrentStudent->PNextStudent;
+	}
+}
+
+
+void Delete_All()
+{
+	struct SStudent *PCurrentStudent = gpFirstStudent;
+	/* Check if the node is empty or not */
+	if(gpFirstStudent == NULL)
+	{
+		DPRINTF("\nEmpty List");
+	}
+	while(PCurrentStudent)
+	{
+		/* We make new pointer since if we delete the original one we will can't increment it */
+		struct SStudent *PTempStudent = PCurrentStudent;
+		free(PTempStudent);
+		PCurrentStudent = PCurrentStudent->PNextStudent;
+	}
+	/* Make list is empty again since head point to null */
+	gpFirstStudent = NULL;
+}

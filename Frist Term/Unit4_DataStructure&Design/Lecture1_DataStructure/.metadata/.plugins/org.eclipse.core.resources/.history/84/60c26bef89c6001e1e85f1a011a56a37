@@ -1,0 +1,36 @@
+/*
+ * main.c
+ *
+ *  Created on: Feb 8, 2024
+ *      Author: Abdelrahman Matarawy
+ */
+#include <stdio.h>
+#include "FIFO.h"
+extern element_type buffer[width];
+void main()
+{
+	FIFO_Buf_t FIFO_Uart;
+	element_type i, temp=0;
+	/* INIT static FIFO buffer */
+	if(FIFO_INIT(&FIFO_Uart, buffer, width) == FIFO_No_Error)
+		printf("FIFO Init.....Done\n");
+	/* Add Items to our circular queue */
+	for(i = 0 ; i < 5; i++)
+	{
+		printf("FIFO Engueue (%x) \n",i);
+		if(FIFO_ENQUEUE(&FIFO_Uart, i) == FIFO_No_Error)
+			printf("\t FIFO Enqueue......Done\n");
+		else
+			printf("\t FIFO Enqueue......Failed\n");
+	}
+	/* Print all Items in FIFO buffer */
+	FIFO_Print(&FIFO_Uart);
+	/* Dequeue First item in FIFO buffer */
+	if(FIFO_DEQUEUE(&FIFO_Uart, &temp) == FIFO_No_Error)
+		printf("\t FIFO Dequeue(%x)......Done\n",temp);
+	/* Dequeue senond item in FIFO buffer */
+	if(FIFO_DEQUEUE(&FIFO_Uart, &temp) == FIFO_No_Error)
+		printf("\t FIFO Dequeue(%x)......Done\n",temp);
+	/* Print all Items in FIFO buffer after dequeue 2 items */
+	FIFO_Print(&FIFO_Uart);
+}

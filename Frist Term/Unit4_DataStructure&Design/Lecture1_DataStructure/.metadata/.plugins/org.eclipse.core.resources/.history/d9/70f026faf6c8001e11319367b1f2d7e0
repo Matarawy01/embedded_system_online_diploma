@@ -1,0 +1,334 @@
+/*
+ * Linked_List.c
+ *
+ *  Created on: Feb 9, 2024
+ *      Author: Abdelrahman Matarawy
+ */
+#include "Linked_List.h"
+struct SStudent *gpFirstStudent = NULL;
+char temp_text[40];
+
+
+void Add_Student()
+{
+	struct SStudent *PNewStudent;
+	struct SStudent *PLastStudent;
+	/* check if list is empty or not */
+	if(gpFirstStudent == NULL)
+	{
+		/* Create new record */
+		PNewStudent = (struct SStudent *)malloc(sizeof(struct SStudent));	
+		/* assign head to first node */
+		gpFirstStudent = PNewStudent;
+	}
+	else
+	{
+		PLastStudent = gpFirstStudent;
+		/* Navigate until reaching the last record */
+		while(PLastStudent->PNextStudent)
+		{
+			PLastStudent = PLastStudent->PNextStudent;
+		}
+		/* Create new record */
+		PNewStudent = (struct SStudent *)malloc(sizeof(struct SStudent));
+		PLastStudent->PNextStudent = PNewStudent;
+	}
+
+	/* fill the record data */
+	DPRINTF("\nEnter the ID: ");
+	gets(temp_text);
+	PNewStudent->Student.ID = atoi(temp_text);
+
+	DPRINTF("\nEnter the Student name: ");
+	gets(PNewStudent->Student.Name);
+
+	DPRINTF("\nEnter the Height: ");
+	gets(temp_text);
+	PNewStudent->Student.Height = atof(temp_text);
+
+	/* Set the next record to null */
+	PNewStudent->PNextStudent = NULL;
+}
+
+
+int Delete_Student()
+{
+	unsigned int selected_ID;
+	/* to get ID to delete the student */
+	DPRINTF("\nEnter Student ID that you want to delete:");
+	gets(temp_text);
+	selected_ID = atoi(temp_text);
+	/* to check if the list is empty or not */
+	if(gpFirstStudent) // when the list is not empty
+	{
+		struct SStudent *PPreviousStudent = NULL;
+		struct SStudent *PSelectedStudent = gpFirstStudent;
+		/* Start iterate to find the pointed node from head */
+		while(PSelectedStudent)
+		{
+			/* Compare each ID with each node */
+			if(PSelectedStudent->Student.ID == selected_ID)
+			{
+				/* the first node is not the selected */
+				if(PPreviousStudent)
+				{
+					PPreviousStudent->PNextStudent = PSelectedStudent->PNextStudent;
+				}
+				else // the first one is the selected ID
+				{
+					gpFirstStudent = PSelectedStudent->PNextStudent;
+				}
+				free(PSelectedStudent);
+				return 1;
+			}
+			PPreviousStudent = PSelectedStudent;
+			PSelectedStudent = PSelectedStudent->PNextStudent;
+		}
+	}
+	/* In case ID not found */
+	DPRINTF("\nThe Entered ID is not found");
+	return 0;
+}
+
+
+void View_Students()
+{
+	int count = 0;
+	struct SStudent *PCurrentStudent = gpFirstStudent;
+	/* Check if the node is empty or not */
+	if(gpFirstStudent == NULL)
+	{
+		DPRINTF("\nEmpty List");
+	}
+	while(PCurrentStudent)
+	{
+		DPRINTF("\nRecord Number %d => ",count+1);
+		DPRINTF("\n\tID : %d",PCurrentStudent->Student.ID);
+		DPRINTF("\n\tName : %s",PCurrentStudent->Student.Name);
+		DPRINTF("\n\tHeight : %f\n",PCurrentStudent->Student.Height);
+		count++;
+		PCurrentStudent = PCurrentStudent->PNextStudent;
+	}
+}
+
+
+void Delete_All()
+{
+	struct SStudent *PCurrentStudent = gpFirstStudent;
+	/* Check if the node is empty or not */
+	if(gpFirstStudent == NULL)
+	{
+		DPRINTF("\nEmpty List");
+	}
+	while(PCurrentStudent)
+	{
+		/* We make new pointer since if we delete the original one we will can't increment it */
+		struct SStudent *PTempStudent = PCurrentStudent;
+		free(PTempStudent);
+		PCurrentStudent = PCurrentStudent->PNextStudent;
+	}
+	/* Make list is empty again since head point to null */
+	gpFirstStudent = NULL;
+}
+
+
+void GetNth()
+{
+	int Index = 0;
+	struct SStudent *PCurrentStudent;
+	/* Scanning the Index from user */
+	DPRINTF("\nEnter the index number: ");
+	scanf("%d",&Index);
+	Scanning_For_Node(PCurrentStudent, Index);
+}
+
+
+void LengthOfList_Iteration()
+{
+	int count = 0;
+	struct SStudent *PLastStudent;
+	count = Scanning_For_Length(PLastStudent);
+	if(count != 0){
+		DPRINTF("\nThe Length of List = %d",count);
+	}
+
+}
+
+
+int LengthOfList_Recursion(struct SStudent *PLastStudent,int test)
+{
+	if(test == 0)
+	{
+		PLastStudent = gpFirstStudent;
+		test = 1;
+	}
+	if(PLastStudent == NULL)
+	{
+		return 0;
+	}else
+	{
+		return 1 + LengthOfList_Recursion(PLastStudent->PNextStudent, test);
+	}
+}
+
+
+void GetNth_1stFromEnd()
+{
+	int Length = 0, NodeNumber = 0, n = 0;
+	struct SStudent *PLastStudent;
+	/* Scanning For The node number */
+	DPRINTF("\nEnter the node number: ");
+	gets(temp_text);
+	n = atoi(temp_text);
+
+	/* Scanning for the length of list */
+	Length = Scanning_For_Length(PLastStudent);
+
+	NodeNumber = Length - n + 1;
+	/* Scanning for the Index in the list */
+	Scanning_For_Node(PLastStudent, NodeNumber);
+}
+
+
+int GetNth_2ndFromEnd()
+{
+	int n = 0, count ;
+	struct SStudent *PMain_Ptr = gpFirstStudent;
+	struct SStudent *PRef_Ptr = gpFirstStudent;
+	DPRINTF("\nEnter the node number: ");
+	gets(temp_text);
+	n = atoi(temp_text);
+	/* Check if the List is empty or not */
+	if(gpFirstStudent == NULL)
+	{
+		DPRINTF("\nThe list is empty");
+		return 0;
+	}
+	/* Iterate Until the gap between them is the node wanted to view from last */
+	for(count = 1; count <= n ; count++)
+	{
+		PRef_Ptr = PRef_Ptr->PNextStudent;
+	}
+	/* Iterate until reach the end of list */
+	while(PRef_Ptr)
+	{
+		PMain_Ptr = PMain_Ptr->PNextStudent;
+		PRef_Ptr = PRef_Ptr->PNextStudent;
+	}
+	DPRINTF("\nThe Node with index %d =>",n);
+	DPRINTF("\n\tID : %d",PMain_Ptr->Student.ID);
+	DPRINTF("\n\tName : %s",PMain_Ptr->Student.Name);
+	DPRINTF("\n\tHeight : %f\n",PMain_Ptr->Student.Height);
+	return 1;
+}
+
+
+void Middle_Node_CountMethod()
+{
+	int count = 0;
+	struct SStudent *PMiddle;
+	count = Scanning_For_Length(PMiddle);
+	if(count % 2 == 2)
+	{
+		Scanning_For_Node(PMiddle, (count/2));
+	}
+	else
+	{
+		Scanning_For_Node(PMiddle, ((count/2) + 1));
+	}
+}
+
+
+int Middle_Node_PointerMethod()
+{
+	int count = 1, length = 0;
+	struct SStudent *PSlow_PTR;
+	length = Scanning_For_Length(PSlow_PTR);
+	if(length % 2 == 2)
+	{
+		struct SStudent *PSlow_PTR = gpFirstStudent;
+		struct SStudent *PFast_PTR = gpFirstStudent;
+	}
+	else
+	{
+		struct SStudent *PSlow_PTR = gpFirstStudent->PNextStudent;
+		struct SStudent *PFast_PTR = gpFirstStudent->PNextStudent;
+	}
+	/* Check if the List is empty or not */
+	if(gpFirstStudent == NULL)
+	{
+		DPRINTF("\nThe list is empty");
+		return 0;
+	}
+	/* Iterate until reach the end of list */
+	while(PFast_PTR)
+	{
+		count++;
+		PFast_PTR = PFast_PTR->PNextStudent->PNextStudent;
+		PSlow_PTR = PSlow_PTR->PNextStudent;
+	}
+	DPRINTF("\nThe Node with index %d =>",count);
+	DPRINTF("\n\tID : %d",PSlow_PTR->Student.ID);
+	DPRINTF("\n\tName : %s",PSlow_PTR->Student.Name);
+	DPRINTF("\n\tHeight : %f\n",PSlow_PTR->Student.Height);
+	return 1;
+}
+
+
+
+
+
+/* ======================Scanning for the Index in the list====================== */
+int Scanning_For_Node(struct SStudent *PCurrentStudent, int NodeNumber)
+{
+	/* Check if the List is empty or not */
+	if(gpFirstStudent == NULL)
+	{
+		DPRINTF("\nThe list is empty");
+		return 0;
+	}
+	else
+	{
+		PCurrentStudent = gpFirstStudent;
+		int count = 1;
+		/* Iterate Until reach The Node equivalent to this Index */
+		while(PCurrentStudent)
+		{
+			if(count == NodeNumber)
+			{
+				DPRINTF("\nThe Node with index %d =>",NodeNumber);
+				DPRINTF("\n\tID : %d",PCurrentStudent->Student.ID);
+				DPRINTF("\n\tName : %s",PCurrentStudent->Student.Name);
+				DPRINTF("\n\tHeight : %f\n",PCurrentStudent->Student.Height);
+				return 1;
+			}
+			else
+			{
+				count++;
+			}
+			PCurrentStudent = PCurrentStudent->PNextStudent;
+		}
+		DPRINTF("\nThis Index is not found in list");
+		return 0;
+	}
+}
+
+/* ======================Scanning for the length of list====================== */
+int Scanning_For_Length(struct SStudent *PLastStudent)
+{
+	int Length = 0;
+	PLastStudent = gpFirstStudent;
+	/* Check if the List is empty or not */
+	if(gpFirstStudent == NULL)
+	{
+		DPRINTF("\nThe list is empty");
+		return 0;
+	}
+	/* Iterate Until reach to Last student */
+	while(PLastStudent)
+	{
+		Length++;
+		PLastStudent = PLastStudent->PNextStudent;
+	}
+	return Length;
+}

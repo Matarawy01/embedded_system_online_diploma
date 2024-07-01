@@ -1,0 +1,46 @@
+/* StartUp for CortexM3 */
+/* By Abdelrahman Matarawy */
+
+
+/* Interupt Vector Table We Named The ISR By .section .vectors to Use in Linker */
+.section .vectors
+
+.word 0x20001000 		 /* address 0x08000000 is Entry Point which in Cortex-M need to add Address for stack top at first */
+.word _reset      		 /* 1 Reset Handler Added in Address 0x08000004 */
+.word vector_handler     /* 2 NMI */
+.word vector_handler     /* 3 Hard fault */
+.word vector_handler     /* 4 MM fault */
+.word vector_handler     /* 5 Bus fault */
+.word vector_handler     /* 6 usage fault */
+.word vector_handler     /* 7 Reserved */
+.word vector_handler     /* 8 Reserved */
+.word vector_handler     /* 9 Reserved */
+.word vector_handler     /* 10 Reserved */
+.word vector_handler     /* 11 SV call */
+.word vector_handler     /* 12 Debug reserved */
+.word vector_handler     /* 13 Reserved */
+.word vector_handler     /* 14 pendSV */
+.word vector_handler     /* 15 SysTick */
+.word vector_handler     /* 16 IRQ0 */
+.word vector_handler     /* 17 IRG1 */
+.word vector_handler     /* 18 IRG2 */
+.word vector_handler     /* 19 ... */
+
+
+/* We Named AnyThing In Startup By .section .text to Use in Linker */
+.section .text
+_reset:
+	bl main
+	b .     /* Loop to your self */
+
+
+/* 
+   For activate 16 bits mode
+   Default is 32 bits but we actvate 16 bits for safe
+*/
+.thumb_func	
+
+
+/* Any ISR Come it refer to Vector Handler */
+vector_handler:
+	b _reset

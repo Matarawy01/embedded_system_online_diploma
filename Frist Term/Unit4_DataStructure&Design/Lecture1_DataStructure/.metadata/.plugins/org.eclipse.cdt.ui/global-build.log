@@ -1,0 +1,2539 @@
+09:50:36 **** Rebuild of configuration Debug for project LIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:19:12: error: incompatible type for argument 1 of 'LIFO_INIT'
+  LIFO_INIT(Uart_LIFO, buffer1, 5);
+            ^~~~~~~~~
+In file included from ..\main.c:9:0:
+..\LIFO.h:28:13: note: expected 'LIFO_Buf_t * {aka struct <anonymous> *}' but argument is of type 'LIFO_Buf_t {aka struct <anonymous>}'
+ LIFO_Status LIFO_INIT(LIFO_Buf_t *LIFO_Buf, unsigned int *Buf, unsigned int length);
+             ^~~~~~~~~
+..\main.c:22:17: error: incompatible type for argument 1 of 'LIFO_Add_Item'
+   LIFO_Add_Item(Uart_LIFO, i);
+                 ^~~~~~~~~
+In file included from ..\main.c:9:0:
+..\LIFO.h:29:13: note: expected 'LIFO_Buf_t * {aka struct <anonymous> *}' but argument is of type 'LIFO_Buf_t {aka struct <anonymous>}'
+ LIFO_Status LIFO_Add_Item(LIFO_Buf_t *LIFO_Buf, unsigned int item);
+             ^~~~~~~~~~~~~
+..\main.c:27:17: error: incompatible type for argument 1 of 'LIFO_Get_Item'
+   LIFO_Get_Item(Uart_LIFO, &temp);
+                 ^~~~~~~~~
+In file included from ..\main.c:9:0:
+..\LIFO.h:30:13: note: expected 'LIFO_Buf_t * {aka struct <anonymous> *}' but argument is of type 'LIFO_Buf_t {aka struct <anonymous>}'
+ LIFO_Status LIFO_Get_Item(LIFO_Buf_t *LIFO_Buf, unsigned int *item);
+             ^~~~~~~~~~~~~
+..\main.c:27:28: warning: pointer targets in passing argument 2 of 'LIFO_Get_Item' differ in signedness [-Wpointer-sign]
+   LIFO_Get_Item(Uart_LIFO, &temp);
+                            ^
+In file included from ..\main.c:9:0:
+..\LIFO.h:30:13: note: expected 'unsigned int *' but argument is of type 'int *'
+ LIFO_Status LIFO_Get_Item(LIFO_Buf_t *LIFO_Buf, unsigned int *item);
+             ^~~~~~~~~~~~~
+..\main.c:17:24: warning: unused variable 'I2C_LIFO' [-Wunused-variable]
+  LIFO_Buf_t Uart_LIFO, I2C_LIFO;
+                        ^~~~~~~~
+09:51:32 **** Incremental Build of configuration Debug for project LIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o LIFO.o "..\\LIFO.c" 
+..\LIFO.c: In function 'LIFO_INIT':
+..\LIFO.c:12:12: error: 'NULL' undeclared (first use in this function)
+  if(Buf == NULL)
+            ^~~~
+..\LIFO.c:12:12: note: each undeclared identifier is reported only once for each function it appears in
+..\LIFO.c: In function 'LIFO_Add_Item':
+..\LIFO.c:25:13: error: 'LIFO_Buf_t {aka struct <anonymous>}' has no member named 'Size'
+  if(LIFO_Buf->Size == LIFO_Buf->Length)
+             ^~
+..\LIFO.c:31:17: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  LIFO_Buf->Head = item;
+                 ^
+09:52:22 **** Incremental Build of configuration Debug for project LIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:19:12: error: incompatible type for argument 1 of 'LIFO_INIT'
+  LIFO_INIT(Uart_LIFO, buffer1, 5);
+            ^~~~~~~~~
+In file included from ..\main.c:9:0:
+..\LIFO.h:28:13: note: expected 'LIFO_Buf_t * {aka struct <anonymous> *}' but argument is of type 'LIFO_Buf_t {aka struct <anonymous>}'
+ LIFO_Status LIFO_INIT(LIFO_Buf_t *LIFO_Buf, unsigned int *Buf, unsigned int length);
+             ^~~~~~~~~
+..\main.c:22:17: error: incompatible type for argument 1 of 'LIFO_Add_Item'
+   LIFO_Add_Item(Uart_LIFO, i);
+                 ^~~~~~~~~
+In file included from ..\main.c:9:0:
+..\LIFO.h:29:13: note: expected 'LIFO_Buf_t * {aka struct <anonymous> *}' but argument is of type 'LIFO_Buf_t {aka struct <anonymous>}'
+ LIFO_Status LIFO_Add_Item(LIFO_Buf_t *LIFO_Buf, unsigned int item);
+             ^~~~~~~~~~~~~
+..\main.c:27:17: error: incompatible type for argument 1 of 'LIFO_Get_Item'
+   LIFO_Get_Item(Uart_LIFO, &temp);
+                 ^~~~~~~~~
+In file included from ..\main.c:9:0:
+..\LIFO.h:30:13: note: expected 'LIFO_Buf_t * {aka struct <anonymous> *}' but argument is of type 'LIFO_Buf_t {aka struct <anonymous>}'
+ LIFO_Status LIFO_Get_Item(LIFO_Buf_t *LIFO_Buf, unsigned int *item);
+             ^~~~~~~~~~~~~
+..\main.c:27:28: warning: pointer targets in passing argument 2 of 'LIFO_Get_Item' differ in signedness [-Wpointer-sign]
+   LIFO_Get_Item(Uart_LIFO, &temp);
+                            ^
+In file included from ..\main.c:9:0:
+..\LIFO.h:30:13: note: expected 'unsigned int *' but argument is of type 'int *'
+ LIFO_Status LIFO_Get_Item(LIFO_Buf_t *LIFO_Buf, unsigned int *item);
+             ^~~~~~~~~~~~~
+09:54:14 **** Incremental Build of configuration Debug for project LIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o LIFO.o "..\\LIFO.c" 
+..\LIFO.c: In function 'LIFO_INIT':
+..\LIFO.c:12:12: error: 'NULL' undeclared (first use in this function)
+  if(Buf == NULL)
+            ^~~~
+..\LIFO.c:12:12: note: each undeclared identifier is reported only once for each function it appears in
+..\LIFO.c: In function 'LIFO_Add_Item':
+..\LIFO.c:31:17: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  LIFO_Buf->Head = item;
+                 ^
+09:54:40 **** Incremental Build of configuration Debug for project LIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o LIFO.o "..\\LIFO.c" 
+..\LIFO.c: In function 'LIFO_Add_Item':
+..\LIFO.c:31:17: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  LIFO_Buf->Head = item;
+                 ^
+gcc -o LIFO.exe LIFO.o main.o 
+Info: Nothing to build for LIFO
+09:55:35 **** Incremental Build of configuration Debug for project LIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o LIFO.o "..\\LIFO.c" 
+gcc -o LIFO.exe LIFO.o main.o 
+Info: Nothing to build for LIFO
+10:01:00 **** Incremental Build of configuration Debug for project LIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LIFO.exe LIFO.o main.o 
+Info: Nothing to build for LIFO
+10:03:12 **** Incremental Build of configuration Debug for project LIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LIFO.exe LIFO.o main.o 
+Info: Nothing to build for LIFO
+10:03:37 **** Incremental Build of configuration Debug for project LIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LIFO.exe LIFO.o main.o 
+Info: Nothing to build for LIFO
+15:41:26 **** Rebuild of configuration Debug for project FIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o FIFO.o "..\\FIFO.c" 
+..\FIFO.c: In function 'FIFO_INIT':
+..\FIFO.c:22:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+..\main.c: In function 'main':
+..\main.c:14:15: error: incompatible type for argument 1 of 'FIFO_INIT'
+  if(FIFO_INIT(FIFO_Uart, buffer, width) == FIFO_No_Error)
+               ^~~~~~~~~
+In file included from ..\main.c:8:0:
+..\FIFO.h:36:13: note: expected 'FIFO_Buf_t * {aka struct <anonymous> *}' but argument is of type 'FIFO_Buf_t {aka struct <anonymous>}'
+ FIFO_Status FIFO_INIT(FIFO_Buf_t *FIFO_Buf, element_type *buff, uint8_t Length);
+             ^~~~~~~~~
+..\main.c:20:6: warning: implicit declaration of function 'FIFO_ENQUEUE' [-Wimplicit-function-declaration]
+   if(FIFO_ENQUEUE(FIFO_Uart, i) == FIFO_No_Error)
+      ^~~~~~~~~~~~
+..\main.c:26:13: error: incompatible type for argument 1 of 'FIFO_Print'
+  FIFO_Print(FIFO_Uart);
+             ^~~~~~~~~
+In file included from ..\main.c:8:0:
+..\FIFO.h:40:7: note: expected 'FIFO_Buf_t * {aka struct <anonymous> *}' but argument is of type 'FIFO_Buf_t {aka struct <anonymous>}'
+ void  FIFO_Print(FIFO_Buf_t *FIFO_Buf);
+       ^~~~~~~~~~
+..\main.c:28:18: error: incompatible type for argument 1 of 'FIFO_DEQUEUE'
+  if(FIFO_DEQUEUE(FIFO_Uart, &temp) == FIFO_No_Error)
+                  ^~~~~~~~~
+In file included from ..\main.c:8:0:
+..\FIFO.h:37:13: note: expected 'FIFO_Buf_t * {aka struct <anonymous> *}' but argument is of type 'FIFO_Buf_t {aka struct <anonymous>}'
+ FIFO_Status FIFO_DEQUEUE(FIFO_Buf_t *FIFO_Buf, element_type *Items);
+             ^~~~~~~~~~~~
+..\main.c:31:18: error: incompatible type for argument 1 of 'FIFO_DEQUEUE'
+  if(FIFO_DEQUEUE(FIFO_Uart, &temp) == FIFO_No_Error)
+                  ^~~~~~~~~
+In file included from ..\main.c:8:0:
+..\FIFO.h:37:13: note: expected 'FIFO_Buf_t * {aka struct <anonymous> *}' but argument is of type 'FIFO_Buf_t {aka struct <anonymous>}'
+ FIFO_Status FIFO_DEQUEUE(FIFO_Buf_t *FIFO_Buf, element_type *Items);
+             ^~~~~~~~~~~~
+..\main.c:34:13: error: incompatible type for argument 1 of 'FIFO_Print'
+  FIFO_Print(FIFO_Uart);
+             ^~~~~~~~~
+In file included from ..\main.c:8:0:
+..\FIFO.h:40:7: note: expected 'FIFO_Buf_t * {aka struct <anonymous> *}' but argument is of type 'FIFO_Buf_t {aka struct <anonymous>}'
+ void  FIFO_Print(FIFO_Buf_t *FIFO_Buf);
+       ^~~~~~~~~~
+15:42:11 **** Incremental Build of configuration Debug for project FIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+..\main.c: In function 'main':
+..\main.c:20:6: warning: implicit declaration of function 'FIFO_ENQUEUE' [-Wimplicit-function-declaration]
+   if(FIFO_ENQUEUE(&FIFO_Uart, i) == FIFO_No_Error)
+      ^~~~~~~~~~~~
+gcc -o FIFO.exe FIFO.o main.o 
+main.o: In function `main':
+C:\Users\abdel\Downloads\Mastering_embedded_system\Unit4\Lecture1\test\FIFO\Debug/../main.c:26: undefined reference to `FIFO_Print'
+C:\Users\abdel\Downloads\Mastering_embedded_system\Unit4\Lecture1\test\FIFO\Debug/../main.c:34: undefined reference to `FIFO_Print'
+collect2.exe: error: ld returned 1 exit status
+15:42:30 **** Incremental Build of configuration Debug for project FIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o FIFO.o "..\\FIFO.c" 
+..\FIFO.c: In function 'FIFO_INIT':
+..\FIFO.c:22:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o FIFO.exe FIFO.o main.o 
+main.o: In function `main':
+C:\Users\abdel\Downloads\Mastering_embedded_system\Unit4\Lecture1\test\FIFO\Debug/../main.c:26: undefined reference to `FIFO_Print'
+C:\Users\abdel\Downloads\Mastering_embedded_system\Unit4\Lecture1\test\FIFO\Debug/../main.c:34: undefined reference to `FIFO_Print'
+collect2.exe: error: ld returned 1 exit status
+15:48:31 **** Incremental Build of configuration Debug for project FIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o FIFO.o "..\\FIFO.c" 
+..\FIFO.c: In function 'FIFO_Print':
+..\FIFO.c:81:16: warning: format '%x' expects a matching 'unsigned int' argument [-Wformat=]
+    printf("\t %x \n,*temp");
+                ^
+..\FIFO.c:81:16: warning: format '%x' expects a matching 'unsigned int' argument [-Wformat=]
+..\FIFO.c: In function 'FIFO_INIT':
+..\FIFO.c:22:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o FIFO.exe FIFO.o main.o 
+15:49:10 **** Incremental Build of configuration Debug for project FIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o FIFO.o "..\\FIFO.c" 
+..\FIFO.c: In function 'FIFO_Print':
+..\FIFO.c:82:16: warning: format '%x' expects a matching 'unsigned int' argument [-Wformat=]
+    printf("\t %x \n,*temp");
+                ^
+..\FIFO.c:82:16: warning: format '%x' expects a matching 'unsigned int' argument [-Wformat=]
+gcc -o FIFO.exe FIFO.o main.o 
+Info: Nothing to build for FIFO
+15:53:01 **** Incremental Build of configuration Debug for project FIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+..\main.c: In function 'main':
+..\main.c:22:3: error: expected expression before 'else'
+   else
+   ^~~~
+15:53:08 **** Incremental Build of configuration Debug for project FIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o FIFO.o "..\\FIFO.c" 
+..\FIFO.c: In function 'FIFO_Print':
+..\FIFO.c:76:2: error: expected expression before 'else'
+  else
+  ^~~~
+..\FIFO.c:73:6: warning: unused variable 'i' [-Wunused-variable]
+  int i;
+      ^
+..\FIFO.c:72:16: warning: unused variable 'temp' [-Wunused-variable]
+  element_type *temp;
+                ^~~~
+15:53:19 **** Incremental Build of configuration Debug for project FIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o FIFO.o "..\\FIFO.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+..\main.c: In function 'main':
+..\main.c:24:2: error: expected expression before '}' token
+  }
+  ^
+15:53:51 **** Incremental Build of configuration Debug for project FIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o FIFO.o "..\\FIFO.c" 
+..\FIFO.c: In function 'FIFO_Print':
+..\FIFO.c:82:16: warning: format '%x' expects a matching 'unsigned int' argument [-Wformat=]
+    printf("\t %x \n,*temp");
+                ^
+..\FIFO.c:82:16: warning: format '%x' expects a matching 'unsigned int' argument [-Wformat=]
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o FIFO.exe FIFO.o main.o 
+Info: Nothing to build for FIFO
+15:56:24 **** Incremental Build of configuration Debug for project FIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:8: warning: type defaults to 'int' in declaration of 'buffer' [-Wimplicit-int]
+ extern buffer[width];
+        ^~~~~~
+..\main.c:9:8: error: conflicting types for 'buffer'
+In file included from ..\main.c:8:0:
+..\FIFO.h:16:14: note: previous declaration of 'buffer' was here
+ element_type buffer[width];
+              ^~~~~~
+..\main.c:10:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+..\main.c: In function 'main':
+..\main.c:15:27: warning: passing argument 2 of 'FIFO_INIT' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(FIFO_INIT(&FIFO_Uart, buffer, width) == FIFO_No_Error)
+                           ^~~~~~
+In file included from ..\main.c:8:0:
+..\FIFO.h:36:13: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'int *'
+ FIFO_Status FIFO_INIT(FIFO_Buf_t *FIFO_Buf, element_type *buff, uint8_t Length);
+             ^~~~~~~~~
+15:56:41 **** Incremental Build of configuration Debug for project FIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:10:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o FIFO.exe FIFO.o main.o 
+15:57:03 **** Incremental Build of configuration Debug for project FIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o FIFO.exe FIFO.o main.o 
+Info: Nothing to build for FIFO
+16:00:03 **** Incremental Build of configuration Debug for project FIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o FIFO.exe FIFO.o main.o 
+Info: Nothing to build for FIFO
+16:00:40 **** Incremental Build of configuration Debug for project FIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o FIFO.exe FIFO.o main.o 
+Info: Nothing to build for FIFO
+16:18:37 **** Incremental Build of configuration Debug for project FIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o FIFO.exe FIFO.o main.o 
+Info: Nothing to build for FIFO
+16:25:49 **** Incremental Build of configuration Debug for project FIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o FIFO.o "..\\FIFO.c" 
+..\FIFO.c:11:13: error: conflicting types for 'FIFO_INIT'
+ FIFO_Status FIFO_INIT(FIFO_Buf_t *FIFO_Buf, element_type *buf, uint8_t Length)
+             ^~~~~~~~~
+In file included from ..\FIFO.c:8:0:
+..\FIFO.h:36:13: note: previous declaration of 'FIFO_INIT' was here
+ FIFO_Status FIFO_INIT(FIFO_Buf_t *FIFO_Buf, element_type *buf, uint32_t Length);
+             ^~~~~~~~~
+..\FIFO.c: In function 'FIFO_Print':
+..\FIFO.c:82:16: warning: format '%x' expects a matching 'unsigned int' argument [-Wformat=]
+    printf("\t %x \n,*temp");
+                ^
+..\FIFO.c:82:16: warning: format '%x' expects a matching 'unsigned int' argument [-Wformat=]
+16:27:24 **** Incremental Build of configuration Debug for project FIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o FIFO.o "..\\FIFO.c" 
+..\FIFO.c: In function 'FIFO_Print':
+..\FIFO.c:82:16: warning: format '%x' expects a matching 'unsigned int' argument [-Wformat=]
+    printf("\t %x \n,*temp");
+                ^
+..\FIFO.c:82:16: warning: format '%x' expects a matching 'unsigned int' argument [-Wformat=]
+gcc -o FIFO.exe FIFO.o main.o 
+Info: Nothing to build for FIFO
+16:29:41 **** Incremental Build of configuration Debug for project FIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o FIFO.o "..\\FIFO.c" 
+..\FIFO.c: In function 'FIFO_Print':
+..\FIFO.c:82:16: warning: format '%x' expects a matching 'unsigned int' argument [-Wformat=]
+    printf("\t %x \n,*temp");
+                ^
+..\FIFO.c:82:16: warning: format '%x' expects a matching 'unsigned int' argument [-Wformat=]
+gcc -o FIFO.exe FIFO.o main.o 
+Info: Nothing to build for FIFO
+16:32:57 **** Incremental Build of configuration Debug for project FIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o FIFO.o "..\\FIFO.c" 
+..\FIFO.c: In function 'FIFO_Print':
+..\FIFO.c:82:16: warning: format '%X' expects a matching 'unsigned int' argument [-Wformat=]
+    printf("\t %X \n,*temp");
+                ^
+..\FIFO.c:82:16: warning: format '%X' expects a matching 'unsigned int' argument [-Wformat=]
+gcc -o FIFO.exe FIFO.o main.o 
+Info: Nothing to build for FIFO
+16:34:41 **** Incremental Build of configuration Debug for project FIFO ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o FIFO.o "..\\FIFO.c" 
+gcc -o FIFO.exe FIFO.o main.o 
+Info: Nothing to build for FIFO
+15:48:21 **** Rebuild of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+..\main.c: In function 'main':
+..\main.c:14:3: warning: implicit declaration of function 'DPRINTF' [-Wimplicit-function-declaration]
+   DPRINTF("\n=========================");
+   ^~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c:8:25: warning: 'gpFirstStudent' initialized and declared 'extern'
+ extern struct SStudent *gpFirstStudent = NULL;
+                         ^~~~~~~~~~~~~~
+..\Linked_List.c:8:25: error: redefinition of 'gpFirstStudent'
+In file included from ..\Linked_List.c:7:0:
+..\Linked_List.h:28:18: note: previous definition of 'gpFirstStudent' was here
+ struct SStudent *gpFirstStudent = NULL;
+                  ^~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Add_Student':
+..\Linked_List.c:24:23: error: 'Null' undeclared (first use in this function)
+  if(gpFirstStudent == Null)
+                       ^~~~
+..\Linked_List.c:24:23: note: each undeclared identifier is reported only once for each function it appears in
+..\Linked_List.c:46:2: warning: implicit declaration of function 'DPRINTF' [-Wimplicit-function-declaration]
+  DPRINTF("\nEnter the ID: ");
+  ^~~~~~~
+..\Linked_List.c: In function 'Delete_Student':
+..\Linked_List.c:99:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+15:49:08 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'Add_Student':
+..\Linked_List.c:25:23: error: 'Null' undeclared (first use in this function)
+  if(gpFirstStudent == Null)
+                       ^~~~
+..\Linked_List.c:25:23: note: each undeclared identifier is reported only once for each function it appears in
+..\Linked_List.c:47:2: warning: implicit declaration of function 'DPRINTF' [-Wimplicit-function-declaration]
+  DPRINTF("\nEnter the ID: ");
+  ^~~~~~~
+..\Linked_List.c: In function 'Delete_Student':
+..\Linked_List.c:100:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+15:50:36 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'Add_Student':
+..\Linked_List.c:25:23: error: 'Null' undeclared (first use in this function)
+  if(gpFirstStudent == Null)
+                       ^~~~
+..\Linked_List.c:25:23: note: each undeclared identifier is reported only once for each function it appears in
+..\Linked_List.c:47:2: warning: implicit declaration of function 'DPRINTF' [-Wimplicit-function-declaration]
+  DPRINTF("\nEnter the ID: ");
+  ^~~~~~~
+..\Linked_List.c: In function 'Delete_Student':
+..\Linked_List.c:100:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+15:50:59 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'Add_Student':
+..\Linked_List.c:46:2: warning: implicit declaration of function 'DPRINTF' [-Wimplicit-function-declaration]
+  DPRINTF("\nEnter the ID: ");
+  ^~~~~~~
+..\Linked_List.c: In function 'Delete_Student':
+..\Linked_List.c:99:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Linked_List.exe Linked_List.o main.o 
+main.o:main.c:(.bss+0x0): multiple definition of `gpFirstStudent'
+Linked_List.o:Linked_List.c:(.bss+0x0): first defined here
+Linked_List.o: In function `Add_Student':
+C:\Users\abdel\Downloads\Mastering_embedded_system\Unit4\Lecture1\test\Linked_List\Debug/../Linked_List.c:46: undefined reference to `DPRINTF'
+C:\Users\abdel\Downloads\Mastering_embedded_system\Unit4\Lecture1\test\Linked_List\Debug/../Linked_List.c:50: undefined reference to `DPRINTF'
+C:\Users\abdel\Downloads\Mastering_embedded_system\Unit4\Lecture1\test\Linked_List\Debug/../Linked_List.c:53: undefined reference to `DPRINTF'
+Linked_List.o: In function `Delete_Student':
+C:\Users\abdel\Downloads\Mastering_embedded_system\Unit4\Lecture1\test\Linked_List\Debug/../Linked_List.c:66: undefined reference to `DPRINTF'
+C:\Users\abdel\Downloads\Mastering_embedded_system\Unit4\Lecture1\test\Linked_List\Debug/../Linked_List.c:96: undefined reference to `DPRINTF'
+Linked_List.o:C:\Users\abdel\Downloads\Mastering_embedded_system\Unit4\Lecture1\test\Linked_List\Debug/../Linked_List.c:109: more undefined references to `DPRINTF' follow
+collect2.exe: error: ld returned 1 exit status
+15:51:17 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'View_Students':
+..\Linked_List.c:116:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+   DPRINTF("\nHeight : %d",PCurrentStudent->Student.Height);
+           ^
+..\Linked_List.c:14:16: note: in definition of macro 'DPRINTF'
+         printf(__VA_ARGS__); \
+                ^~~~~~~~~~~
+..\Linked_List.c:116:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+   DPRINTF("\nHeight : %d",PCurrentStudent->Student.Height);
+           ^
+..\Linked_List.c:14:16: note: in definition of macro 'DPRINTF'
+         printf(__VA_ARGS__); \
+                ^~~~~~~~~~~
+..\Linked_List.c: In function 'Delete_Student':
+..\Linked_List.c:99:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Linked_List.exe Linked_List.o main.o 
+main.o:main.c:(.bss+0x0): multiple definition of `gpFirstStudent'
+Linked_List.o:Linked_List.c:(.bss+0x0): first defined here
+main.o: In function `main':
+C:\Users\abdel\Downloads\Mastering_embedded_system\Unit4\Lecture1\test\Linked_List\Debug/../main.c:14: undefined reference to `DPRINTF'
+C:\Users\abdel\Downloads\Mastering_embedded_system\Unit4\Lecture1\test\Linked_List\Debug/../main.c:15: undefined reference to `DPRINTF'
+C:\Users\abdel\Downloads\Mastering_embedded_system\Unit4\Lecture1\test\Linked_List\Debug/../main.c:16: undefined reference to `DPRINTF'
+C:\Users\abdel\Downloads\Mastering_embedded_system\Unit4\Lecture1\test\Linked_List\Debug/../main.c:17: undefined reference to `DPRINTF'
+C:\Users\abdel\Downloads\Mastering_embedded_system\Unit4\Lecture1\test\Linked_List\Debug/../main.c:18: undefined reference to `DPRINTF'
+main.o:C:\Users\abdel\Downloads\Mastering_embedded_system\Unit4\Lecture1\test\Linked_List\Debug/../main.c:19: more undefined references to `DPRINTF' follow
+collect2.exe: error: ld returned 1 exit status
+15:52:07 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+In file included from ..\Linked_List.c:7:0:
+..\Linked_List.c: In function 'View_Students':
+..\Linked_List.c:112:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+   DPRINTF("\nHeight : %d",PCurrentStudent->Student.Height);
+           ^
+..\Linked_List.h:18:16: note: in definition of macro 'DPRINTF'
+         printf(__VA_ARGS__); \
+                ^~~~~~~~~~~
+..\Linked_List.c:112:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+   DPRINTF("\nHeight : %d",PCurrentStudent->Student.Height);
+           ^
+..\Linked_List.h:18:16: note: in definition of macro 'DPRINTF'
+         printf(__VA_ARGS__); \
+                ^~~~~~~~~~~
+..\Linked_List.c: In function 'Delete_Student':
+..\Linked_List.c:95:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+main.o:main.c:(.bss+0x0): multiple definition of `gpFirstStudent'
+Linked_List.o:Linked_List.c:(.bss+0x0): first defined here
+collect2.exe: error: ld returned 1 exit status
+15:54:33 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'Delete_Student':
+..\Linked_List.c:92:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Linked_List.exe Linked_List.o main.o 
+main.o:main.c:(.bss+0x0): multiple definition of `gpFirstStudent'
+Linked_List.o:Linked_List.c:(.bss+0x0): first defined here
+collect2.exe: error: ld returned 1 exit status
+15:54:36 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+main.o:main.c:(.bss+0x0): multiple definition of `gpFirstStudent'
+Linked_List.o:Linked_List.c:(.bss+0x0): first defined here
+collect2.exe: error: ld returned 1 exit status
+15:55:10 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'Delete_Student':
+..\Linked_List.c:92:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Linked_List.exe Linked_List.o main.o 
+main.o:main.c:(.bss+0x0): multiple definition of `gpFirstStudent'
+Linked_List.o:Linked_List.c:(.bss+0x0): first defined here
+collect2.exe: error: ld returned 1 exit status
+15:56:11 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+main.o:main.c:(.bss+0x0): multiple definition of `gpFirstStudent'
+Linked_List.o:Linked_List.c:(.bss+0x0): first defined here
+collect2.exe: error: ld returned 1 exit status
+15:56:38 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+main.o:main.c:(.bss+0x0): multiple definition of `gpFirstStudent'
+Linked_List.o:Linked_List.c:(.bss+0x0): first defined here
+collect2.exe: error: ld returned 1 exit status
+15:58:09 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+main.o:main.c:(.bss+0x0): multiple definition of `gpFirstStudent'
+Linked_List.o:Linked_List.c:(.bss+0x0): first defined here
+collect2.exe: error: ld returned 1 exit status
+15:58:47 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+Info: Nothing to build for Linked_List
+16:07:44 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+16:07:49 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+16:08:05 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+16:08:08 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+16:11:10 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+16:11:15 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+16:12:46 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+16:12:50 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+16:13:46 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+16:13:48 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+17:37:38 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: error: 'else' without a previous 'if'
+  else
+  ^~~~
+17:39:07 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+17:39:12 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:149:66: warning: missing terminating " character
+     DPRINTF("\nThe Node with index %d:DPRINTF("\nRecord Number %d",count+1);
+                                                                  ^
+..\Linked_List.c:152:64: warning: missing terminating " character
+   DPRINTF("\n\tHeight : %f\n",PCurrentStudent->Student.Height);",Index);
+                                                                ^
+..\Linked_List.c:164:0: error: unterminated argument list invoking macro "DPRINTF"
+..\Linked_List.c:149:5: error: 'DPRINTF' undeclared (first use in this function)
+     DPRINTF("\nThe Node with index %d:DPRINTF("\nRecord Number %d",count+1);
+     ^~~~~~~
+..\Linked_List.c:149:5: note: each undeclared identifier is reported only once for each function it appears in
+..\Linked_List.c:149:5: error: expected ';' at end of input
+..\Linked_List.c:149:5: error: expected declaration or statement at end of input
+..\Linked_List.c:149:5: error: expected declaration or statement at end of input
+..\Linked_List.c:149:5: error: expected declaration or statement at end of input
+..\Linked_List.c:149:5: error: expected declaration or statement at end of input
+17:39:36 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:149:66: warning: missing terminating " character
+     DPRINTF("\nThe Node with index %d:DPRINTF("\nRecord Number %d",count+1);
+                                                                  ^
+..\Linked_List.c:152:66: warning: missing terminating " character
+     DPRINTF("\n\tHeight : %f\n",PCurrentStudent->Student.Height);",Index);
+                                                                  ^
+..\Linked_List.c:164:0: error: unterminated argument list invoking macro "DPRINTF"
+..\Linked_List.c:149:5: error: 'DPRINTF' undeclared (first use in this function)
+     DPRINTF("\nThe Node with index %d:DPRINTF("\nRecord Number %d",count+1);
+     ^~~~~~~
+..\Linked_List.c:149:5: note: each undeclared identifier is reported only once for each function it appears in
+..\Linked_List.c:149:5: error: expected ';' at end of input
+..\Linked_List.c:149:5: error: expected declaration or statement at end of input
+..\Linked_List.c:149:5: error: expected declaration or statement at end of input
+..\Linked_List.c:149:5: error: expected declaration or statement at end of input
+..\Linked_List.c:149:5: error: expected declaration or statement at end of input
+17:39:53 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+17:41:30 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+17:41:34 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+17:42:06 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+17:45:20 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c:135:5: error: conflicting types for 'GetNth'
+ int GetNth()
+     ^~~~~~
+In file included from ..\Linked_List.c:7:0:
+..\Linked_List.h:40:6: note: previous declaration of 'GetNth' was here
+ void GetNth();
+      ^~~~~~
+17:45:35 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+17:47:53 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+17:47:56 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+17:49:48 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+17:49:51 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+18:42:10 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c:173:5: error: conflicting types for 'LengthOfList_Iteration'
+ int LengthOfList_Iteration()
+     ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ..\Linked_List.c:7:0:
+..\Linked_List.h:41:6: note: previous declaration of 'LengthOfList_Iteration' was here
+ void LengthOfList_Iteration();
+      ^~~~~~~~~~~~~~~~~~~~~~
+18:42:32 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+18:44:25 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+18:45:13 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+18:49:19 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+19:03:32 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+19:03:48 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:04:03 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+19:22:46 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'LengthOfList_Recursion':
+..\Linked_List.c:205:2: error: expected ';' before '}' token
+  }
+  ^
+19:23:13 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+..\main.c: In function 'main':
+..\main.c:47:27: error: 'gpFirstStudent' undeclared (first use in this function)
+    LengthOfList_Recursion(gpFirstStudent);
+                           ^~~~~~~~~~~~~~
+..\main.c:47:27: note: each undeclared identifier is reported only once for each function it appears in
+19:23:42 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:23:52 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:30:42 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+..\main.c: In function 'main':
+..\main.c:47:27: error: 'gpFirstStudent' undeclared (first use in this function)
+    LengthOfList_Recursion(gpFirstStudent);
+                           ^~~~~~~~~~~~~~
+..\main.c:47:27: note: each undeclared identifier is reported only once for each function it appears in
+19:31:01 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:31:43 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:31:49 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:31:54 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:31:56 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+22:20:53 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+22:24:55 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+Info: Nothing to build for Linked_List
+Info: Nothing to build for Linked_List
+22:28:19 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+22:28:22 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+22:28:57 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+22:29:01 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+22:29:59 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+Info: Nothing to build for Linked_List
+Info: Nothing to build for Linked_List
+23:30:25 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+In file included from ..\main.c:7:0:
+..\main.c: In function 'main':
+..\main.c:47:32: error: expected expression before 'int'
+    DPRINTF("\nThe Length = %d",int LengthOfList_Recursion(struct SStudent *PLastStudent));
+                                ^
+..\Linked_List.h:18:16: note: in definition of macro 'DPRINTF'
+         printf(__VA_ARGS__); \
+                ^~~~~~~~~~~
+23:30:41 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+23:33:47 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+23:37:03 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+23:48:13 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:8:33: error: 'gpFirstStudent' undeclared here (not in a function)
+ struct SStudent *PLastStudent = gpFirstStudent;
+                                 ^~~~~~~~~~~~~~
+..\main.c:9:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+23:48:33 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:8:8: warning: type defaults to 'int' in declaration of 'gpFirstStudent' [-Wimplicit-int]
+ extern gpFirstStudent;
+        ^~~~~~~~~~~~~~
+..\main.c:9:33: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ struct SStudent *PLastStudent = gpFirstStudent;
+                                 ^~~~~~~~~~~~~~
+..\main.c:9:33: error: initializer element is not constant
+..\main.c:10:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+23:48:47 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:33: error: incompatible types when initializing type 'struct SStudent *' using type 'struct SStudent'
+ struct SStudent *PLastStudent = gpFirstStudent;
+                                 ^~~~~~~~~~~~~~
+..\main.c:10:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+23:49:01 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:33: error: initializer element is not constant
+ struct SStudent *PLastStudent = gpFirstStudent;
+                                 ^~~~~~~~~~~~~~
+..\main.c:10:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+23:49:57 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:33: error: initializer element is not constant
+ struct SStudent *PLastStudent = gpFirstStudent;
+                                 ^~~~~~~~~~~~~~
+..\main.c:10:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+23:52:41 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:33: error: initializer element is not constant
+ struct SStudent *PLastStudent = gpFirstStudent;
+                                 ^~~~~~~~~~~~~~
+..\main.c:10:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+23:52:51 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:33: error: initializer element is not constant
+ struct SStudent *PLastStudent = gpFirstStudent;
+                                 ^~~~~~~~~~~~~~
+..\main.c:10:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+23:53:14 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:33: error: initializer element is not constant
+ struct SStudent *PLastStudent = gpFirstStudent;
+                                 ^~~~~~~~~~~~~~
+..\main.c:10:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+23:53:17 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:33: error: initializer element is not constant
+ struct SStudent *PLastStudent = gpFirstStudent;
+                                 ^~~~~~~~~~~~~~
+..\main.c:10:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+23:53:32 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:33: error: initializer element is not constant
+ struct SStudent *PLastStudent = gpFirstStudent;
+                                 ^~~~~~~~~~~~~~
+23:53:52 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:10:1: warning: data definition has no type or storage class
+ PLastStudent= gpFirstStudent;
+ ^~~~~~~~~~~~
+..\main.c:10:1: warning: type defaults to 'int' in declaration of 'PLastStudent' [-Wimplicit-int]
+..\main.c:10:1: error: conflicting types for 'PLastStudent'
+..\main.c:9:18: note: previous declaration of 'PLastStudent' was here
+ struct SStudent *PLastStudent;
+                  ^~~~~~~~~~~~
+..\main.c:10:15: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ PLastStudent= gpFirstStudent;
+               ^~~~~~~~~~~~~~
+..\main.c:10:15: error: initializer element is not constant
+In file included from ..\main.c:7:0:
+..\main.c: In function 'main':
+..\main.c:49:63: warning: passing argument 1 of 'LengthOfList_Recursion' makes pointer from integer without a cast [-Wint-conversion]
+    DPRINTF("\nThe Length of List = %i",LengthOfList_Recursion(PLastStudent));
+                                                               ^
+..\Linked_List.h:18:16: note: in definition of macro 'DPRINTF'
+         printf(__VA_ARGS__); \
+                ^~~~~~~~~~~
+..\Linked_List.h:42:14: note: expected 'struct SStudent *' but argument is of type 'int'
+ unsigned int LengthOfList_Recursion(struct SStudent *PLastStudent);
+              ^~~~~~~~~~~~~~~~~~~~~~
+23:54:25 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:26: error: initializer element is not constant
+ struct SStudent *Ptest = gpFirstStudent;
+                          ^~~~~~~~~~~~~~
+23:55:39 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c:8:25: error: conflicting types for 'gpFirstStudent'
+ extern struct SStudent *gpFirstStudent;
+                         ^~~~~~~~~~~~~~
+In file included from ..\Linked_List.c:7:0:
+..\Linked_List.h:15:24: note: previous definition of 'gpFirstStudent' was here
+ const struct SStudent *gpFirstStudent = NULL;
+                        ^~~~~~~~~~~~~~
+23:58:12 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:26: error: initializer element is not constant
+ struct SStudent *Ptest = gpFirstStudent;
+                          ^~~~~~~~~~~~~~
+00:02:36 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:26: error: initializer element is not constant
+ struct SStudent *Ptest = gpFirstStudent;
+                          ^~~~~~~~~~~~~~
+00:04:35 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:26: error: initializer element is not constant
+ struct SStudent *Ptest = gpFirstStudent;
+                          ^~~~~~~~~~~~~~
+00:09:55 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:8:26: error: initializer element is not constant
+ struct SStudent *Ptest = gpFirstStudent;
+                          ^~~~~~~~~~~~~~
+00:10:01 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:8:26: error: initializer element is not constant
+ struct SStudent *Ptest = gpFirstStudent;
+                          ^~~~~~~~~~~~~~
+00:10:51 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+main.o:main.c:(.bss+0x0): multiple definition of `gpFirstStudent'
+Linked_List.o:Linked_List.c:(.bss+0x0): first defined here
+collect2.exe: error: ld returned 1 exit status
+00:13:24 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+00:14:39 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c:193:33: error: initializer element is not constant
+ struct SStudent *PLastStudent = gpFirstStudent;
+                                 ^~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Recursion':
+..\Linked_List.c:194:5: warning: type of 'PLastStudent' defaults to 'int' [-Wimplicit-int]
+ int LengthOfList_Recursion(PLastStudent)
+     ^~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c:194:5: error: argument 'PLastStudent' doesn't match prototype
+In file included from ..\Linked_List.c:7:0:
+..\Linked_List.h:43:5: error: prototype declaration
+ int LengthOfList_Recursion(struct SStudent *PLastStudent);
+     ^~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c:196:18: warning: comparison between pointer and integer
+  if(PLastStudent == NULL)
+                  ^~
+..\Linked_List.c:200:48: error: invalid type argument of '->' (have 'int')
+  return 1 + LengthOfList_Recursion(PLastStudent->PNextStudent);
+                                                ^~
+..\Linked_List.c:202:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+00:15:16 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c:10:26: error: initializer element is not constant
+ struct SStudent *ptest = gpFirstStudent;
+                          ^~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Recursion':
+..\Linked_List.c:194:5: warning: type of 'ptest' defaults to 'int' [-Wimplicit-int]
+ int LengthOfList_Recursion(ptest)
+     ^~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c:194:5: error: argument 'ptest' doesn't match prototype
+In file included from ..\Linked_List.c:7:0:
+..\Linked_List.h:43:5: error: prototype declaration
+ int LengthOfList_Recursion(struct SStudent *PLastStudent);
+     ^~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c:196:5: error: 'PLastStudent' undeclared (first use in this function)
+  if(PLastStudent == NULL)
+     ^~~~~~~~~~~~
+..\Linked_List.c:196:5: note: each undeclared identifier is reported only once for each function it appears in
+..\Linked_List.c:202:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+00:16:10 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:47:4: error: a label can only be part of a statement and a declaration is not a statement
+    struct SStudent *Ptest =gpFirstStudent;
+    ^~~~~~
+..\main.c:47:28: error: 'gpFirstStudent' undeclared (first use in this function)
+    struct SStudent *Ptest =gpFirstStudent;
+                            ^~~~~~~~~~~~~~
+..\main.c:47:28: note: each undeclared identifier is reported only once for each function it appears in
+00:17:04 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:47:4: error: a label can only be part of a statement and a declaration is not a statement
+    struct SStudent *Ptest = gpFirstStudent;
+    ^~~~~~
+00:17:36 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:18:29 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+In file included from ..\main.c:7:0:
+..\main.c: In function 'main':
+..\main.c:47:63: error: expected expression before 'struct'
+    DPRINTF("\nThe Length of List = %i",LengthOfList_Recursion(struct SStudent *Ptest));
+                                                               ^
+..\Linked_List.h:18:16: note: in definition of macro 'DPRINTF'
+         printf(__VA_ARGS__); \
+                ^~~~~~~~~~~
+00:19:17 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+00:21:48 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:21:57 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:22:01 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+00:23:39 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:23:43 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+00:25:33 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:25:36 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+00:26:52 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+00:30:45 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:30:48 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+00:33:02 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+Info: Nothing to build for Linked_List
+Info: Nothing to build for Linked_List
+00:34:41 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+00:37:05 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'LengthOfList_Recursion':
+..\Linked_List.c:208:2: warning: statement with no effect [-Wunused-value]
+  test 0;
+  ^~~~
+..\Linked_List.c:208:7: error: expected ';' before numeric constant
+  test 0;
+       ^
+00:39:07 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c:194:5: error: conflicting types for 'LengthOfList_Recursion'
+ int LengthOfList_Recursion(struct SStudent *PLastStudent,int test)
+     ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ..\Linked_List.c:7:0:
+..\Linked_List.h:43:5: note: previous declaration of 'LengthOfList_Recursion' was here
+ int LengthOfList_Recursion(struct SStudent *PLastStudent);
+     ^~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Recursion':
+..\Linked_List.c:206:14: error: too few arguments to function 'LengthOfList_Recursion'
+   return 1 + LengthOfList_Recursion(PLastStudent->PNextStudent);
+              ^~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c:194:5: note: declared here
+ int LengthOfList_Recursion(struct SStudent *PLastStudent,int test)
+     ^~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c:208:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+00:39:20 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'LengthOfList_Recursion':
+..\Linked_List.c:206:14: error: too few arguments to function 'LengthOfList_Recursion'
+   return 1 + LengthOfList_Recursion(PLastStudent->PNextStudent);
+              ^~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c:194:5: note: declared here
+ int LengthOfList_Recursion(struct SStudent *PLastStudent,int test)
+     ^~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c:208:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+00:40:04 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+00:40:21 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'LengthOfList_Recursion':
+..\Linked_List.c:207:14: error: too few arguments to function 'LengthOfList_Recursion'
+   return 1 + LengthOfList_Recursion(PLastStudent->PNextStudent);
+              ^~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c:194:5: note: declared here
+ int LengthOfList_Recursion(struct SStudent *PLastStudent,int test)
+     ^~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c:209:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+00:40:30 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+00:42:13 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:42:17 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+16:11:12 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+In file included from ..\Linked_List.c:7:0:
+..\Linked_List.c: In function 'GetNth_FromEnd':
+..\Linked_List.c:242:42: error: 'Index' undeclared (first use in this function)
+    DPRINTF("\nThe Node with index %d =>",Index);
+                                          ^
+..\Linked_List.h:18:16: note: in definition of macro 'DPRINTF'
+         printf(__VA_ARGS__); \
+                ^~~~~~~~~~~
+..\Linked_List.c:242:42: note: each undeclared identifier is reported only once for each function it appears in
+    DPRINTF("\nThe Node with index %d =>",Index);
+                                          ^
+..\Linked_List.h:18:16: note: in definition of macro 'DPRINTF'
+         printf(__VA_ARGS__); \
+                ^~~~~~~~~~~
+16:11:37 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+16:25:41 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+16:50:27 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c:135:6: error: conflicting types for 'GetNth'
+ void GetNth()
+      ^~~~~~
+In file included from ..\Linked_List.c:7:0:
+..\Linked_List.h:41:5: note: previous declaration of 'GetNth' was here
+ int GetNth();
+     ^~~~~~
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:137:17: warning: unused variable 'count' [-Wunused-variable]
+  int Index = 0, count = 0;
+                 ^~~~~
+In file included from ..\Linked_List.c:7:0:
+..\Linked_List.c: In function 'Scanning_For_Node':
+..\Linked_List.c:209:43: error: 'n' undeclared (first use in this function)
+     DPRINTF("\nThe Node with index %d =>",n);
+                                           ^
+..\Linked_List.h:18:16: note: in definition of macro 'DPRINTF'
+         printf(__VA_ARGS__); \
+                ^~~~~~~~~~~
+..\Linked_List.c:209:43: note: each undeclared identifier is reported only once for each function it appears in
+     DPRINTF("\nThe Node with index %d =>",n);
+                                           ^
+..\Linked_List.h:18:16: note: in definition of macro 'DPRINTF'
+         printf(__VA_ARGS__); \
+                ^~~~~~~~~~~
+16:50:52 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c:135:6: error: conflicting types for 'GetNth'
+ void GetNth()
+      ^~~~~~
+In file included from ..\Linked_List.c:7:0:
+..\Linked_List.h:41:5: note: previous declaration of 'GetNth' was here
+ int GetNth();
+     ^~~~~~
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:137:17: warning: unused variable 'count' [-Wunused-variable]
+  int Index = 0, count = 0;
+                 ^~~~~
+16:51:08 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c:135:6: error: conflicting types for 'GetNth'
+ void GetNth()
+      ^~~~~~
+In file included from ..\Linked_List.c:7:0:
+..\Linked_List.h:41:5: note: previous declaration of 'GetNth' was here
+ int GetNth();
+     ^~~~~~
+16:53:06 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:151:11: warning: comparison between pointer and integer
+  if(count != NULL){
+           ^~
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count =Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_FromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+16:54:50 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_FromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+17:12:32 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:52:4: warning: implicit declaration of function 'GetNth_FromEnd' [-Wimplicit-function-declaration]
+    GetNth_FromEnd();
+    ^~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth_2ndFromEnd':
+..\Linked_List.c:222:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+main.o: In function `main':
+C:\Users\abdel\Downloads\Mastering_embedded_system\Unit4\Lecture1\test\Linked_List\Debug/../main.c:52: undefined reference to `GetNth_FromEnd'
+collect2.exe: error: ld returned 1 exit status
+17:12:40 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+17:13:16 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+17:23:11 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth_2ndFromEnd':
+..\Linked_List.c:222:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node':
+..\Linked_List.c:229:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+17:37:01 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:244:6: warning: unused variable 'n' [-Wunused-variable]
+  int n = 0, count = 1;
+      ^
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+17:38:58 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+17:40:39 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+17:42:48 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+17:50:00 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+17:51:04 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+17:52:27 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+17:53:18 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+17:54:28 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+17:54:31 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+17:56:59 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+18:01:19 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:250:20: warning: unused variable 'PFast_PTR' [-Wunused-variable]
+   struct SStudent *PFast_PTR = gpFirstStudent;
+                    ^~~~~~~~~
+..\Linked_List.c:249:20: warning: unused variable 'PSlow_PTR' [-Wunused-variable]
+   struct SStudent *PSlow_PTR = gpFirstStudent;
+                    ^~~~~~~~~
+..\Linked_List.c:255:20: warning: unused variable 'PFast_PTR' [-Wunused-variable]
+   struct SStudent *PFast_PTR = gpFirstStudent->PNextStudent;
+                    ^~~~~~~~~
+..\Linked_List.c:254:20: warning: unused variable 'PSlow_PTR' [-Wunused-variable]
+   struct SStudent *PSlow_PTR = gpFirstStudent->PNextStudent;
+                    ^~~~~~~~~
+..\Linked_List.c:264:8: error: 'PFast_PTR' undeclared (first use in this function)
+  while(PFast_PTR)
+        ^~~~~~~~~
+..\Linked_List.c:264:8: note: each undeclared identifier is reported only once for each function it appears in
+18:06:36 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:247:9: warning: 'PSlow_PTR' is used uninitialized in this function [-Wuninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+18:08:07 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:247:9: warning: 'PSlow_PTR' is used uninitialized in this function [-Wuninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+18:08:11 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+18:08:54 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:253:9: warning: 'PSlow_PTR' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+Info: Nothing to build for Linked_List
+18:11:26 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:253:9: warning: 'PSlow_PTR' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+18:12:17 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:253:9: warning: 'PSlow_PTR' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+18:14:52 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:244:17: warning: unused variable 'length' [-Wunused-variable]
+  int count = 1, length = 0;
+                 ^~~~~~
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+18:16:58 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:244:17: warning: unused variable 'length' [-Wunused-variable]
+  int count = 1, length = 0;
+                 ^~~~~~
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+Info: Nothing to build for Linked_List
+Info: Nothing to build for Linked_List
+Info: Nothing to build for Linked_List
+Info: Nothing to build for Linked_List
+18:26:37 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+18:26:41 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+Info: Nothing to build for Linked_List
+Info: Nothing to build for Linked_List
+18:29:31 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+18:30:28 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+18:31:22 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:247:9: warning: 'PSlow_PTR' is used uninitialized in this function [-Wuninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+18:32:13 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:247:9: warning: 'PSlow_PTR' is used uninitialized in this function [-Wuninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+18:33:13 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:247:9: warning: 'PSlow_PTR' is used uninitialized in this function [-Wuninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+18:36:59 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:247:9: warning: 'PSlow_PTR' is used uninitialized in this function [-Wuninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+18:42:08 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:244:16: warning: variable 'length' set but not used [-Wunused-but-set-variable]
+  int count = 1,length = 0;
+                ^~~~~~
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:247:9: warning: 'PSlow_PTR' is used uninitialized in this function [-Wuninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+18:42:12 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+18:43:19 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:244:16: warning: variable 'length' set but not used [-Wunused-but-set-variable]
+  int count = 1,length = 0;
+                ^~~~~~
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:247:9: warning: 'PSlow_PTR' is used uninitialized in this function [-Wuninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+Info: Nothing to build for Linked_List
+Info: Nothing to build for Linked_List
+18:45:10 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:244:16: warning: variable 'length' set but not used [-Wunused-but-set-variable]
+  int count = 1,length = 0;
+                ^~~~~~
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:247:9: warning: 'PSlow_PTR' is used uninitialized in this function [-Wuninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+18:47:35 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:247:9: warning: 'PSlow_PTR' is used uninitialized in this function [-Wuninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+18:50:28 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:247:9: warning: 'PSlow_PTR' is used uninitialized in this function [-Wuninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+Info: Nothing to build for Linked_List
+Info: Nothing to build for Linked_List
+18:54:23 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:247:9: warning: 'PSlow_PTR' is used uninitialized in this function [-Wuninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+18:55:14 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:247:9: warning: 'PSlow_PTR' is used uninitialized in this function [-Wuninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+Info: Nothing to build for Linked_List
+Info: Nothing to build for Linked_List
+18:58:14 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:247:9: warning: 'PSlow_PTR' is used uninitialized in this function [-Wuninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+19:00:28 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:247:9: warning: 'PSlow_PTR' is used uninitialized in this function [-Wuninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+19:02:08 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:247:9: warning: 'PSlow_PTR' is used uninitialized in this function [-Wuninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+19:22:13 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:247:9: warning: 'PSlow_PTR' is used uninitialized in this function [-Wuninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+19:24:36 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:247:9: warning: 'PSlow_PTR' is used uninitialized in this function [-Wuninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+C:/Users/abdel/Downloads/01-mingw-w64_x64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Linked_List.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:24:46 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+19:28:19 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:247:9: warning: 'PSlow_PTR' is used uninitialized in this function [-Wuninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
+19:31:29 **** Incremental Build of configuration Debug for project Linked_List ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linked_List.o "..\\Linked_List.c" 
+..\Linked_List.c: In function 'GetNth':
+..\Linked_List.c:142:2: warning: 'PCurrentStudent' is used uninitialized in this function [-Wuninitialized]
+  Scanning_For_Node(PCurrentStudent, Index);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'LengthOfList_Iteration':
+..\Linked_List.c:150:8: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PLastStudent);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'GetNth_1stFromEnd':
+..\Linked_List.c:185:9: warning: 'PLastStudent' is used uninitialized in this function [-Wuninitialized]
+  Length = Scanning_For_Length(PLastStudent);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_CountMethod':
+..\Linked_List.c:230:8: warning: 'PMiddle' is used uninitialized in this function [-Wuninitialized]
+  count = Scanning_For_Length(PMiddle);
+  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Linked_List.c: In function 'Middle_Node_PointerMethod':
+..\Linked_List.c:247:9: warning: 'PSlow_PTR' is used uninitialized in this function [-Wuninitialized]
+  length = Scanning_For_Length(PSlow_PTR);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Linked_List.exe Linked_List.o main.o 
+Info: Nothing to build for Linked_List
