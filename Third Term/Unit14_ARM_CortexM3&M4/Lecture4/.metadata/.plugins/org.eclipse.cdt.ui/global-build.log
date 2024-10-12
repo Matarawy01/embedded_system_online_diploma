@@ -1,0 +1,442 @@
+13:28:52 **** Build of configuration Debug for project Stack_Memory ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc "../Src/STM32F103C6_EXTI_Driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/STM32F103C6_EXTI_Driver.d" -MT"Src/STM32F103C6_EXTI_Driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/STM32F103C6_EXTI_Driver.o"
+arm-none-eabi-gcc "../Src/STM32F103C6_GPIO_Driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/STM32F103C6_GPIO_Driver.d" -MT"Src/STM32F103C6_GPIO_Driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/STM32F103C6_GPIO_Driver.o"
+arm-none-eabi-gcc "../Src/STM32F103C6_RCC_Driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/STM32F103C6_RCC_Driver.d" -MT"Src/STM32F103C6_RCC_Driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/STM32F103C6_RCC_Driver.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+../Src/main.c:43:19: error: '_estack' undeclared here (not in a function); did you mean 'setstate'?
+ uint8_t _S_MSP = &_estack;
+                   ^~~~~~~
+                   setstate
+../Src/main.c:106:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ Start_Os()
+ ^~~~~~~~
+../Src/main.c: In function 'Start_Os':
+../Src/main.c:118:10: warning: unused variable '_E_PSP_Task_B' [-Wunused-variable]
+  uint8_t _E_PSP_Task_B = (_S_PSP_Task_B - TaskB_Stack_Size);
+          ^~~~~~~~~~~~~
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:162:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+../Src/STM32F103C6_RCC_Driver.c: In function 'MCAL_RCC_GetSYSCLK_Freq':
+../Src/STM32F103C6_RCC_Driver.c:54:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [Src/subdir.mk:39: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+13:30:08 **** Incremental Build of configuration Debug for project Stack_Memory ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c:43:20: error: '_estack' undeclared here (not in a function); did you mean 'setstate'?
+ uint8_t _S_MSP = & _estack;
+                    ^~~~~~~
+                    setstate
+../Src/main.c:106:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ Start_Os()
+ ^~~~~~~~
+../Src/main.c: In function 'Start_Os':
+../Src/main.c:118:10: warning: unused variable '_E_PSP_Task_B' [-Wunused-variable]
+  uint8_t _E_PSP_Task_B = (_S_PSP_Task_B - TaskB_Stack_Size);
+          ^~~~~~~~~~~~~
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:162:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:39: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+13:31:25 **** Incremental Build of configuration Debug for project Stack_Memory ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c:44:18: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ uint8_t _S_MSP = & _estack;
+                  ^
+../Src/main.c:44:18: error: initializer element is not computable at load time
+../Src/main.c:107:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ Start_Os()
+ ^~~~~~~~
+../Src/main.c: In function 'Start_Os':
+../Src/main.c:119:10: warning: unused variable '_E_PSP_Task_B' [-Wunused-variable]
+  uint8_t _E_PSP_Task_B = (_S_PSP_Task_B - TaskB_Stack_Size);
+          ^~~~~~~~~~~~~
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:163:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:39: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+13:32:33 **** Incremental Build of configuration Debug for project Stack_Memory ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c:44:18: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ uint8_t _S_MSP = &_estack;
+                  ^
+../Src/main.c:44:18: error: initializer element is not computable at load time
+../Src/main.c:107:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ Start_Os()
+ ^~~~~~~~
+../Src/main.c: In function 'Start_Os':
+../Src/main.c:119:10: warning: unused variable '_E_PSP_Task_B' [-Wunused-variable]
+  uint8_t _E_PSP_Task_B = (_S_PSP_Task_B - TaskB_Stack_Size);
+          ^~~~~~~~~~~~~
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:163:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:39: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+13:33:40 **** Incremental Build of configuration Debug for project Stack_Memory ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c:44:19: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ uint32_t _S_MSP = &_estack;
+                   ^
+../Src/main.c:107:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ Start_Os()
+ ^~~~~~~~
+../Src/main.c: In function 'Start_Os':
+../Src/main.c:119:11: warning: unused variable '_E_PSP_Task_B' [-Wunused-variable]
+  uint32_t _E_PSP_Task_B = (_S_PSP_Task_B - TaskB_Stack_Size);
+           ^~~~~~~~~~~~~
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:163:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Stack_Memory.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session5\Stack_Memory\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Stack_Memory.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Stack_Memory.elf
+ 
+arm-none-eabi-size   Stack_Memory.elf 
+arm-none-eabi-objdump -h -S  Stack_Memory.elf  > "Stack_Memory.list"
+arm-none-eabi-objcopy  -O binary  Stack_Memory.elf  "Stack_Memory.bin"
+   text	   data	    bss	    dec	    hex	filename
+   3044	     12	   1652	   4708	   1264	Stack_Memory.elf
+Finished building: default.size.stdout
+ 
+Finished building: Stack_Memory.bin
+Finished building: Stack_Memory.list
+ 
+ 
+13:34:12 **** Incremental Build of configuration Debug for project Stack_Memory ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c:44:19: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ uint32_t _S_MSP = &_estack;
+                   ^
+../Src/main.c: In function 'Start_Os':
+../Src/main.c:119:11: warning: unused variable '_E_PSP_Task_B' [-Wunused-variable]
+  uint32_t _E_PSP_Task_B = (_S_PSP_Task_B - TaskB_Stack_Size);
+           ^~~~~~~~~~~~~
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:163:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Stack_Memory.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session5\Stack_Memory\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Stack_Memory.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Stack_Memory.elf
+ 
+arm-none-eabi-objdump -h -S  Stack_Memory.elf  > "Stack_Memory.list"
+arm-none-eabi-objcopy  -O binary  Stack_Memory.elf  "Stack_Memory.bin"
+arm-none-eabi-size   Stack_Memory.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3044	     12	   1652	   4708	   1264	Stack_Memory.elf
+Finished building: default.size.stdout
+ 
+Finished building: Stack_Memory.bin
+Finished building: Stack_Memory.list
+ 
+ 
+13:40:02 **** Incremental Build of configuration Debug for project Stack_Memory ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c:44:19: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ uint32_t _S_MSP = &_estack;
+                   ^
+../Src/main.c: In function 'Start_Os':
+../Src/main.c:124:11: warning: unused variable '_E_PSP_Task_B' [-Wunused-variable]
+  uint32_t _E_PSP_Task_B = (_S_PSP_Task_B - TaskB_Stack_Size);
+           ^~~~~~~~~~~~~
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:168:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Stack_Memory.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session5\Stack_Memory\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Stack_Memory.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Stack_Memory.elf
+ 
+arm-none-eabi-objdump -h -S  Stack_Memory.elf  > "Stack_Memory.list"
+arm-none-eabi-objcopy  -O binary  Stack_Memory.elf  "Stack_Memory.bin"
+arm-none-eabi-size   Stack_Memory.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3056	     12	   1652	   4720	   1270	Stack_Memory.elf
+Finished building: default.size.stdout
+ 
+Finished building: Stack_Memory.bin
+Finished building: Stack_Memory.list
+ 
+ 
+13:41:26 **** Incremental Build of configuration Debug for project Stack_Memory ****
+make -j8 all 
+arm-none-eabi-gcc -o "Stack_Memory.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session5\Stack_Memory\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Stack_Memory.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Stack_Memory.axf
+ 
+arm-none-eabi-objdump -h -S  Stack_Memory.axf  > "Stack_Memory.list"
+arm-none-eabi-objcopy  -O binary  Stack_Memory.axf  "Stack_Memory.bin"
+arm-none-eabi-size   Stack_Memory.axf 
+   text	   data	    bss	    dec	    hex	filename
+   3056	     12	   1652	   4720	   1270	Stack_Memory.axf
+Finished building: default.size.stdout
+ 
+Finished building: Stack_Memory.bin
+Finished building: Stack_Memory.list
+ 
+ 
+13:44:43 **** Incremental Build of configuration Debug for project Stack_Memory ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c:44:19: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ uint32_t _S_MSP = &_estack;
+                   ^
+../Src/main.c: In function 'Start_Os':
+../Src/main.c:124:11: warning: unused variable '_E_PSP_Task_B' [-Wunused-variable]
+  uint32_t _E_PSP_Task_B = (_S_PSP_Task_B - TaskB_Stack_Size);
+           ^~~~~~~~~~~~~
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:168:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Stack_Memory.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session5\Stack_Memory\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Stack_Memory.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Stack_Memory.axf
+ 
+arm-none-eabi-objdump -h -S  Stack_Memory.axf  > "Stack_Memory.list"
+arm-none-eabi-objcopy  -O binary  Stack_Memory.axf  "Stack_Memory.bin"
+arm-none-eabi-size   Stack_Memory.axf 
+   text	   data	    bss	    dec	    hex	filename
+   3052	     12	   1652	   4716	   126c	Stack_Memory.axf
+Finished building: default.size.stdout
+ 
+Finished building: Stack_Memory.bin
+Finished building: Stack_Memory.list
+ 
+ 
+13:49:22 **** Incremental Build of configuration Debug for project Stack_Memory ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c:44:19: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ uint32_t _S_MSP = &_estack;
+                   ^
+../Src/main.c: In function 'Start_Os':
+../Src/main.c:124:11: warning: unused variable '_E_PSP_Task_B' [-Wunused-variable]
+  uint32_t _E_PSP_Task_B = (_S_PSP_Task_B - TaskB_Stack_Size);
+           ^~~~~~~~~~~~~
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:168:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Stack_Memory.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session5\Stack_Memory\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Stack_Memory.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Stack_Memory.axf
+ 
+arm-none-eabi-objdump -h -S  Stack_Memory.axf  > "Stack_Memory.list"
+arm-none-eabi-objcopy  -O binary  Stack_Memory.axf  "Stack_Memory.bin"
+arm-none-eabi-size   Stack_Memory.axf 
+   text	   data	    bss	    dec	    hex	filename
+   3052	     12	   1652	   4716	   126c	Stack_Memory.axf
+Finished building: default.size.stdout
+ 
+Finished building: Stack_Memory.bin
+ 
+Finished building: Stack_Memory.list
+ 
+13:57:28 **** Incremental Build of configuration Debug for project Stack_Memory ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c:44:19: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ uint32_t _S_MSP = &_estack;
+                   ^
+../Src/main.c: In function 'Start_Os':
+../Src/main.c:124:11: warning: unused variable '_E_PSP_Task_B' [-Wunused-variable]
+  uint32_t _E_PSP_Task_B = (_S_PSP_Task_B - TaskB_Stack_Size);
+           ^~~~~~~~~~~~~
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:168:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Stack_Memory.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session5\Stack_Memory\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Stack_Memory.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Stack_Memory.axf
+ 
+arm-none-eabi-objdump -h -S  Stack_Memory.axf  > "Stack_Memory.list"
+arm-none-eabi-objcopy  -O binary  Stack_Memory.axf  "Stack_Memory.bin"
+arm-none-eabi-size   Stack_Memory.axf 
+   text	   data	    bss	    dec	    hex	filename
+   3052	     12	   1652	   4716	   126c	Stack_Memory.axf
+Finished building: default.size.stdout
+ 
+Finished building: Stack_Memory.bin
+Finished building: Stack_Memory.list
+ 
+ 
+14:05:08 **** Incremental Build of configuration Debug for project Stack_Memory ****
+make -j8 all 
+arm-none-eabi-gcc -o "Stack_Memory.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session5\Stack_Memory\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Stack_Memory.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Stack_Memory.axf
+ 
+arm-none-eabi-objdump -h -S  Stack_Memory.axf  > "Stack_Memory.list"
+arm-none-eabi-objcopy  -O binary  Stack_Memory.axf  "Stack_Memory.bin"
+arm-none-eabi-size   Stack_Memory.axf 
+   text	   data	    bss	    dec	    hex	filename
+   3052	     12	   1652	   4716	   126c	Stack_Memory.axf
+Finished building: default.size.stdout
+ 
+Finished building: Stack_Memory.bin
+Finished building: Stack_Memory.list
+ 
+ 
+14:19:26 **** Incremental Build of configuration Debug for project Stack_Memory ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c:44:19: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ uint32_t _S_MSP = &_estack;
+                   ^
+../Src/main.c: In function 'Start_Os':
+../Src/main.c:124:11: warning: unused variable '_E_PSP_Task_B' [-Wunused-variable]
+  uint32_t _E_PSP_Task_B = (_S_PSP_Task_B - TaskB_Stack_Size);
+           ^~~~~~~~~~~~~
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:168:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Stack_Memory.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session5\Stack_Memory\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Stack_Memory.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Stack_Memory.axf
+ 
+arm-none-eabi-objdump -h -S  Stack_Memory.axf  > "Stack_Memory.list"
+arm-none-eabi-objcopy  -O binary  Stack_Memory.axf  "Stack_Memory.bin"
+arm-none-eabi-size   Stack_Memory.axf 
+   text	   data	    bss	    dec	    hex	filename
+   3052	     12	   1652	   4716	   126c	Stack_Memory.axf
+Finished building: default.size.stdout
+ 
+Finished building: Stack_Memory.bin
+Finished building: Stack_Memory.list
+ 
+ 
+14:29:01 **** Incremental Build of configuration Debug for project Stack_Memory ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c:44:19: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ uint32_t _S_MSP = &_estack;
+                   ^
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:168:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Stack_Memory.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session5\Stack_Memory\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Stack_Memory.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Stack_Memory.axf
+ 
+arm-none-eabi-objdump -h -S  Stack_Memory.axf  > "Stack_Memory.list"
+arm-none-eabi-objcopy  -O binary  Stack_Memory.axf  "Stack_Memory.bin"
+arm-none-eabi-size   Stack_Memory.axf 
+   text	   data	    bss	    dec	    hex	filename
+   3092	     12	   1652	   4756	   1294	Stack_Memory.axf
+Finished building: default.size.stdout
+ 
+Finished building: Stack_Memory.bin
+Finished building: Stack_Memory.list
+ 
+ 

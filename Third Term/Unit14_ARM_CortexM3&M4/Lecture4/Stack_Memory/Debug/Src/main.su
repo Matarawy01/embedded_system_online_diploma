@@ -1,0 +1,8 @@
+main.c:61:6:Switch_CPU_AccessLevel	16	static,ignoring_inline_asm
+main.c:77:6:clk_init	4	static
+main.c:83:6:EXTI_CallBack	4	static
+main.c:97:5:TASKA	24	static
+main.c:102:5:TASKB	24	static
+main.c:107:6:SVC_Handler	8	static
+main.c:112:6:Start_Os	8	static,ignoring_inline_asm
+main.c:162:5:main	32	static

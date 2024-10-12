@@ -1,0 +1,38 @@
+03:09:00 **** Incremental Build of configuration Debug for project Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"C:/Users/abdel/Downloads/Mastering_embedded_system/2nd Term/unit7/Lecture3/Drivers/STM32F103C6_Drivers/Inc" -I"C:/Users/abdel/Downloads/Mastering_embedded_system/2nd Term/unit7/Lecture3/Drivers/HAL/Includes" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:61:33: warning: passing argument 2 of 'MCAL_UART_ReceiveData' from incompatible pointer type [-Wincompatible-pointer-types]
+   MCAL_UART_ReceiveData(USART1, &ch, Enable);
+                                 ^
+In file included from ../Src/main.c:29:0:
+C:/Users/abdel/Downloads/Mastering_embedded_system/2nd Term/unit7/Lecture3/Drivers/STM32F103C6_Drivers/Inc/STM32F103C6_USART_Driver.h:143:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'uint8_t * {aka unsigned char *}'
+ void MCAL_UART_ReceiveData(USART_TypeDef *USARTx, uint16_t *TXBuffer, enum Polling_Mechanism Polling_Enable);
+      ^~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:62:30: warning: passing argument 2 of 'MCAL_UART_SendData' from incompatible pointer type [-Wincompatible-pointer-types]
+   MCAL_UART_SendData(USART1, &ch, Enable);
+                              ^
+In file included from ../Src/main.c:29:0:
+C:/Users/abdel/Downloads/Mastering_embedded_system/2nd Term/unit7/Lecture3/Drivers/STM32F103C6_Drivers/Inc/STM32F103C6_USART_Driver.h:142:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'uint8_t * {aka unsigned char *}'
+ void MCAL_UART_SendData(USART_TypeDef *USARTx, uint16_t *TXBuffer, enum Polling_Mechanism Polling_Enable);
+      ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\2nd Term\unit7\Lecture3\Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  Drivers.elf  > "Drivers.list"
+arm-none-eabi-objcopy  -O ihex  Drivers.elf  "Drivers.hex"
+arm-none-eabi-objcopy  -O binary  Drivers.elf  "Drivers.bin"
+arm-none-eabi-size   Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2944	      8	   1640	   4592	   11f0	Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drivers.hex
+Finished building: Drivers.list
+Finished building: Drivers.bin
+ 
+ 
+ 
+
+03:09:01 Build Finished. 0 errors, 2 warnings. (took 1s.0ms)
+

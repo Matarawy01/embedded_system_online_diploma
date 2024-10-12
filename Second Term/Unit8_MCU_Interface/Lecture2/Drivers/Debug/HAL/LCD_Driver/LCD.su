@@ -1,0 +1,7 @@
+LCD.c:10:6:delay_ms	24	static
+LCD.c:16:13:Send_EnableTrigger	8	static
+LCD.c:29:6:LCD_Send_Cmd	16	static
+LCD.c:43:6:LCD_ClearScreen	8	static
+LCD.c:57:6:LCD_Init	8	static
+LCD.c:142:6:LCD_Send_Char	16	static
+LCD.c:157:6:LCD_vSend_string	16	static

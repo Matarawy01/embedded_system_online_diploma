@@ -1,0 +1,19 @@
+23:55:40 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-gcc -o "Lecture1.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lecture1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lecture1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lecture1.axf
+ 
+arm-none-eabi-objdump -h -S  Lecture1.axf  > "Lecture1.list"
+arm-none-eabi-objcopy  -O binary  Lecture1.axf  "Lecture1.bin"
+arm-none-eabi-size   Lecture1.axf 
+   text	   data	    bss	    dec	    hex	filename
+   2648	      8	   1632	   4288	   10c0	Lecture1.axf
+Finished building: default.size.stdout
+ 
+Finished building: Lecture1.bin
+Finished building: Lecture1.list
+ 
+ 
+
+23:55:41 Build Finished. 0 errors, 0 warnings. (took 711ms)
+

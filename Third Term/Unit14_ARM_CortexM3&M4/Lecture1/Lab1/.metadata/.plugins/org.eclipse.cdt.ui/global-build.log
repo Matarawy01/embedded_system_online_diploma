@@ -1,0 +1,323 @@
+22:54:19 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -I"C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lab1/STM32F103C6_Drivers/Inc" -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Src/main.o: In function `main':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lab1/Debug/../Src/main.c:54: undefined reference to `MCAL_EXTI_GPIO_Init'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:49: Lab1.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:55:17 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lab1/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:24:0:
+../Src/main.c: In function 'main':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lab1/STM32F103C6_Drivers/Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lab1/STM32F103C6_Drivers/Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:49:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Src/main.o: In function `main':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lab1/Debug/../Src/main.c:53: undefined reference to `MCAL_GPIO_ReadPort'
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lab1/Debug/../Src/main.c:54: undefined reference to `MCAL_EXTI_GPIO_Init'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:49: Lab1.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:02:11 **** Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+../Src/main.c:23:10: fatal error: STM32F103C6_EXTI_Driver.h: No such file or directory
+ #include "STM32F103C6_EXTI_Driver.h"
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:04:37 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -I"C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc" -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+In file included from C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:46:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lecture1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lecture1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lecture1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Src/main.o: In function `main':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/Debug/../Src/main.c:51: undefined reference to `MCAL_EXTI_GPIO_Init'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:49: Lecture1.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:09:49 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:46:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lecture1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lecture1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lecture1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Src/main.o: In function `main':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/Debug/../Src/main.c:51: undefined reference to `MCAL_EXTI_GPIO_Init'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:49: Lecture1.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:13:44 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:46:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lecture1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lecture1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lecture1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Src/main.o: In function `main':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/Debug/../Src/main.c:51: undefined reference to `MCAL_EXTI_GPIO_Update'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:49: Lecture1.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:14:00 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-gcc -o "Lecture1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lecture1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lecture1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Src/main.o: In function `main':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/Debug/../Src/main.c:51: undefined reference to `MCAL_EXTI_GPIO_Update'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:49: Lecture1.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:19:17 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-gcc -o "Lecture1.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lecture1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lecture1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Src/main.o: In function `main':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/Debug/../Src/main.c:51: undefined reference to `MCAL_EXTI_GPIO_Update'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:49: Lecture1.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:25:07 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-gcc -o "Lecture1.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lecture1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lecture1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Src/main.o: In function `main':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/Debug/../Src/main.c:51: undefined reference to `MCAL_EXTI_GPIO_Update'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:49: Lecture1.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:28:57 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from c:\users\abdel\downloads\mastering_embedded_system\3rd term\unit14\session2\lab1\lecture1\stm32f103c6_drivers\inc\stm32f103c6_exti_driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+c:\users\abdel\downloads\mastering_embedded_system\3rd term\unit14\session2\lab1\lecture1\stm32f103c6_drivers\inc\STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+c:\users\abdel\downloads\mastering_embedded_system\3rd term\unit14\session2\lab1\lecture1\stm32f103c6_drivers\inc\stm32f103c6_exti_driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:46:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lecture1.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lecture1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lecture1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Src/main.o: In function `main':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/Debug/../Src/main.c:51: undefined reference to `MCAL_EXTI_GPIO_Update'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:49: Lecture1.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:30:30 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+In file included from c:\users\abdel\downloads\mastering_embedded_system\3rd term\unit14\session2\lab1\lecture1\stm32f103c6_drivers\inc\stm32f103c6_exti_driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+c:\users\abdel\downloads\mastering_embedded_system\3rd term\unit14\session2\lab1\lecture1\stm32f103c6_drivers\inc\STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+c:\users\abdel\downloads\mastering_embedded_system\3rd term\unit14\session2\lab1\lecture1\stm32f103c6_drivers\inc\stm32f103c6_exti_driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:46:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lecture1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lecture1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lecture1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Src/main.o: In function `main':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/Debug/../Src/main.c:51: undefined reference to `MCAL_EXTI_GPIO_Update'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:49: Lecture1.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:31:08 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/../STM32F103C6_Drivers/Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Src/../STM32F103C6_Drivers/Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Src/../STM32F103C6_Drivers/Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:46:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lecture1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lecture1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lecture1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Src/main.o: In function `main':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/Debug/../Src/main.c:51: undefined reference to `MCAL_EXTI_GPIO_Update'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:49: Lecture1.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:40:31 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-gcc -o "Lecture1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lecture1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lecture1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Src/main.o: In function `main':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/Debug/../Src/main.c:51: undefined reference to `MCAL_EXTI_GPIO_Update'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:49: Lecture1.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:42:17 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/STM32F103C6_EXTI_Driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/STM32F103C6_EXTI_Driver.d" -MT"Src/STM32F103C6_EXTI_Driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/STM32F103C6_EXTI_Driver.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:46:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lecture1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lecture1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lecture1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Src/STM32F103C6_EXTI_Driver.o: In function `Update_EXTI':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/Debug/../Src/STM32F103C6_EXTI_Driver.c:121: undefined reference to `MCAL_GPIO_INIT'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:49: Lecture1.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:42:45 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-gcc -o "Lecture1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lecture1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lecture1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Src/STM32F103C6_EXTI_Driver.o: In function `Update_EXTI':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/Debug/../Src/STM32F103C6_EXTI_Driver.c:121: undefined reference to `MCAL_GPIO_INIT'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:49: Lecture1.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:42:59 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-gcc -o "Lecture1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lecture1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lecture1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Src/STM32F103C6_EXTI_Driver.o: In function `Update_EXTI':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/Debug/../Src/STM32F103C6_EXTI_Driver.c:121: undefined reference to `MCAL_GPIO_INIT'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:49: Lecture1.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:43:07 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-gcc -o "Lecture1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lecture1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lecture1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Src/STM32F103C6_EXTI_Driver.o: In function `Update_EXTI':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lecture1/Debug/../Src/STM32F103C6_EXTI_Driver.c:121: undefined reference to `MCAL_GPIO_INIT'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:49: Lecture1.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:44:37 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/STM32F103C6_GPIO_Driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/STM32F103C6_GPIO_Driver.d" -MT"Src/STM32F103C6_GPIO_Driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/STM32F103C6_GPIO_Driver.o"
+arm-none-eabi-gcc "../Src/STM32F103C6_RCC_Driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/STM32F103C6_RCC_Driver.d" -MT"Src/STM32F103C6_RCC_Driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/STM32F103C6_RCC_Driver.o"
+../Src/STM32F103C6_RCC_Driver.c: In function 'MCAL_RCC_GetSYSCLK_Freq':
+../Src/STM32F103C6_RCC_Driver.c:54:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+arm-none-eabi-gcc -o "Lecture1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lecture1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lecture1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lecture1.elf
+ 
+arm-none-eabi-size   Lecture1.elf 
+arm-none-eabi-objdump -h -S  Lecture1.elf  > "Lecture1.list"
+arm-none-eabi-objcopy  -O binary  Lecture1.elf  "Lecture1.bin"
+   text	   data	    bss	    dec	    hex	filename
+   2648	      8	   1632	   4288	   10c0	Lecture1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lecture1.bin
+Finished building: Lecture1.list
+ 
+ 
+23:47:59 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-size   Lecture1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2648	      8	   1632	   4288	   10c0	Lecture1.elf
+Finished building: default.size.stdout
+ 
+23:48:12 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-size   Lecture1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2648	      8	   1632	   4288	   10c0	Lecture1.elf
+Finished building: default.size.stdout
+ 
+23:48:53 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-size   Lecture1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2648	      8	   1632	   4288	   10c0	Lecture1.elf
+Finished building: default.size.stdout
+ 
+23:54:26 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-size   Lecture1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2648	      8	   1632	   4288	   10c0	Lecture1.elf
+Finished building: default.size.stdout
+ 
+23:54:34 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+make: *** No rule to make target 'Lecture1.elf', needed by 'all'.  Stop.
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:55:40 **** Incremental Build of configuration Debug for project Lecture1 ****
+make -j8 all 
+arm-none-eabi-gcc -o "Lecture1.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lecture1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lecture1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lecture1.axf
+ 
+arm-none-eabi-objdump -h -S  Lecture1.axf  > "Lecture1.list"
+arm-none-eabi-objcopy  -O binary  Lecture1.axf  "Lecture1.bin"
+arm-none-eabi-size   Lecture1.axf 
+   text	   data	    bss	    dec	    hex	filename
+   2648	      8	   1632	   4288	   10c0	Lecture1.axf
+Finished building: default.size.stdout
+ 
+Finished building: Lecture1.bin
+Finished building: Lecture1.list
+ 
+ 

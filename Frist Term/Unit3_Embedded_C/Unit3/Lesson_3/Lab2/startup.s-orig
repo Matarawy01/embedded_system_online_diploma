@@ -2,10 +2,10 @@
 /* By Abdelrahman Matarawy */
 
 
-/* Interupt Vector Table We Named The ISR By .section .vectors to Use in Linker */
+/* Interupt Vector Table We Named The ISR By .section .vectors to Use in Linker command taken by assembler */
 .section .vectors
 
-.word 0x20001000 		 /* address 0x08000000 is Entry Point which in Cortex-M need to add Address for stack top at first */
+.word 0x20001000 		 /* address 0x08000000 is Entry Point which in Cortex-M need to add Address of stack top which represent stack of SRAM start */
 .word _reset      		 /* 1 Reset Handler Added in Address 0x08000004 */
 .word vector_handler     /* 2 NMI */
 .word vector_handler     /* 3 Hard fault */
@@ -36,7 +36,7 @@ _reset:
 
 /* 
    For activate 16 bits mode
-   Default is 32 bits but we actvate 16 bits for safe
+   Default is 32 bits but we actvate 16 bits for safe if instruction 16 okay ... 32 okay
 */
 .thumb_func	
 

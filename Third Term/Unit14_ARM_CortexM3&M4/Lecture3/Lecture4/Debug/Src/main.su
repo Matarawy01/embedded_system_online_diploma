@@ -1,0 +1,4 @@
+main.c:32:6:Switch_CPU_AccessLevel	16	static,ignoring_inline_asm
+main.c:53:6:clk_init	4	static
+main.c:59:6:EXTI_CallBack	8	static
+main.c:65:5:main	32	static

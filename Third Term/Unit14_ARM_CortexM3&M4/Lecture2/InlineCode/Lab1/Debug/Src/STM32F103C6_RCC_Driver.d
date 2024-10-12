@@ -1,0 +1,6 @@
+Src/STM32F103C6_RCC_Driver.o: ../Src/STM32F103C6_RCC_Driver.c \
+ ../Inc/STM32F103C6_RCC_Driver.h ../Inc/STM32F103X6.h
+
+../Inc/STM32F103C6_RCC_Driver.h:
+
+../Inc/STM32F103X6.h:

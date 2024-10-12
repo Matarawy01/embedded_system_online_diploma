@@ -1,0 +1,23 @@
+05:10:50 **** Incremental Build of configuration Debug for project Lesson1_Unit7_Lab ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Lesson1_Unit7_Lab.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\2nd Term\unit7\Lecture1\Lesson1_Unit7_Lab\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lesson1_Unit7_Lab.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lesson1_Unit7_Lab.elf
+ 
+arm-none-eabi-objdump -h -S  Lesson1_Unit7_Lab.elf  > "Lesson1_Unit7_Lab.list"
+arm-none-eabi-objcopy  -O ihex  Lesson1_Unit7_Lab.elf  "Lesson1_Unit7_Lab.hex"
+arm-none-eabi-objcopy  -O binary  Lesson1_Unit7_Lab.elf  "Lesson1_Unit7_Lab.bin"
+arm-none-eabi-size   Lesson1_Unit7_Lab.elf 
+   text	   data	    bss	    dec	    hex	filename
+    888	      8	   1568	   2464	    9a0	Lesson1_Unit7_Lab.elf
+Finished building: default.size.stdout
+Finished building: Lesson1_Unit7_Lab.hex
+ 
+Finished building: Lesson1_Unit7_Lab.bin
+Finished building: Lesson1_Unit7_Lab.list
+ 
+ 
+ 
+
+05:10:51 Build Finished. 0 errors, 0 warnings. (took 877ms)
+

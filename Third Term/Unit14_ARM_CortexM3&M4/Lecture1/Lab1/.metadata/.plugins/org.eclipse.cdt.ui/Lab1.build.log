@@ -1,0 +1,24 @@
+22:55:17 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lab1/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:24:0:
+../Src/main.c: In function 'main':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lab1/STM32F103C6_Drivers/Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lab1/STM32F103C6_Drivers/Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:49:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Src/main.o: In function `main':
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lab1/Debug/../Src/main.c:53: undefined reference to `MCAL_GPIO_ReadPort'
+C:/Users/abdel/Downloads/Mastering_embedded_system/3rd Term/unit14/session2/Lab1/Lab1/Debug/../Src/main.c:54: undefined reference to `MCAL_EXTI_GPIO_Init'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:49: Lab1.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+22:55:17 Build Failed. 3 errors, 1 warnings. (took 729ms)
+

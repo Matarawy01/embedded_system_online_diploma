@@ -1,0 +1,14 @@
+RESET ;Set stack pointer
+			mov		R0, #5
+			bl		main
+			
+main
+			bl		subtract
+			bl		termination
+			
+subtract
+			sub		R0,R0,#1
+			cmp		R0,#0
+			bne		subtract
+			mov		pc,lr
+termination

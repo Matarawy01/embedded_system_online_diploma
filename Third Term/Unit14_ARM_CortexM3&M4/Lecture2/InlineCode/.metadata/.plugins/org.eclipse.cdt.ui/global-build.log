@@ -1,0 +1,547 @@
+21:43:01 **** Build of configuration Debug for project Lab1 ****
+make -j8 all 
+make: *** No rule to make target 'all'.  Stop.
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:43:22 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+make: *** No rule to make target 'all'.  Stop.
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:43:33 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc "../Src/STM32F103C6_EXTI_Driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/STM32F103C6_EXTI_Driver.d" -MT"Src/STM32F103C6_EXTI_Driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/STM32F103C6_EXTI_Driver.o"
+arm-none-eabi-gcc "../Src/STM32F103C6_GPIO_Driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/STM32F103C6_GPIO_Driver.d" -MT"Src/STM32F103C6_GPIO_Driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/STM32F103C6_GPIO_Driver.o"
+arm-none-eabi-gcc "../Src/STM32F103C6_RCC_Driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/STM32F103C6_RCC_Driver.d" -MT"Src/STM32F103C6_RCC_Driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/STM32F103C6_RCC_Driver.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Src/STM32F103C6_RCC_Driver.c: In function 'MCAL_RCC_GetSYSCLK_Freq':
+../Src/STM32F103C6_RCC_Driver.c:54:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:46:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session3\InlineCode\Lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+arm-none-eabi-objcopy  -O binary  Lab1.elf  "Lab1.bin"
+   text	   data	    bss	    dec	    hex	filename
+   2648	      8	   1632	   4288	   10c0	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.bin
+Finished building: Lab1.list
+ 
+ 
+21:49:15 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+make: *** No rule to make target 'C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lab1\STM32F103C6TX_FLASH.ld', needed by 'Lab1.axf'.  Stop.
+make: *** Waiting for unfinished jobs....
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:46:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:49:59 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+make: *** No rule to make target 'C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lab1\STM32F103C6TX_FLASH.ld', needed by 'Lab1.elf'.  Stop.
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:51:06 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+make: *** No rule to make target 'C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lab1\STM32F103C6TX_FLASH.ld', needed by 'Lab1.elf'.  Stop.
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:51:20 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+make: *** No rule to make target 'C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lab1\STM32F103C6TX_FLASH.ld', needed by 'Lab1.elf'.  Stop.
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:51:25 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+make: *** No rule to make target 'C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session2\Lab1\Lab1\STM32F103C6TX_FLASH.ld', needed by 'Lab1.elf'.  Stop.
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:55:13 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc "../Src/STM32F103C6_EXTI_Driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/STM32F103C6_EXTI_Driver.d" -MT"Src/STM32F103C6_EXTI_Driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/STM32F103C6_EXTI_Driver.o"
+arm-none-eabi-gcc "../Src/STM32F103C6_GPIO_Driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/STM32F103C6_GPIO_Driver.d" -MT"Src/STM32F103C6_GPIO_Driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/STM32F103C6_GPIO_Driver.o"
+arm-none-eabi-gcc "../Src/STM32F103C6_RCC_Driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/STM32F103C6_RCC_Driver.d" -MT"Src/STM32F103C6_RCC_Driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/STM32F103C6_RCC_Driver.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Src/STM32F103C6_RCC_Driver.c: In function 'MCAL_RCC_GetSYSCLK_Freq':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:46:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+../Src/STM32F103C6_RCC_Driver.c:54:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session3\InlineCode\Lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+arm-none-eabi-objcopy  -O binary  Lab1.elf  "Lab1.bin"
+   text	   data	    bss	    dec	    hex	filename
+   2648	      8	   1632	   4288	   10c0	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.bin
+Finished building: Lab1.list
+ 
+ 
+21:56:47 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2648	      8	   1632	   4288	   10c0	Lab1.elf
+Finished building: default.size.stdout
+ 
+21:57:27 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:46:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session3\InlineCode\Lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-objdump -D Lab1.elf > Lab1.s
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+arm-none-eabi-objcopy  -O binary  Lab1.elf  "Lab1.bin"
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2648	      8	   1632	   4288	   10c0	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.bin
+Finished building: Lab1.list
+ 
+ 
+05:24:10 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:46:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+../Src/main.c:43:20: warning: unused variable 'val3' [-Wunused-variable]
+  int val1=2,val2=3,val3;
+                    ^~~~
+../Src/main.c:43:13: warning: unused variable 'val2' [-Wunused-variable]
+  int val1=2,val2=3,val3;
+             ^~~~
+../Src/main.c:43:6: warning: unused variable 'val1' [-Wunused-variable]
+  int val1=2,val2=3,val3;
+      ^~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session3\InlineCode\Lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-objdump -D Lab1.elf > Lab1.s
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+arm-none-eabi-objcopy  -O binary  Lab1.elf  "Lab1.bin"
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2672	      8	   1632	   4312	   10d8	Lab1.elf
+Finished building: Lab1.list
+Finished building: default.size.stdout
+ 
+ 
+Finished building: Lab1.bin
+ 
+05:26:59 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:46:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session3\InlineCode\Lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-objdump -D Lab1.elf > Lab1.s
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+arm-none-eabi-objcopy  -O binary  Lab1.elf  "Lab1.bin"
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2668	      8	   1632	   4308	   10d4	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.bin
+Finished building: Lab1.list
+ 
+ 
+05:42:08 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:46:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session3\InlineCode\Lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-objdump -D Lab1.elf > Lab1.s
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+arm-none-eabi-objcopy  -O binary  Lab1.elf  "Lab1.bin"
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2672	      8	   1632	   4312	   10d8	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.bin
+Finished building: Lab1.list
+ 
+ 
+05:42:34 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc -o "Lab1.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session3\InlineCode\Lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-objdump -D Lab1.axf > Lab1.s
+Finished building target: Lab1.axf
+ 
+arm-none-eabi-objdump -h -S  Lab1.axf  > "Lab1.list"
+arm-none-eabi-objcopy  -O binary  Lab1.axf  "Lab1.bin"
+arm-none-eabi-size   Lab1.axf 
+   text	   data	    bss	    dec	    hex	filename
+   2672	      8	   1632	   4312	   10d8	Lab1.axf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.bin
+Finished building: Lab1.list
+ 
+ 
+06:10:26 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:46:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+../Src/main.c:43:6: warning: unused variable 'val3' [-Wunused-variable]
+  int val3=4;
+      ^~~~
+arm-none-eabi-gcc -o "Lab1.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session3\InlineCode\Lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-objdump -D Lab1.axf > Lab1.s
+Finished building target: Lab1.axf
+ 
+arm-none-eabi-objdump -h -S  Lab1.axf  > "Lab1.list"
+arm-none-eabi-objcopy  -O binary  Lab1.axf  "Lab1.bin"
+arm-none-eabi-size   Lab1.axf 
+   text	   data	    bss	    dec	    hex	filename
+   2656	      8	   1632	   4296	   10c8	Lab1.axf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.bin
+Finished building: Lab1.list
+ 
+ 
+06:16:24 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:46:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session3\InlineCode\Lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-objdump -D Lab1.axf > Lab1.s
+Finished building target: Lab1.axf
+ 
+arm-none-eabi-objdump -h -S  Lab1.axf  > "Lab1.list"
+arm-none-eabi-objcopy  -O binary  Lab1.axf  "Lab1.bin"
+arm-none-eabi-size   Lab1.axf 
+   text	   data	    bss	    dec	    hex	filename
+   2668	      8	   1632	   4308	   10d4	Lab1.axf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.bin
+Finished building: Lab1.list
+ 
+ 
+06:22:57 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:46:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session3\InlineCode\Lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-objdump -D Lab1.axf > Lab1.s
+Finished building target: Lab1.axf
+ 
+arm-none-eabi-objdump -h -S  Lab1.axf  > "Lab1.list"
+arm-none-eabi-objcopy  -O binary  Lab1.axf  "Lab1.bin"
+arm-none-eabi-size   Lab1.axf 
+   text	   data	    bss	    dec	    hex	filename
+   2668	      8	   1632	   4308	   10d4	Lab1.axf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.bin
+Finished building: Lab1.list
+ 
+ 
+06:26:10 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:46:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session3\InlineCode\Lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-objdump -D Lab1.axf > Lab1.s
+Finished building target: Lab1.axf
+ 
+arm-none-eabi-objdump -h -S  Lab1.axf  > "Lab1.list"
+arm-none-eabi-objcopy  -O binary  Lab1.axf  "Lab1.bin"
+arm-none-eabi-size   Lab1.axf 
+   text	   data	    bss	    dec	    hex	filename
+   2668	      8	   1632	   4308	   10d4	Lab1.axf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.bin
+Finished building: Lab1.list
+ 
+ 
+06:26:17 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.axf 
+   text	   data	    bss	    dec	    hex	filename
+   2668	      8	   1632	   4308	   10d4	Lab1.axf
+Finished building: default.size.stdout
+ 
+20:02:20 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:46:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+../Src/main.c:57:2: warning: 'val2' is used uninitialized in this function [-Wuninitialized]
+  __asm("add %0, %1, %2"
+  ^~~~~
+../Src/main.c:57:2: warning: 'val3' is used uninitialized in this function [-Wuninitialized]
+arm-none-eabi-gcc -o "Lab1.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session3\InlineCode\Lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-objdump -D Lab1.axf > Lab1.s
+Finished building target: Lab1.axf
+ 
+arm-none-eabi-objdump -h -S  Lab1.axf  > "Lab1.list"
+arm-none-eabi-objcopy  -O binary  Lab1.axf  "Lab1.bin"
+arm-none-eabi-size   Lab1.axf 
+   text	   data	    bss	    dec	    hex	filename
+   2668	      8	   1632	   4308	   10d4	Lab1.axf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.bin
+ 
+Finished building: Lab1.list
+ 
+20:09:25 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:47:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+../Src/main.c:59:4: error: undefined named operand 'out0'
+    :[OUT0] "=r" (CPU_Control_Register) );
+    ^
+../Src/main.c:44:6: warning: unused variable 'CPU_IP_Register' [-Wunused-variable]
+  int CPU_IP_Register = 0;
+      ^~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:39: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:09:47 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:47:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+../Src/main.c:59:4: error: undefined named operand 'out0'
+    :[OUT0] "=r" (CPU_Control_Register) );
+    ^
+../Src/main.c:44:6: warning: unused variable 'CPU_IP_Register' [-Wunused-variable]
+  int CPU_IP_Register = 0;
+      ^~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:39: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:10:09 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:47:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+../Src/main.c:44:6: warning: unused variable 'CPU_IP_Register' [-Wunused-variable]
+  int CPU_IP_Register = 0;
+      ^~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session3\InlineCode\Lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-objdump -D Lab1.axf > Lab1.s
+Finished building target: Lab1.axf
+ 
+arm-none-eabi-objdump -h -S  Lab1.axf  > "Lab1.list"
+arm-none-eabi-objcopy  -O binary  Lab1.axf  "Lab1.bin"
+arm-none-eabi-size   Lab1.axf 
+   text	   data	    bss	    dec	    hex	filename
+   2672	      8	   1632	   4312	   10d8	Lab1.axf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.bin
+Finished building: Lab1.list
+ 
+ 
+20:12:16 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Inc/STM32F103C6_EXTI_Driver.h:14:0,
+                 from ../Src/main.c:23:
+../Src/main.c: In function 'main':
+../Inc/STM32F103C6_GPIO_Driver.h:49:31: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define GPIO_PIN_9            ((uint16_t)0x0200) /* Pin 9 Selected */
+                               ^
+../Inc/STM32F103C6_EXTI_Driver.h:133:70: note: in expansion of macro 'GPIO_PIN_9'
+ #define EXTI_LINE9_PB9           (EXTI_GPIO_Mapping_t){EXTI9, GPIOB, GPIO_PIN_9, EXTI9_IRQ}
+                                                                      ^~~~~~~~~~
+../Src/main.c:50:23: note: in expansion of macro 'EXTI_LINE9_PB9'
+  EXTI_Conf.EXTI_PIN = EXTI_LINE9_PB9; // Set line 9, GPIOB, Pin9 an EXTI
+                       ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.axf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\abdel\Downloads\Mastering_embedded_system\3rd Term\unit14\session3\InlineCode\Lab1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-objdump -D Lab1.axf > Lab1.s
+Finished building target: Lab1.axf
+ 
+arm-none-eabi-objdump -h -S  Lab1.axf  > "Lab1.list"
+arm-none-eabi-objcopy  -O binary  Lab1.axf  "Lab1.bin"
+arm-none-eabi-size   Lab1.axf 
+   text	   data	    bss	    dec	    hex	filename
+   2684	      8	   1640	   4332	   10ec	Lab1.axf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.bin
+Finished building: Lab1.list
+ 
+ 

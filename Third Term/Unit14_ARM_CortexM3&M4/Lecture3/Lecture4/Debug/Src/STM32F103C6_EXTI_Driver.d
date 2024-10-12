@@ -1,0 +1,11 @@
+Src/STM32F103C6_EXTI_Driver.o: ../Src/STM32F103C6_EXTI_Driver.c \
+ ../Inc/STM32F103C6_EXTI_Driver.h ../Inc/STM32F103X6.h \
+ ../Inc/STM32F103C6_GPIO_Driver.h ../Inc/STM32F103C6_GPIO_Driver.h
+
+../Inc/STM32F103C6_EXTI_Driver.h:
+
+../Inc/STM32F103X6.h:
+
+../Inc/STM32F103C6_GPIO_Driver.h:
+
+../Inc/STM32F103C6_GPIO_Driver.h:
