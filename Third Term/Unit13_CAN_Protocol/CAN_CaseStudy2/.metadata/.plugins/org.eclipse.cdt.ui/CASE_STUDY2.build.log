@@ -1,0 +1,10 @@
+18:11:36 **** Incremental Build of configuration Debug for project CASE_STUDY2 ****
+make -j8 all 
+arm-none-eabi-size   CASE_STUDY2.axf 
+   text	   data	    bss	    dec	    hex	filename
+   7960	     20	   1636	   9616	   2590	CASE_STUDY2.axf
+Finished building: default.size.stdout
+ 
+
+18:11:37 Build Finished. 0 errors, 0 warnings. (took 250ms)
+
